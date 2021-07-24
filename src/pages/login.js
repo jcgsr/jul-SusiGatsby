@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { firebase } from "../services/firebase/firebase";
 import { navigate } from "gatsby";
-import SusiDB from "./susidb";
 
 import Layout from "../components/layout";
 import Sinergia from "../components/sinergia";
@@ -54,7 +53,6 @@ const Login = () => {
       ) : (
         <>
           <h2>olá, {email}</h2>
-          <SusiDB />
           <Sinergia />
           <button onClick={handleLogout}>logout</button>
         </>

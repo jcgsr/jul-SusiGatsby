@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import firebase from "firebase";
 
@@ -8,6 +8,27 @@ const Sinergia = () => {
   const [oleo, setOleo] = useState("");
   const [obs, setObs] = useState("");
 
+  const [sinergiaDados, setSinergiaDados] = useState([]);
+  const [idSinergia, setIdSinergia] = useState("");
+
+  const loadSinergia = () => {
+    firebase
+      .firestore()
+      .collection("sinergias")
+      .onSnapshot(doc => {
+        let minhasSinergias = [];
+        doc.forEach(item => {
+          minhasSinergias.push({
+            id: item.id,
+            sinergia: item.data().sinergia,
+            carreador: item.data().carreador,
+            oleos: item.data().oleos,
+            obs: item.data().obs,
+          });
+        });
+        setSinergiaDados(minhasSinergias);
+      });
+  };
   const handleSubmit = async e => {
     e.preventDefault();
     try {
@@ -21,15 +42,50 @@ const Sinergia = () => {
           obs: obs,
         })
         .then(() => {
-          setSinergia("");
-          setCarreador("");
-          setOleo("");
-          setObs("");
+          handleReset();
         });
       alert("sinergia gravada");
     } catch (error) {
       alert(error);
     }
+  };
+  const handleReset = () => {
+    setSinergia("");
+    setCarreador("");
+    setOleo("");
+    setObs("");
+  };
+
+  const handleEdit = async () => {
+    await firebase
+      .firestore()
+      .collection("sinergias")
+      .doc(idSinergia)
+      .update({
+        sinergia: sinergia,
+        carreador: carreador,
+        oleos: oleo,
+        obs: obs,
+      })
+      .then(() => {
+        alert("Dados atualizados");
+        setIdSinergia("");
+        handleReset();
+      });
+  };
+
+  const handleDelete = async id => {
+    await firebase
+      .firestore()
+      .collection("sinergias")
+      .doc(id)
+      .delete()
+      .then(() => {
+        alert("Deletado");
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
 
   return (
@@ -37,6 +93,13 @@ const Sinergia = () => {
       <h1>Sinergia</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="sinergia">sinergia</label>
+        <input
+          type="text"
+          value={idSinergia}
+          onChange={e => setIdSinergia(e.target.value)}
+          style={{ display: "none" }}
+        />
+
         <input
           placeholder="perfume"
           type="text"
@@ -74,7 +137,36 @@ const Sinergia = () => {
         />
         <br />
         <button type="submit">gravar</button>
+        <button type="button" onClick={handleEdit}>
+          editar
+        </button>
       </form>
+      <button onClick={loadSinergia}>mostrar</button>
+      <h2>Dados Sinergia</h2>
+      <ul>
+        {sinergiaDados.map(dado => {
+          return (
+            <li key={dado.id}>
+              <p>Sinergia: {dado.sinergia}</p>
+              <p>Carreador: {dado.carreador}</p>
+              <p>Óleos: {dado.oleos}</p>
+              <p>Observaçã: {dado.obs}</p>
+              <button
+                onClick={() => (
+                  setIdSinergia(dado.id),
+                  setSinergia(dado.sinergia),
+                  setCarreador(dado.carreador),
+                  setOleo(dado.oleos),
+                  setObs(dado.obs)
+                )}
+              >
+                carregar
+              </button>
+              <button onClick={() => handleDelete(dado.id)}>deletar</button>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
