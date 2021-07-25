@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import firebase from "firebase";
 
@@ -89,7 +89,7 @@ const Sinergia = () => {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div>
       <h1>Sinergia</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="sinergia">sinergia</label>

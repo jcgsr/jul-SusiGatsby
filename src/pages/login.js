@@ -4,8 +4,10 @@ import { navigate } from "gatsby";
 
 import Layout from "../components/layout";
 import Sinergia from "../components/sinergia";
+import Pacote from "../components/pacote";
 
 const Login = () => {
+  // LOGIN
   const [isLogged, setIsLogged] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +29,16 @@ const Login = () => {
     firebase.auth().signOut();
     navigate("/");
   };
+  // FIM LOGIN
+
+  // SHOW COMPONENTS
+  const [showSinergias, setShowSinergias] = useState(false);
+  const [showPacotes, setShowPacotes] = useState(false);
+  const handleShowSinergia = () => {
+    setShowSinergias(true);
+    setShowPacotes(false);
+  };
+  // FIM SHOW COMPONENTS
   return (
     <Layout>
       {!isLogged ? (
@@ -53,7 +65,20 @@ const Login = () => {
       ) : (
         <>
           <h2>olá, {email}</h2>
-          <Sinergia />
+          <div>
+            <button
+              onClick={() => (setShowSinergias(true), setShowPacotes(false))}
+            >
+              sinergias
+            </button>
+            <button
+              onClick={() => (setShowSinergias(false), setShowPacotes(true))}
+            >
+              pacotes
+            </button>
+          </div>
+          {showSinergias && <Sinergia />}
+          {showPacotes && <Pacote />}
           <button onClick={handleLogout}>logout</button>
         </>
       )}
