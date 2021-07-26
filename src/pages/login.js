@@ -5,6 +5,7 @@ import { navigate } from "gatsby";
 import Layout from "../components/layout";
 import Sinergia from "../components/sinergia";
 import Pacote from "../components/pacote";
+import Anamnese from "../components/anamnese";
 
 const Login = () => {
   // LOGIN
@@ -34,10 +35,11 @@ const Login = () => {
   // SHOW COMPONENTS
   const [showSinergias, setShowSinergias] = useState(false);
   const [showPacotes, setShowPacotes] = useState(false);
-  const handleShowSinergia = () => {
-    setShowSinergias(true);
-    setShowPacotes(false);
-  };
+  const [showAnamnese, setShowAnamnese] = useState(false);
+  // const handleShowSinergia = () => {
+  //   setShowSinergias(true);
+  //   setShowPacotes(false);
+  // };
   // FIM SHOW COMPONENTS
   return (
     <Layout>
@@ -67,18 +69,37 @@ const Login = () => {
           <h2>olá, {email}</h2>
           <div>
             <button
-              onClick={() => (setShowSinergias(true), setShowPacotes(false))}
+              onClick={() => (
+                setShowAnamnese(true),
+                setShowSinergias(false),
+                setShowPacotes(false)
+              )}
             >
-              sinergias
+              anamnese
             </button>
+
             <button
-              onClick={() => (setShowSinergias(false), setShowPacotes(true))}
+              onClick={() => (
+                setShowSinergias(false),
+                setShowPacotes(true),
+                setShowAnamnese(false)
+              )}
             >
               pacotes
+            </button>
+            <button
+              onClick={() => (
+                setShowSinergias(true),
+                setShowPacotes(false),
+                setShowAnamnese(false)
+              )}
+            >
+              sinergias
             </button>
           </div>
           {showSinergias && <Sinergia />}
           {showPacotes && <Pacote />}
+          {showAnamnese && <Anamnese />}
           <button onClick={handleLogout}>logout</button>
         </>
       )}
