@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Layout from "../components/layout";
+
 import firebase from "firebase";
 
 const Anamnese = () => {
@@ -10,7 +12,6 @@ const Anamnese = () => {
   const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
   const [idAnamnese, setIdAnamnese] = useState("");
-  const [anamneseDados, setAnamneseDados] = useState([]);
 
   // PERGUNTAS
   const [alergias, setAlergias] = useState("");
@@ -86,7 +87,7 @@ const Anamnese = () => {
     setAnotacoes("");
   };
   return (
-    <div>
+    <Layout>
       <h1>Anamnese</h1>
       <h2>Bem-vindo(a)!</h2>
       <h3>
@@ -251,7 +252,7 @@ const Anamnese = () => {
         </div>
         <button type="submit">gravar</button>
       </form>
-    </div>
+    </Layout>
   );
 };
 
