@@ -6,6 +6,7 @@ import Layout from "../components/layout";
 import Sinergia from "../components/sinergia";
 import Pacote from "../components/pacote";
 import Anamnese from "../components/anamnese";
+import Doshas from "../components/doshas";
 
 const Login = () => {
   // LOGIN
@@ -36,10 +37,8 @@ const Login = () => {
   const [showSinergias, setShowSinergias] = useState(false);
   const [showPacotes, setShowPacotes] = useState(false);
   const [showAnamnese, setShowAnamnese] = useState(false);
-  // const handleShowSinergia = () => {
-  //   setShowSinergias(true);
-  //   setShowPacotes(false);
-  // };
+  const [showDoshas, setShowDoshas] = useState(false);
+
   // FIM SHOW COMPONENTS
   return (
     <Layout>
@@ -72,7 +71,8 @@ const Login = () => {
               onClick={() => (
                 setShowAnamnese(true),
                 setShowSinergias(false),
-                setShowPacotes(false)
+                setShowPacotes(false),
+                setShowDoshas(false)
               )}
             >
               anamnese
@@ -82,7 +82,8 @@ const Login = () => {
               onClick={() => (
                 setShowSinergias(false),
                 setShowPacotes(true),
-                setShowAnamnese(false)
+                setShowAnamnese(false),
+                setShowDoshas(false)
               )}
             >
               pacotes
@@ -91,15 +92,27 @@ const Login = () => {
               onClick={() => (
                 setShowSinergias(true),
                 setShowPacotes(false),
-                setShowAnamnese(false)
+                setShowAnamnese(false),
+                setShowDoshas(false)
               )}
             >
               sinergias
+            </button>
+            <button
+              onClick={() => (
+                setShowDoshas(true),
+                setShowSinergias(false),
+                setShowPacotes(false),
+                setShowAnamnese(false)
+              )}
+            >
+              doshas
             </button>
           </div>
           {showSinergias && <Sinergia />}
           {showPacotes && <Pacote />}
           {showAnamnese && <Anamnese />}
+          {showDoshas && <Doshas />}
           <button onClick={handleLogout}>logout</button>
         </>
       )}
