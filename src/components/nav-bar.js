@@ -18,6 +18,8 @@ export default function NavBar() {
         {` `}
         <Link to="/login">Login</Link>
         {` `}
+        <Link to="/anamneseform">Anamnese</Link>
+        {` `}
       </nav>
     </div>
   );
