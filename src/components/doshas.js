@@ -34,10 +34,66 @@ const Doshas = () => {
   const [v20, setV20] = useState(0);
   const [sumV, setSumV] = useState(0);
 
+  // PITTA
+  const [p1, setP1] = useState(0);
+  const [p2, setP2] = useState(0);
+  const [p3, setP3] = useState(0);
+  const [p4, setP4] = useState(0);
+  const [p5, setP5] = useState(0);
+  const [p6, setP6] = useState(0);
+  const [p7, setP7] = useState(0);
+  const [p8, setP8] = useState(0);
+  const [p9, setP9] = useState(0);
+  const [p10, setP10] = useState(0);
+  const [p11, setP11] = useState(0);
+  const [p12, setP12] = useState(0);
+  const [p13, setP13] = useState(0);
+  const [p14, setP14] = useState(0);
+  const [p15, setP15] = useState(0);
+  const [p16, setP16] = useState(0);
+  const [p17, setP17] = useState(0);
+  const [p18, setP18] = useState(0);
+  const [p19, setP19] = useState(0);
+  const [p20, setP20] = useState(0);
+  const [sumP, setSumP] = useState(0);
+
+  // KAPHA
+  const [k1, setK1] = useState(0);
+  const [k2, setK2] = useState(0);
+  const [k3, setK3] = useState(0);
+  const [k4, setK4] = useState(0);
+  const [k5, setK5] = useState(0);
+  const [k6, setK6] = useState(0);
+  const [k7, setK7] = useState(0);
+  const [k8, setK8] = useState(0);
+  const [k9, setK9] = useState(0);
+  const [k10, setK10] = useState(0);
+  const [k11, setK11] = useState(0);
+  const [k12, setK12] = useState(0);
+  const [k13, setK13] = useState(0);
+  const [k14, setK14] = useState(0);
+  const [k15, setK15] = useState(0);
+  const [k16, setK16] = useState(0);
+  const [k17, setK17] = useState(0);
+  const [k18, setK18] = useState(0);
+  const [k19, setK19] = useState(0);
+  const [k20, setK20] = useState(0);
+  const [sumK, setSumK] = useState(0);
+
   // FUNCTIONS
   const getAge = birthDate =>
     Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e10);
   const sumVata = (...args) => {
+    return args.reduce((previous, current) => {
+      return previous + current;
+    });
+  };
+  const sumPitta = (...args) => {
+    return args.reduce((previous, current) => {
+      return previous + current;
+    });
+  };
+  const sumKapha = (...args) => {
     return args.reduce((previous, current) => {
       return previous + current;
     });
@@ -54,20 +110,23 @@ const Doshas = () => {
         profissao: profession,
         telefone: phone,
         totalVata: sumV,
+        totalPitta: sumP,
+        totalKapha: sumK,
       })
       .then(() => {
         handleReset();
-        idade();
       });
   };
   const handleReset = () => {
     setName("");
     setBirthday("");
+    setAge("");
     setAddress("");
     setProfession("");
     setPhone("");
     setSumV("");
-    setAge("");
+    setSumP("");
+    setSumK("");
   };
 
   const idade = () => {
@@ -91,6 +150,8 @@ const Doshas = () => {
             profissao: item.data().profissao,
             telefone: item.data().telefone,
             vata: item.data().totalVata,
+            pitta: item.data().totalPitta,
+            kapha: item.data().totalKapha,
           });
         });
         setDoshasDados(meusDoshas);
@@ -109,10 +170,30 @@ const Doshas = () => {
         console.log(e);
       });
   };
+  const handleEdit = async () => {
+    await firebase
+      .firestore()
+      .collection("doshas")
+      .doc(idDoshas)
+      .update({
+        nome: name,
+        nascimento: birthday,
+        endereco: address,
+        profissao: profession,
+        telefone: phone,
+        totalVata: sumV,
+        totalPitta: sumP,
+        totalKapha: sumK,
+      })
+      .then(() => {
+        alert("Dados atualizados");
+        setIdDoshas("");
+        handleReset();
+      });
+  };
   return (
     <div>
       <h1>Doshas</h1>
-      <h2>VATA</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -150,6 +231,7 @@ const Doshas = () => {
           value={phone}
           onChange={e => setPhone(e.target.value)}
         />
+        <h2>VATA</h2>
         <div
           onChange={e => {
             setV1(e.target.value);
@@ -630,10 +712,1015 @@ const Doshas = () => {
         </h4>
         <p onChange={e => setSumV(e.target.value)}>
           Por favor, confirme o total do seu Vata:
-          <input type="number" value={sumV} placeholder="total vata" />
+          <input
+            type="number"
+            value={sumV}
+            onFocus={e => e.currentTarget.select()}
+            placeholder="total vata"
+          />
         </p>
+        <hr />
+        <div
+          onChange={e => {
+            setP1(e.target.value);
+          }}
+        >
+          <h2>PITTA</h2>
+          <p>1. Considero-me muito eficiente.</p>
+          <span>não</span>
+          <input type="radio" name="eficiente" value="1" />
+          <label htmlFor="eficiente">1</label>
+          <input type="radio" name="eficiente" value="2" />
+          <label htmlFor="eficiente">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="eficiente" value="3" />
+          <label htmlFor="eficiente">3</label>
+          <input type="radio" name="eficiente" value="4" />
+          <label htmlFor="eficiente">4</label>
+          <span>sim</span>
+          <input type="radio" name="eficiente" value="5" />
+          <label htmlFor="eficiente">5</label>
+          <input type="radio" name="eficiente" value="6" />
+          <label htmlFor="eficiente">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP2(e.target.value);
+          }}
+        >
+          <p>
+            2. Tendo a ser extremamente preciso e organizado em minhas
+            atividades.
+          </p>
+          <span>não</span>
+          <input type="radio" name="organizado" value="1" />
+          <label htmlFor="ornanizado">1</label>
+          <input type="radio" name="ornanizado" value="2" />
+          <label htmlFor="ornanizado">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="ornanizado" value="3" />
+          <label htmlFor="ornanizado">3</label>
+          <input type="radio" name="ornanizado" value="4" />
+          <label htmlFor="ornanizado">4</label>
+          <span>sim</span>
+          <input type="radio" name="ornanizado" value="5" />
+          <label htmlFor="ornanizado">5</label>
+          <input type="radio" name="ornanizado" value="6" />
+          <label htmlFor="ornanizado">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP3(e.target.value);
+          }}
+        >
+          <p>3. Tenho força de vontade e sou um tanto perseverante.</p>
+          <span>não</span>
+          <input type="radio" name="perseverante" value="1" />
+          <label htmlFor="perseverante">1</label>
+          <input type="radio" name="perseverante" value="2" />
+          <label htmlFor="perseverante">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="perseverante" value="3" />
+          <label htmlFor="perseverante">3</label>
+          <input type="radio" name="perseverante" value="4" />
+          <label htmlFor="perseverante">4</label>
+          <span>sim</span>
+          <input type="radio" name="perseverante" value="5" />
+          <label htmlFor="perseverante">5</label>
+          <input type="radio" name="perseverante" value="6" />
+          <label htmlFor="perseverante">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP4(e.target.value);
+          }}
+        >
+          <p>
+            4. Sinto incômodo e me canso facilmente em clima mais quente que o
+            normal.
+          </p>
+          <span>não</span>
+          <input type="radio" name="incomodo" value="1" />
+          <label htmlFor="incomodo">1</label>
+          <input type="radio" name="incomodo" value="2" />
+          <label htmlFor="incomodo">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="incomodo" value="3" />
+          <label htmlFor="incomodo">3</label>
+          <input type="radio" name="incomodo" value="4" />
+          <label htmlFor="incomodo">4</label>
+          <span>sim</span>
+          <input type="radio" name="incomodo" value="5" />
+          <label htmlFor="incomodo">5</label>
+          <input type="radio" name="incomodo" value="6" />
+          <label htmlFor="incomodo">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP5(e.target.value);
+          }}
+        >
+          <p>5. Tendo a transpirar facilmente.</p>
+          <span>não</span>
+          <input type="radio" name="transpirar" value="1" />
+          <label htmlFor="transpirar">1</label>
+          <input type="radio" name="transpirar" value="2" />
+          <label htmlFor="transpirar">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="transpirar" value="3" />
+          <label htmlFor="transpirar">3</label>
+          <input type="radio" name="transpirar" value="4" />
+          <label htmlFor="transpirar">4</label>
+          <span>sim</span>
+          <input type="radio" name="transpirar" value="5" />
+          <label htmlFor="transpirar">5</label>
+          <input type="radio" name="transpirar" value="6" />
+          <label htmlFor="transpirar">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP6(e.target.value);
+          }}
+        >
+          <p>6. Nem sempre aparento, mas me irrito facilmente.</p>
+          <span>não</span>
+          <input type="radio" name="irrito" value="1" />
+          <label htmlFor="irrito">1</label>
+          <input type="radio" name="irrito" value="2" />
+          <label htmlFor="irrito">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="irrito" value="3" />
+          <label htmlFor="irrito">3</label>
+          <input type="radio" name="irrito" value="4" />
+          <label htmlFor="irrito">4</label>
+          <span>sim</span>
+          <input type="radio" name="irrito" value="5" />
+          <label htmlFor="irrito">5</label>
+          <input type="radio" name="irrito" value="6" />
+          <label htmlFor="irrito">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP7(e.target.value);
+          }}
+        >
+          <p>7. É difícil pra mim, atrasar ou suprimir alguma refeição.</p>
+          <span>não</span>
+          <input type="radio" name="refeicao" value="1" />
+          <label htmlFor="refeicao">1</label>
+          <input type="radio" name="refeicao" value="2" />
+          <label htmlFor="refeicao">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="refeicao" value="3" />
+          <label htmlFor="refeicao">3</label>
+          <input type="radio" name="refeicao" value="4" />
+          <label htmlFor="refeicao">4</label>
+          <span>sim</span>
+          <input type="radio" name="refeicao" value="5" />
+          <label htmlFor="refeicao">5</label>
+          <input type="radio" name="refeicao" value="6" />
+          <label htmlFor="refeicao">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP8(e.target.value);
+          }}
+        >
+          <p>
+            8. Meu cabelo é grisalho desde cedo, fino, liso, loiro e perco-o
+            precocemente.
+          </p>
+          <span>não</span>
+          <input type="radio" name="grisalho" value="1" />
+          <label htmlFor="grisalho">1</label>
+          <input type="radio" name="grisalho" value="2" />
+          <label htmlFor="grisalho">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="grisalho" value="3" />
+          <label htmlFor="grisalho">3</label>
+          <input type="radio" name="grisalho" value="4" />
+          <label htmlFor="grisalho">4</label>
+          <span>sim</span>
+          <input type="radio" name="grisalho" value="5" />
+          <label htmlFor="grisalho">5</label>
+          <input type="radio" name="grisalho" value="6" />
+          <label htmlFor="grisalho">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP9(e.target.value);
+          }}
+        >
+          <p>9. Tenho bom apetite, se quiser posso comer muito.</p>
+          <span>não</span>
+          <input type="radio" name="bomapetite" value="1" />
+          <label htmlFor="bomapetite">1</label>
+          <input type="radio" name="bomapetite" value="2" />
+          <label htmlFor="bomapetite">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="bomapetite" value="3" />
+          <label htmlFor="bomapetite">3</label>
+          <input type="radio" name="bomapetite" value="4" />
+          <label htmlFor="bomapetite">4</label>
+          <span>sim</span>
+          <input type="radio" name="bomapetite" value="5" />
+          <label htmlFor="bomapetite">5</label>
+          <input type="radio" name="bomapetite" value="6" />
+          <label htmlFor="bomapetite">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP10(e.target.value);
+          }}
+        >
+          <p>10. Muitos me acham cabeça-dura.</p>
+          <span>não</span>
+          <input type="radio" name="cabecadura" value="1" />
+          <label htmlFor="cabecadura">1</label>
+          <input type="radio" name="cabecadura" value="2" />
+          <label htmlFor="cabecadura">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="cabecadura" value="3" />
+          <label htmlFor="cabecadura">3</label>
+          <input type="radio" name="cabecadura" value="4" />
+          <label htmlFor="cabecadura">4</label>
+          <span>sim</span>
+          <input type="radio" name="cabecadura" value="5" />
+          <label htmlFor="cabecadura">5</label>
+          <input type="radio" name="cabecadura" value="6" />
+          <label htmlFor="cabecadura">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP11(e.target.value);
+          }}
+        >
+          <p>
+            11. Minha digestão é regular e não é comum eu ter prisão de ventre.
+          </p>
+          <span>não</span>
+          <input type="radio" name="prisaoventre" value="1" />
+          <label htmlFor="prisaoventre">1</label>
+          <input type="radio" name="prisaoventre" value="2" />
+          <label htmlFor="prisaoventre">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="prisaoventre" value="3" />
+          <label htmlFor="prisaoventre">3</label>
+          <input type="radio" name="prisaoventre" value="4" />
+          <label htmlFor="prisaoventre">4</label>
+          <span>sim</span>
+          <input type="radio" name="prisaoventre" value="5" />
+          <label htmlFor="prisaoventre">5</label>
+          <input type="radio" name="prisaoventre" value="6" />
+          <label htmlFor="prisaoventre">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP12(e.target.value);
+          }}
+        >
+          <p>12. Fico impaciente com facilidade.</p>
+          <span>não</span>
+          <input type="radio" name="impaciente" value="1" />
+          <label htmlFor="impaciente">1</label>
+          <input type="radio" name="impaciente" value="2" />
+          <label htmlFor="impaciente">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="impaciente" value="3" />
+          <label htmlFor="impaciente">3</label>
+          <input type="radio" name="impaciente" value="4" />
+          <label htmlFor="impaciente">4</label>
+          <span>sim</span>
+          <input type="radio" name="impaciente" value="5" />
+          <label htmlFor="impaciente">5</label>
+          <input type="radio" name="impaciente" value="6" />
+          <label htmlFor="impaciente">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP13(e.target.value);
+          }}
+        >
+          <p>13.Tendo a ser perfeccionista com detalhes.</p>
+          <span>não</span>
+          <input type="radio" name="perfeccionista" value="1" />
+          <label htmlFor="perfeccionista">1</label>
+          <input type="radio" name="perfeccionista" value="2" />
+          <label htmlFor="perfeccionista">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="perfeccionista" value="3" />
+          <label htmlFor="perfeccionista">3</label>
+          <input type="radio" name="perfeccionista" value="4" />
+          <label htmlFor="perfeccionista">4</label>
+          <span>sim</span>
+          <input type="radio" name="perfeccionista" value="5" />
+          <label htmlFor="perfeccionista">5</label>
+          <input type="radio" name="perfeccionista" value="6" />
+          <label htmlFor="perfeccionista">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP14(e.target.value);
+          }}
+        >
+          <p>14. Zango-me com facilidade, mas esqueço logo.</p>
+          <span>não</span>
+          <input type="radio" name="zango" value="1" />
+          <label htmlFor="zango">1</label>
+          <input type="radio" name="zango" value="2" />
+          <label htmlFor="zango">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="zango" value="3" />
+          <label htmlFor="zango">3</label>
+          <input type="radio" name="zango" value="4" />
+          <label htmlFor="zango">4</label>
+          <span>sim</span>
+          <input type="radio" name="zango" value="5" />
+          <label htmlFor="zango">5</label>
+          <input type="radio" name="zango" value="6" />
+          <label htmlFor="zango">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP15(e.target.value);
+          }}
+        >
+          <p>15. Gosto de comidas e bebidas frias (como sorvete).</p>
+          <span>não</span>
+          <input type="radio" name="sorvete" value="1" />
+          <label htmlFor="sorvete">1</label>
+          <input type="radio" name="sorvete" value="2" />
+          <label htmlFor="sorvete">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="sorvete" value="3" />
+          <label htmlFor="sorvete">3</label>
+          <input type="radio" name="sorvete" value="4" />
+          <label htmlFor="sorvete">4</label>
+          <span>sim</span>
+          <input type="radio" name="sorvete" value="5" />
+          <label htmlFor="sorvete">5</label>
+          <input type="radio" name="sorvete" value="6" />
+          <label htmlFor="sorvete">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP16(e.target.value);
+          }}
+        >
+          <p>
+            16. É mais comum que eu perceba que um ambiente está muito quente do
+            que frio.{" "}
+          </p>
+          <span>não</span>
+          <input type="radio" name="ambiente" value="1" />
+          <label htmlFor="ambiente">1</label>
+          <input type="radio" name="ambiente" value="2" />
+          <label htmlFor="ambiente">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="ambiente" value="3" />
+          <label htmlFor="ambiente">3</label>
+          <input type="radio" name="ambiente" value="4" />
+          <label htmlFor="ambiente">4</label>
+          <span>sim</span>
+          <input type="radio" name="ambiente" value="5" />
+          <label htmlFor="ambiente">5</label>
+          <input type="radio" name="ambiente" value="6" />
+          <label htmlFor="ambiente">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP17(e.target.value);
+          }}
+        >
+          <p>17. Não tolero comidas quentes ou apimentadas.</p>
+          <span>não</span>
+          <input type="radio" name="apimentadas" value="1" />
+          <label htmlFor="apimentadas">1</label>
+          <input type="radio" name="apimentadas" value="2" />
+          <label htmlFor="apimentadas">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="apimentadas" value="3" />
+          <label htmlFor="apimentadas">3</label>
+          <input type="radio" name="apimentadas" value="4" />
+          <label htmlFor="apimentadas">4</label>
+          <span>sim</span>
+          <input type="radio" name="apimentadas" value="5" />
+          <label htmlFor="apimentadas">5</label>
+          <input type="radio" name="apimentadas" value="6" />
+          <label htmlFor="apimentadas">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP18(e.target.value);
+          }}
+        >
+          <p>18. Não tolero discórdia.</p>
+          <span>não</span>
+          <input type="radio" name="discordia" value="1" />
+          <label htmlFor="discordia">1</label>
+          <input type="radio" name="discordia" value="2" />
+          <label htmlFor="discordia">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="discordia" value="3" />
+          <label htmlFor="discordia">3</label>
+          <input type="radio" name="discordia" value="4" />
+          <label htmlFor="discordia">4</label>
+          <span>sim</span>
+          <input type="radio" name="discordia" value="5" />
+          <label htmlFor="discordia">5</label>
+          <input type="radio" name="discordia" value="6" />
+          <label htmlFor="discordia">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP19(e.target.value);
+          }}
+        >
+          <p>
+            19. Gosto de desafios e quando quero algo sou muito determinado.
+          </p>
+          <span>não</span>
+          <input type="radio" name="desafios" value="1" />
+          <label htmlFor="desafios">1</label>
+          <input type="radio" name="desafios" value="2" />
+          <label htmlFor="desafios">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="desafios" value="3" />
+          <label htmlFor="desafios">3</label>
+          <input type="radio" name="desafios" value="4" />
+          <label htmlFor="desafios">4</label>
+          <span>sim</span>
+          <input type="radio" name="desafios" value="5" />
+          <label htmlFor="desafios">5</label>
+          <input type="radio" name="desafios" value="6" />
+          <label htmlFor="desafios">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setP20(e.target.value);
+          }}
+        >
+          <p>20. Tendo a ser bastante crítico com os outros e comigo mesmo.</p>
+          <span>não</span>
+          <input type="radio" name="critico" value="1" />
+          <label htmlFor="critico">1</label>
+          <input type="radio" name="critico" value="2" />
+          <label htmlFor="critico">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="critico" value="3" />
+          <label htmlFor="critico">3</label>
+          <input type="radio" name="critico" value="4" />
+          <label htmlFor="critico">4</label>
+          <span>sim</span>
+          <input type="radio" name="critico" value="5" />
+          <label htmlFor="critico">5</label>
+          <input type="radio" name="critico" value="6" />
+          <label htmlFor="critico">6</label>
+        </div>
+        <h4>
+          total pitta:
+          {sumPitta(
+            +p1,
+            +p2,
+            +p3,
+            +p4,
+            +p5,
+            +p6,
+            +p7,
+            +p8,
+            +p9,
+            +p10,
+            +p11,
+            +p12,
+            +p13,
+            +p14,
+            +p15,
+            +p16,
+            +p17,
+            +p18,
+            +p19,
+            +p20
+          )}{" "}
+          <br />
+        </h4>
+        <p onChange={e => setSumP(e.target.value)}>
+          Por favor, confirme o total do seu Pitta:
+          <input
+            type="number"
+            value={sumP}
+            onFocus={e => e.currentTarget.select()}
+            placeholder="total pitta"
+          />
+        </p>
+        <hr />
+        <h2>KAPHA</h2>
+        <div
+          onChange={e => {
+            setK1(e.target.value);
+          }}
+        >
+          {/* PERGUNTAS */}
+          <p>
+            1. Minha tendência natural é de fazer as coisas de maneira lenta e
+            relaxada.
+          </p>
+          <span>não</span>
+          <input type="radio" name="relaxada" value="1" />
+          <label htmlFor="relaxada">1</label>
+          <input type="radio" name="relaxada" value="2" />
+          <label htmlFor="relaxada">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="relaxada" value="3" />
+          <label htmlFor="relaxada">3</label>
+          <input type="radio" name="relaxada" value="4" />
+          <label htmlFor="relaxada">4</label>
+          <span>sim</span>
+          <input type="radio" name="relaxada" value="5" />
+          <label htmlFor="relaxada">5</label>
+          <input type="radio" name="relaxada" value="6" />
+          <label htmlFor="relaxada">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK2(e.target.value);
+          }}
+        >
+          <p>
+            2. Engordo mais facilmente que a maioria das pessoas e perco peso
+            mais devagar.
+          </p>
+          <span>não</span>
+          <input type="radio" name="engordo" value="1" />
+          <label htmlFor="engordo">1</label>
+          <input type="radio" name="engordo" value="2" />
+          <label htmlFor="engordo">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="engordo" value="3" />
+          <label htmlFor="engordo">3</label>
+          <input type="radio" name="engordo" value="4" />
+          <label htmlFor="engordo">4</label>
+          <span>sim</span>
+          <input type="radio" name="engordo" value="5" />
+          <label htmlFor="engordo">5</label>
+          <input type="radio" name="engordo" value="6" />
+          <label htmlFor="engordo">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK3(e.target.value);
+          }}
+        >
+          <p>3. Tenho uma disposição calma e plácida.</p>
+          <span>não</span>
+          <input type="radio" name="placida" value="1" />
+          <label htmlFor="placida">1</label>
+          <input type="radio" name="placida" value="2" />
+          <label htmlFor="placida">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="placida" value="3" />
+          <label htmlFor="placida">3</label>
+          <input type="radio" name="placida" value="4" />
+          <label htmlFor="placida">4</label>
+          <span>sim</span>
+          <input type="radio" name="placida" value="5" />
+          <label htmlFor="placida">5</label>
+          <input type="radio" name="placida" value="6" />
+          <label htmlFor="placida">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK4(e.target.value);
+          }}
+        >
+          <p>4. Posso deixar de comer uma refeição facilmente.</p>
+          <span>não</span>
+          <input type="radio" name="refeicaoperfer" value="1" />
+          <label htmlFor="refeicaoperfer">1</label>
+          <input type="radio" name="refeicaoperfer" value="2" />
+          <label htmlFor="refeicaoperfer">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="refeicaoperfer" value="3" />
+          <label htmlFor="refeicaoperfer">3</label>
+          <input type="radio" name="refeicaoperfer" value="4" />
+          <label htmlFor="refeicaoperfer">4</label>
+          <span>sim</span>
+          <input type="radio" name="refeicaoperfer" value="5" />
+          <label htmlFor="refeicaoperfer">5</label>
+          <input type="radio" name="refeicaoperfer" value="6" />
+          <label htmlFor="refeicaoperfer">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK5(e.target.value);
+          }}
+        >
+          <p>
+            5. Tendo a ter excesso de muco, congestão nasal, asma ou problemas
+            de sinusite.
+          </p>
+          <span>não</span>
+          <input type="radio" name="muco" value="1" />
+          <label htmlFor="muco">1</label>
+          <input type="radio" name="muco" value="2" />
+          <label htmlFor="muco">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="muco" value="3" />
+          <label htmlFor="muco">3</label>
+          <input type="radio" name="muco" value="4" />
+          <label htmlFor="muco">4</label>
+          <span>sim</span>
+          <input type="radio" name="muco" value="5" />
+          <label htmlFor="muco">5</label>
+          <input type="radio" name="muco" value="6" />
+          <label htmlFor="muco">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK6(e.target.value);
+          }}
+        >
+          <p>6. Preciso de pelo menos 8h de sono para me sentir bem.</p>
+          <span>não</span>
+          <input type="radio" name="sono" value="1" />
+          <label htmlFor="sono">1</label>
+          <input type="radio" name="sono" value="2" />
+          <label htmlFor="sono">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="sono" value="3" />
+          <label htmlFor="sono">3</label>
+          <input type="radio" name="sono" value="4" />
+          <label htmlFor="sono">4</label>
+          <span>sim</span>
+          <input type="radio" name="sono" value="5" />
+          <label htmlFor="sono">5</label>
+          <input type="radio" name="sono" value="6" />
+          <label htmlFor="sono">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK7(e.target.value);
+          }}
+        >
+          <p>7. Meu sono é bem profundo.</p>
+          <span>não</span>
+          <input type="radio" name="sonoprofundo" value="1" />
+          <label htmlFor="sonoprofundo">1</label>
+          <input type="radio" name="sonoprofundo" value="2" />
+          <label htmlFor="sonoprofundo">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="sonoprofundo" value="3" />
+          <label htmlFor="sonoprofundo">3</label>
+          <input type="radio" name="sonoprofundo" value="4" />
+          <label htmlFor="sonoprofundo">4</label>
+          <span>sim</span>
+          <input type="radio" name="sonoprofundo" value="5" />
+          <label htmlFor="sonoprofundo">5</label>
+          <input type="radio" name="sonoprofundo" value="6" />
+          <label htmlFor="sonoprofundo">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK8(e.target.value);
+          }}
+        >
+          <p>8. Sou calmo por natureza e não me zango facilmente.</p>
+          <span>não</span>
+          <input type="radio" name="calmo" value="1" />
+          <label htmlFor="calmo">1</label>
+          <input type="radio" name="calmo" value="2" />
+          <label htmlFor="calmo">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="calmo" value="3" />
+          <label htmlFor="calmo">3</label>
+          <input type="radio" name="calmo" value="4" />
+          <label htmlFor="calmo">4</label>
+          <span>sim</span>
+          <input type="radio" name="calmo" value="5" />
+          <label htmlFor="calmo">5</label>
+          <input type="radio" name="calmo" value="6" />
+          <label htmlFor="calmo">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK9(e.target.value);
+          }}
+        >
+          <p>
+            9. Não aprendo rápido, mas tenho forte poder de retenção e memória a
+            longo prazo.
+          </p>
+          <span>não</span>
+          <input type="radio" name="retencao" value="1" />
+          <label htmlFor="retencao">1</label>
+          <input type="radio" name="retencao" value="2" />
+          <label htmlFor="retencao">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="retencao" value="3" />
+          <label htmlFor="retencao">3</label>
+          <input type="radio" name="retencao" value="4" />
+          <label htmlFor="retencao">4</label>
+          <span>sim</span>
+          <input type="radio" name="retencao" value="5" />
+          <label htmlFor="retencao">5</label>
+          <input type="radio" name="retencao" value="6" />
+          <label htmlFor="retencao">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK10(e.target.value);
+          }}
+        >
+          <p>10. Tenho tendência a obesidade e adquiro gordura facilmente.</p>
+          <span>não</span>
+          <input type="radio" name="obesidade" value="1" />
+          <label htmlFor="obesidade">1</label>
+          <input type="radio" name="obesidade" value="2" />
+          <label htmlFor="obesidade">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="obesidade" value="3" />
+          <label htmlFor="obesidade">3</label>
+          <input type="radio" name="obesidade" value="4" />
+          <label htmlFor="obesidade">4</label>
+          <span>sim</span>
+          <input type="radio" name="obesidade" value="5" />
+          <label htmlFor="obesidade">5</label>
+          <input type="radio" name="obesidade" value="6" />
+          <label htmlFor="obesidade">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK11(e.target.value);
+          }}
+        >
+          <p>11. Não gosto de clima frio e úmido.</p>
+          <span>não</span>
+          <input type="radio" name="umido" value="1" />
+          <label htmlFor="umido">1</label>
+          <input type="radio" name="umido" value="2" />
+          <label htmlFor="umido">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="umido" value="3" />
+          <label htmlFor="umido">3</label>
+          <input type="radio" name="umido" value="4" />
+          <label htmlFor="umido">4</label>
+          <span>sim</span>
+          <input type="radio" name="umido" value="5" />
+          <label htmlFor="umido">5</label>
+          <input type="radio" name="umido" value="6" />
+          <label htmlFor="umido">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK12(e.target.value);
+          }}
+        >
+          <p>12. Meu cabelo é grosso, escuro e liso.</p>
+          <span>não</span>
+          <input type="radio" name="cabeloliso" value="1" />
+          <label htmlFor="cabeloliso">1</label>
+          <input type="radio" name="cabeloliso" value="2" />
+          <label htmlFor="cabeloliso">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="cabeloliso" value="3" />
+          <label htmlFor="cabeloliso">3</label>
+          <input type="radio" name="cabeloliso" value="4" />
+          <label htmlFor="cabeloliso">4</label>
+          <span>sim</span>
+          <input type="radio" name="cabeloliso" value="5" />
+          <label htmlFor="cabeloliso">5</label>
+          <input type="radio" name="cabeloliso" value="6" />
+          <label htmlFor="cabeloliso">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK13(e.target.value);
+          }}
+        >
+          <p>13. Minha pele é suave, lisa e clara.</p>
+          <span>não</span>
+          <input type="radio" name="lisa" value="1" />
+          <label htmlFor="lisa">1</label>
+          <input type="radio" name="lisa" value="2" />
+          <label htmlFor="lisa">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="lisa" value="3" />
+          <label htmlFor="lisa">3</label>
+          <input type="radio" name="lisa" value="4" />
+          <label htmlFor="lisa">4</label>
+          <span>sim</span>
+          <input type="radio" name="lisa" value="5" />
+          <label htmlFor="lisa">5</label>
+          <input type="radio" name="lisa" value="6" />
+          <label htmlFor="lisa">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK14(e.target.value);
+          }}
+        >
+          <p>14. Tenho um porte forte e sólido.</p>
+          <span>não</span>
+          <input type="radio" name="solido" value="1" />
+          <label htmlFor="solido">1</label>
+          <input type="radio" name="solido" value="2" />
+          <label htmlFor="solido">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="solido" value="3" />
+          <label htmlFor="solido">3</label>
+          <input type="radio" name="solido" value="4" />
+          <label htmlFor="solido">4</label>
+          <span>sim</span>
+          <input type="radio" name="solido" value="5" />
+          <label htmlFor="solido">5</label>
+          <input type="radio" name="solido" value="6" />
+          <label htmlFor="solido">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK15(e.target.value);
+          }}
+        >
+          <p>
+            15. Os seguintes adjetivos me descrevem bem: sereno, gentil,
+            compreensivo, afetivo.
+          </p>
+          <span>não</span>
+          <input type="radio" name="sereno" value="1" />
+          <label htmlFor="sereno">1</label>
+          <input type="radio" name="sereno" value="2" />
+          <label htmlFor="sereno">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="sereno" value="3" />
+          <label htmlFor="sereno">3</label>
+          <input type="radio" name="sereno" value="4" />
+          <label htmlFor="sereno">4</label>
+          <span>sim</span>
+          <input type="radio" name="sereno" value="5" />
+          <label htmlFor="sereno">5</label>
+          <input type="radio" name="sereno" value="6" />
+          <label htmlFor="sereno">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK16(e.target.value);
+          }}
+        >
+          <p>
+            16. Minha digestão é lenta, o que faz que eu me sinta pesado após
+            comer.
+          </p>
+          <span>não</span>
+          <input type="radio" name="pesado" value="1" />
+          <label htmlFor="pesado">1</label>
+          <input type="radio" name="pesado" value="2" />
+          <label htmlFor="pesado">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="pesado" value="3" />
+          <label htmlFor="pesado">3</label>
+          <input type="radio" name="pesado" value="4" />
+          <label htmlFor="pesado">4</label>
+          <span>sim</span>
+          <input type="radio" name="pesado" value="5" />
+          <label htmlFor="pesado">5</label>
+          <input type="radio" name="pesado" value="6" />
+          <label htmlFor="pesado">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK17(e.target.value);
+          }}
+        >
+          <p>
+            17.Tenho uma resistência física muito boa, bem como um nível estável
+            de energia.
+          </p>
+          <span>não</span>
+          <input type="radio" name="estavel" value="1" />
+          <label htmlFor="estavel">1</label>
+          <input type="radio" name="estavel" value="2" />
+          <label htmlFor="estavel">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="estavel" value="3" />
+          <label htmlFor="estavel">3</label>
+          <input type="radio" name="estavel" value="4" />
+          <label htmlFor="estavel">4</label>
+          <span>sim</span>
+          <input type="radio" name="estavel" value="5" />
+          <label htmlFor="estavel">5</label>
+          <input type="radio" name="estavel" value="6" />
+          <label htmlFor="estavel">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK18(e.target.value);
+          }}
+        >
+          <p>18. Geralmente meu andar é lento e calculado.</p>
+          <span>não</span>
+          <input type="radio" name="calculado" value="1" />
+          <label htmlFor="calculado">1</label>
+          <input type="radio" name="calculado" value="2" />
+          <label htmlFor="calculado">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="calculado" value="3" />
+          <label htmlFor="calculado">3</label>
+          <input type="radio" name="calculado" value="4" />
+          <label htmlFor="calculado">4</label>
+          <span>sim</span>
+          <input type="radio" name="calculado" value="5" />
+          <label htmlFor="calculado">5</label>
+          <input type="radio" name="calculado" value="6" />
+          <label htmlFor="calculado">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK19(e.target.value);
+          }}
+        >
+          <p>
+            19. Tendo a dormir demais, sentir moleza ao acordar e custo a entrar
+            em atividade pela manhã.
+          </p>
+          <span>não</span>
+          <input type="radio" name="moleza" value="1" />
+          <label htmlFor="moleza">1</label>
+          <input type="radio" name="moleza" value="2" />
+          <label htmlFor="moleza">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="moleza" value="3" />
+          <label htmlFor="moleza">3</label>
+          <input type="radio" name="moleza" value="4" />
+          <label htmlFor="moleza">4</label>
+          <span>sim</span>
+          <input type="radio" name="moleza" value="5" />
+          <label htmlFor="moleza">5</label>
+          <input type="radio" name="moleza" value="6" />
+          <label htmlFor="moleza">6</label>
+        </div>
+        <div
+          onChange={e => {
+            setK20(e.target.value);
+          }}
+        >
+          <p>20. Como devagar e sou lento e metódico em minhas ações.</p>
+          <span>não</span>
+          <input type="radio" name="metodico" value="1" />
+          <label htmlFor="metodico">1</label>
+          <input type="radio" name="metodico" value="2" />
+          <label htmlFor="metodico">2</label>
+          <span>às vezes</span>
+          <input type="radio" name="metodico" value="3" />
+          <label htmlFor="metodico">3</label>
+          <input type="radio" name="metodico" value="4" />
+          <label htmlFor="metodico">4</label>
+          <span>sim</span>
+          <input type="radio" name="metodico" value="5" />
+          <label htmlFor="metodico">5</label>
+          <input type="radio" name="metodico" value="6" />
+          <label htmlFor="metodico">6</label>
+        </div>
+        <h4>
+          total kapha:{" "}
+          {sumKapha(
+            +k1,
+            +k2,
+            +k3,
+            +k4,
+            +k5,
+            +k6,
+            +k7,
+            +k8,
+            +k9,
+            +k10,
+            +k11,
+            +k12,
+            +k13,
+            +k14,
+            +k15,
+            +k16,
+            +k17,
+            +k18,
+            +k19,
+            +k20
+          )}{" "}
+          <br />
+        </h4>
+        <p onChange={e => setSumK(e.target.value)}>
+          Por favor, confirme o total do seu Kapha:
+          <input
+            type="number"
+            onFocus={e => e.currentTarget.select()}
+            value={sumK}
+            placeholder="total kapha"
+          />
+        </p>
+        <hr />
+
         <p id="idade">idade: {getAge(birthday)}</p>
         <button type="submit">gravar</button>
+        <button type="button" onClick={handleEdit}>
+          editar
+        </button>
       </form>
       <button onClick={showDoshas}>mostrar</button>
       <h2>dados doshas</h2>
@@ -643,19 +1730,21 @@ const Doshas = () => {
             <li key={dosha.id}>
               <p>Nome: {dosha.nome}</p>
               <p>Nascimento: {dosha.nascimento}</p>
-              <p>Idade: {dosha.idade}</p>
               <p>Endereço: {dosha.endereco}</p>
               <p>Profissão: {dosha.profissao}</p>
               <p>Vata: {dosha.vata}</p>
+              <p>Pitta: {dosha.pitta}</p>
+              <p>Kapha: {dosha.kapha}</p>
               <button
                 onClick={() => (
                   setIdDoshas(dosha.id),
                   setName(dosha.nome),
                   setBirthday(dosha.nascimento),
-                  setAge(dosha.idade),
                   setAddress(dosha.endereco),
                   setProfession(dosha.profissao),
-                  setSumV(dosha.vata)
+                  setSumV(dosha.vata),
+                  setSumP(dosha.pitta),
+                  setSumK(dosha.kapha)
                 )}
               >
                 carregar
