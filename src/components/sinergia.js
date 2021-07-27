@@ -11,7 +11,7 @@ const Sinergia = () => {
   const [sinergiaDados, setSinergiaDados] = useState([]);
   const [idSinergia, setIdSinergia] = useState("");
 
-  const loadSinergia = () => {
+  const showSinergia = () => {
     firebase
       .firestore()
       .collection("sinergias")
@@ -141,7 +141,7 @@ const Sinergia = () => {
           editar
         </button>
       </form>
-      <button onClick={loadSinergia}>mostrar</button>
+      <button onClick={showSinergia}>mostrar</button>
       <h2>Dados Sinergia</h2>
       <ul>
         {sinergiaDados.map(dado => {
