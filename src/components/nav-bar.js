@@ -20,6 +20,8 @@ export default function NavBar() {
         {` `}
         <Link to="/anamneseform">Anamnese</Link>
         {` `}
+        <Link to="/doshaform">Anamnese Ayurveda</Link>
+        {` `}
       </nav>
     </div>
   );
