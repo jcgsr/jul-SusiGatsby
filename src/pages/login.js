@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { firebase } from "../services/firebase";
 import { navigate } from "gatsby";
 
-import Layout from "../components/layout";
-import Sinergia from "../components/sinergia";
-import Pacote from "../components/pacote";
-import Anamnese from "../components/anamnese";
-import Doshas from "../components/doshas";
-import Antigos from "../components/antigos";
+import Layout from "../components/Layout";
+import Sinergia from "../components/Sinergia";
+import Pacote from "../components/Pacote";
+import Anamnese from "../components/Anamnese";
+import Doshas from "../components/Doshas";
+import Antigos from "../components/Antigos";
 
 const Login = () => {
   // LOGIN
@@ -45,9 +45,9 @@ const Login = () => {
   return (
     <Layout>
       {!isLogged ? (
-        <>
+        <main className="container">
           <h2>Login</h2>
-          <form>
+          <form className="form">
             <label htmlFor="email">email</label>
             <input
               type="text"
@@ -64,9 +64,9 @@ const Login = () => {
             <br />
             <button onClick={handleSubmit}>login</button>
           </form>
-        </>
+        </main>
       ) : (
-        <>
+        <main className="page">
           <h2>olá, {email}</h2>
           <div>
             <button
@@ -132,7 +132,7 @@ const Login = () => {
           {showDoshas && <Doshas />}
           {showAntigos && <Antigos />}
           <button onClick={handleLogout}>logout</button>
-        </>
+        </main>
       )}
     </Layout>
   );

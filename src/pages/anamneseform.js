@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { navigate } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 import firebase from "firebase";
 
@@ -91,12 +91,12 @@ const Anamnese = () => {
   return (
     <Layout>
       <h1>Anamnese</h1>
-      <h2>Bem-vindo(a)!</h2>
-      <h3>
+      <h3>Bem-vindo(a)!</h3>
+      <h5>
         Para um atendimento seguro e mais eficaz, preciso saber algumas questões
         de saúde.
-      </h3>
-      <form onSubmit={handleSubmit}>
+      </h5>
+      <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
           value={idAnamnese}
@@ -134,13 +134,13 @@ const Anamnese = () => {
           onChange={e => setPhone(e.target.value)}
         />
         {/* PERGUNTAS */}
-        <div>
+        <div className="checkboxes" style={{ marginTop: "1rem" }}>
           <div onChange={e => setAlergias(e.target.value)}>
             <p>1. Alergias?</p>
-            <input type="radio" name="alergias" value="sim" />
             <label htmlFor="alergias">Sim</label>
-            <input type="radio" name="alergias" value="não" />
+            <input type="radio" name="alergias" value="sim" />
             <label htmlFor="alergias">Não</label>
+            <input type="radio" name="alergias" value="não" />
           </div>
           <div onChange={e => setHipertensao(e.target.value)}>
             <p>2. Hipertensão?</p>
@@ -206,7 +206,7 @@ const Anamnese = () => {
             <label htmlFor="gravidez">Não</label>
             <div onChange={e => setMeses(e.target.value)}>
               <label htmlFor="meses">Quantos meses</label>
-              <input type="range" min="0" max="9" value={meses} /> {meses}
+              <input type="number" value={meses} />
             </div>
           </div>
           <div onChange={e => setGripe(e.target.value)}>

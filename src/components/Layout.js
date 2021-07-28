@@ -1,7 +1,10 @@
 import React from "react";
 
-import NavBar from "./nav-bar";
-import Footer from "./footer";
+import NavBar from "./Navbar";
+import Footer from "./Footer";
+
+import "normalize.css";
+import "../assets/css/main.css";
 
 const Layout = ({ children }) => (
   <>

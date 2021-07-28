@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { navigate } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 
 import firebase from "firebase";
 
