@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { firebase } from "../services/firebase/firebase";
+import { firebase } from "../services/firebase";
 import { navigate } from "gatsby";
 
 import Layout from "../components/layout";
@@ -7,6 +7,7 @@ import Sinergia from "../components/sinergia";
 import Pacote from "../components/pacote";
 import Anamnese from "../components/anamnese";
 import Doshas from "../components/doshas";
+import Antigos from "../components/antigos";
 
 const Login = () => {
   // LOGIN
@@ -38,6 +39,7 @@ const Login = () => {
   const [showPacotes, setShowPacotes] = useState(false);
   const [showAnamnese, setShowAnamnese] = useState(false);
   const [showDoshas, setShowDoshas] = useState(false);
+  const [showAntigos, setShowAntigos] = useState(false);
 
   // FIM SHOW COMPONENTS
   return (
@@ -72,7 +74,8 @@ const Login = () => {
                 setShowAnamnese(true),
                 setShowSinergias(false),
                 setShowPacotes(false),
-                setShowDoshas(false)
+                setShowDoshas(false),
+                setShowAntigos(false)
               )}
             >
               anamnese
@@ -83,7 +86,8 @@ const Login = () => {
                 setShowSinergias(false),
                 setShowPacotes(true),
                 setShowAnamnese(false),
-                setShowDoshas(false)
+                setShowDoshas(false),
+                setShowAntigos(false)
               )}
             >
               pacotes
@@ -93,7 +97,8 @@ const Login = () => {
                 setShowSinergias(true),
                 setShowPacotes(false),
                 setShowAnamnese(false),
-                setShowDoshas(false)
+                setShowDoshas(false),
+                setShowAntigos(false)
               )}
             >
               sinergias
@@ -103,16 +108,29 @@ const Login = () => {
                 setShowDoshas(true),
                 setShowSinergias(false),
                 setShowPacotes(false),
-                setShowAnamnese(false)
+                setShowAnamnese(false),
+                setShowAntigos(false)
               )}
             >
               doshas
+            </button>
+            <button
+              onClick={() => (
+                setShowAntigos(true),
+                setShowDoshas(false),
+                setShowSinergias(false),
+                setShowPacotes(false),
+                setShowAnamnese(false)
+              )}
+            >
+              antigos
             </button>
           </div>
           {showSinergias && <Sinergia />}
           {showPacotes && <Pacote />}
           {showAnamnese && <Anamnese />}
           {showDoshas && <Doshas />}
+          {showAntigos && <Antigos />}
           <button onClick={handleLogout}>logout</button>
         </>
       )}
