@@ -20,14 +20,21 @@
 }
 
 .checkboxes {
-  grid-template-columns: repeat(3, 20px [col-start]);
+  text-align: left;
+}
+.checkboxes div input[type="radio"] {
+  width: 1rem;
+  margin-top: 1rem;
+}
+
+.form button {
+  margin-top: 1rem;
 }
 
 .checkboxes label {
-  display: grid;
-  flex-direction: column;
+  display: inline;
+  margin-left: 5px;
 }
-
 :root {
   /* COLORS  */
 
@@ -102,7 +109,7 @@ body {
 p,
 q {
   margin: 0;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
   max-width: 40em;
 }
 
