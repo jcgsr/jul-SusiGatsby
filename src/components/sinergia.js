@@ -94,6 +94,7 @@ const Sinergia = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="sinergia">sinergia</label>
         <input
+          id="sinergia"
           type="text"
           value={idSinergia}
           onChange={e => setIdSinergia(e.target.value)}
@@ -160,7 +161,9 @@ const Sinergia = () => {
                   setObs(dado.obs)
                 )}
               >
-                carregar
+                <a href="#sinergia" style={{ textDecoration: "none" }}>
+                  carregar
+                </a>
               </button>
               <button onClick={() => handleDelete(dado.id)}>deletar</button>
             </li>

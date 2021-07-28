@@ -203,6 +203,7 @@ const Pacote = () => {
         />
         <label htmlFor="label">Cliente</label>
         <input
+          id="cliente"
           type="text"
           value={cliente}
           onChange={e => setCliente(e.target.value)}
@@ -467,7 +468,9 @@ const Pacote = () => {
                     setSessao10(dado.sessao10)
                   )}
                 >
-                  carregar pacote
+                  <a href="#cliente" style={{ textDecoration: "none" }}>
+                    carregar
+                  </a>
                 </button>
                 <button onClick={() => handleDelete(dado.id)}>deletar</button>
               </li>

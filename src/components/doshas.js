@@ -2,10 +2,11 @@ import React, { useState } from "react";
 
 import firebase from "firebase";
 
+import { getAge } from "../services/utils/age";
+
 const Doshas = () => {
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
-  const [age, setAge] = useState("");
   const [address, setAddress] = useState("");
   const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
@@ -81,8 +82,8 @@ const Doshas = () => {
   const [sumK, setSumK] = useState(0);
 
   // FUNCTIONS
-  const getAge = birthDate =>
-    Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e10);
+  // const getAge = birthDate =>
+  //   Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e10);
   const sumVata = (...args) => {
     return args.reduce((previous, current) => {
       return previous + current;
@@ -120,19 +121,12 @@ const Doshas = () => {
   const handleReset = () => {
     setName("");
     setBirthday("");
-    setAge("");
     setAddress("");
     setProfession("");
     setPhone("");
     setSumV("");
     setSumP("");
     setSumK("");
-  };
-
-  const idade = () => {
-    let idadeAtual = document.getElementById("idade").innerText;
-    console.log(idadeAtual);
-    setAge(idadeAtual);
   };
 
   const showDoshas = () => {
@@ -203,6 +197,7 @@ const Doshas = () => {
         />
         <label htmlFor="name">Nome</label>
         <input
+          id="nome"
           type="text"
           value={name}
           onChange={e => setName(e.target.value)}
@@ -213,6 +208,7 @@ const Doshas = () => {
           value={birthday}
           onChange={e => setBirthday(e.target.value)}
         />
+        <p id="idade">idade: {getAge(birthday)}</p>
         <label htmlFor="address">Endereço</label>
         <input
           type="text"
@@ -1716,7 +1712,6 @@ const Doshas = () => {
         </p>
         <hr />
 
-        <p id="idade">idade: {getAge(birthday)}</p>
         <button type="submit">gravar</button>
         <button type="button" onClick={handleEdit}>
           editar
@@ -1747,7 +1742,9 @@ const Doshas = () => {
                   setSumK(dosha.kapha)
                 )}
               >
-                carregar
+                <a href="#nome" style={{ textDecoration: "none" }}>
+                  carregar
+                </a>
               </button>
               <button onClick={() => handleDelete(dosha.id)}>deletar</button>
             </li>

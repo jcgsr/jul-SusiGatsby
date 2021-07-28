@@ -2,10 +2,12 @@ import React, { useState } from "react";
 
 import firebase from "firebase";
 
+import { getAge } from "../services/utils/age";
+
 const Anamnese = () => {
   // DADOS
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [birthday, setBirthday] = useState("");
   const [address, setAddress] = useState("");
   const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
@@ -40,7 +42,7 @@ const Anamnese = () => {
       .collection("anamneses")
       .add({
         nome: name,
-        idade: age,
+        nascimento: birthday,
         endereco: address,
         profissao: profession,
         telefone: phone,
@@ -82,6 +84,7 @@ const Anamnese = () => {
           minhasAnamneses.push({
             id: item.id,
             nome: item.data().nome,
+            nascimento: item.data().nascimento,
             idade: item.data().idade,
             endereco: item.data().endereco,
             profissao: item.data().profissao,
@@ -130,7 +133,7 @@ const Anamnese = () => {
       .doc(idAnamnese)
       .update({
         nome: name,
-        idade: age,
+        nascimento: birthday,
         endereco: address,
         profissao: profession,
         telefone: phone,
@@ -148,7 +151,7 @@ const Anamnese = () => {
     setName("");
     setIdAnamnese("");
     setName("");
-    setAge("");
+    setBirthday("");
     setAddress("");
     setProfession("");
     setPhone("");
@@ -172,12 +175,19 @@ const Anamnese = () => {
         />
         <label htmlFor="name">Nome</label>
         <input
+          id="nome"
           type="text"
           value={name}
           onChange={e => setName(e.target.value)}
         />
-        <label htmlFor="age">Idade</label>
-        <input type="text" value={age} onChange={e => setAge(e.target.value)} />
+        <label htmlFor="age">Data de nascimento</label>
+        <input
+          type="date"
+          value={birthday}
+          onChange={e => setBirthday(e.target.value)}
+        />
+        <p>idade: {getAge(birthday)}</p>
+
         <label htmlFor="address">Endereço</label>
         <input
           type="text"
@@ -330,7 +340,7 @@ const Anamnese = () => {
           return (
             <li key={dado.id}>
               <p>Nome: {dado.nome}</p>
-              <p>Idade: {dado.idade}</p>
+              <p>Nascimento: {dado.nascimento}</p>
               <p>Endereço: {dado.endereco}</p>
               <p>Profissão: {dado.profissao}</p>
               <p>Alergias: {dado.alergia}</p>
@@ -356,7 +366,7 @@ const Anamnese = () => {
                 onClick={() => (
                   setIdAnamnese(dado.id),
                   setName(dado.nome),
-                  setAge(dado.idade),
+                  setBirthday(dado.nascimento),
                   setAddress(dado.endereco),
                   setProfession(dado.profissao),
                   setPhone(dado.telefone),
@@ -365,7 +375,9 @@ const Anamnese = () => {
                   setAnotacoes(dado.anotacoes)
                 )}
               >
-                carregar
+                <a href="#nome" style={{ textDecoration: "none" }}>
+                  carregar
+                </a>
               </button>
               <button onClick={() => handleDelete(dado.id)}>deletar</button>
             </li>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { navigate } from "gatsby";
+
 import Layout from "../components/layout";
 
 import firebase from "firebase";
@@ -7,11 +9,9 @@ import firebase from "firebase";
 const Doshas = () => {
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
-  const [age, setAge] = useState("");
   const [address, setAddress] = useState("");
   const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
-  const [doshasDados, setDoshasDados] = useState([]);
   const [idDoshas, setIdDoshas] = useState("");
   // VATA
   const [v1, setV1] = useState(0);
@@ -115,13 +115,14 @@ const Doshas = () => {
         totalKapha: sumK,
       })
       .then(() => {
+        handleReset();
         alert("Dosha Enviado");
+        navigate("/");
       });
   };
   const handleReset = () => {
     setName("");
     setBirthday("");
-    setAge("");
     setAddress("");
     setProfession("");
     setPhone("");

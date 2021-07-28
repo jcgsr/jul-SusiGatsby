@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { navigate } from "gatsby";
+
 import Layout from "../components/layout";
 
 import firebase from "firebase";
@@ -7,7 +9,7 @@ import firebase from "firebase";
 const Anamnese = () => {
   // DADOS
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [birthday, setBirthday] = useState("");
   const [address, setAddress] = useState("");
   const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
@@ -41,8 +43,7 @@ const Anamnese = () => {
       .collection("anamneses")
       .add({
         nome: name,
-        idade: age,
-        endereco: address,
+        nascimento: birthday,
         profissao: profession,
         telefone: phone,
         alergia: alergias,
@@ -68,6 +69,7 @@ const Anamnese = () => {
       .then(() => {
         handleReset();
         alert("Anamnese Gravada!");
+        navigate("/");
       })
       .catch(e => {
         console.log(e);
@@ -78,7 +80,7 @@ const Anamnese = () => {
     setName("");
     setIdAnamnese("");
     setName("");
-    setAge("");
+    setBirthday("");
     setAddress("");
     setProfession("");
     setPhone("");
@@ -107,8 +109,12 @@ const Anamnese = () => {
           value={name}
           onChange={e => setName(e.target.value)}
         />
-        <label htmlFor="age">Idade</label>
-        <input type="text" value={age} onChange={e => setAge(e.target.value)} />
+        <label htmlFor="age">Data de nascimento</label>
+        <input
+          type="date"
+          value={birthday}
+          onChange={e => setBirthday(e.target.value)}
+        />
         <label htmlFor="address">Endereço</label>
         <input
           type="text"
