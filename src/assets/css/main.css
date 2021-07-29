@@ -27,13 +27,55 @@
   margin-top: 1rem;
 }
 
+.checkboxes h3 {
+  margin-top: 1rem;
+  box-shadow: 1px 1px var(--grey-1000);
+}
+
+.checkboxes h4 {
+  text-align: left;
+  color: var(--grey-400);
+  margin-top: 1rem;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.boxes p {
+  text-transform: capitalize;
+  margin-top: 0;
+}
 .form button {
   margin-top: 1rem;
+}
+.nao {
+  background-color: #534272;
+  padding: 0.5rem;
+}
+.as-vezes {
+  background-color: #8269b1;
+  padding: 0.5rem;
+}
+.sim {
+  background-color: #ac8adf;
+  padding: 0.5rem;
 }
 
 .checkboxes label {
   display: inline;
-  margin-left: 5px;
+  /* margin-left: 1px; */
+}
+
+.btn-anamnese {
+  text-align: center;
+  margin: 1rem;
+}
+
+.btn-anamnese button {
+  margin-left: 1rem;
 }
 :root {
   /* COLORS  */
@@ -168,7 +210,7 @@ a {
   object-fit: cover;
 }
 .form {
-  width: 50%;
+  width: 90%;
   color: var(--white);
   background: var(--primary);
   border-radius: var(--borderRadius);
@@ -177,9 +219,9 @@ a {
   margin: 0 auto;
   text-align: center;
 }
-@media only screen and (max-width: 456px) {
+@media only screen and (min-width: 900px) {
   .form {
-    width: 90%;
+    width: 70%;
   }
 }
 label {
@@ -217,7 +259,8 @@ textarea {
   text-transform: capitalize;
 }
 hr {
-  border-top: var(--line);
+  border-top: 1px solid var(--grey-600);
+  margin-top: 1rem;
 }
 
 button,
@@ -419,7 +462,7 @@ form > *:last-child {
 /*#########*/
 .page-footer {
   text-align: center;
-  height: 4rem;
+  height: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -427,6 +470,7 @@ form > *:last-child {
   background: var(--bgFooter);
   color: var(--white);
   margin-top: 1rem;
+  padding: 0.5rem;
 }
 .page-footer p {
   margin-bottom: 0;
