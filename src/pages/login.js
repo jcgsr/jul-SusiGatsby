@@ -68,7 +68,7 @@ const Login = () => {
       ) : (
         <main className="page">
           <h2>olá, {email}</h2>
-          <div>
+          <div className="login-btn">
             <button
               onClick={() => (
                 setShowAnamnese(true),
@@ -131,7 +131,10 @@ const Login = () => {
           {showAnamnese && <Anamnese />}
           {showDoshas && <Doshas />}
           {showAntigos && <Antigos />}
-          <button cstyle={{ textAlign: "center" }} onClick={handleLogout}>
+          <button
+            style={{ marginTop: "1rem", textAlign: "center" }}
+            onClick={handleLogout}
+          >
             logout
           </button>
         </main>

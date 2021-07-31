@@ -77,6 +77,24 @@
 .btn-anamnese button {
   margin-left: 1rem;
 }
+
+.login-btn {
+  display: flex;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 456px) {
+  .login-btn {
+    flex-direction: column;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .login-btn button {
+    margin-top: 1rem;
+  }
+}
+
+/* ###########  */
+
 :root {
   /* COLORS  */
 
@@ -313,8 +331,8 @@ button.block {
   background-color: var(--green-light);
 }
 .alert-danger {
-  color: var(--red-dark);
-  background-color: var(--red-light);
+  color: var(--white);
+  background-color: var(--red-dark);
 }
 
 .container {
