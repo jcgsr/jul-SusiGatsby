@@ -2154,52 +2154,55 @@ const Doshas = () => {
             />
           </p>
           <hr />
-
+        </div>
+        <div className="btn-anamnese">
           <button type="submit">gravar</button>
+          <button onClick={showDoshas}>mostrar</button>
         </div>
       </form>
-
-      <button onClick={showDoshas}>mostrar</button>
       <h2>dados doshas</h2>
-      <ul>
-        {doshasDados.map(dosha => {
-          return (
-            <li key={dosha.id}>
-              <p>Nome: {dosha.nome}</p>
-              <p>Nascimento: {dosha.nascimento}</p>
-              <p>Endereço: {dosha.endereco}</p>
-              <p>Profissão: {dosha.profissao}</p>
-              <p>Vata: {dosha.vata}</p>
-              <p>Pitta: {dosha.pitta}</p>
-              <p>Kapha: {dosha.kapha}</p>
-              <div className="btn-anamnese">
-                <button
-                  onClick={() => (
-                    setIdDoshas(dosha.id),
-                    setName(dosha.nome),
-                    setBirthday(dosha.nascimento),
-                    setAddress(dosha.endereco),
-                    setProfession(dosha.profissao),
-                    setSumV(dosha.vata),
-                    setSumP(dosha.pitta),
-                    setSumK(dosha.kapha)
-                  )}
-                >
-                  <a href="#nome" style={{ textDecoration: "none" }}>
-                    carregar
-                  </a>
-                </button>
-                <button
-                  className="alert-danger"
-                  onClick={() => handleDelete(dosha.id)}
-                >
-                  deletar
-                </button>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="card">
+        <ul>
+          {doshasDados.map(dosha => {
+            return (
+              <li key={dosha.id}>
+                <p>Nome: {dosha.nome}</p>
+                <p>Nascimento: {dosha.nascimento}</p>
+                <p>Endereço: {dosha.endereco}</p>
+                <p>Profissão: {dosha.profissao}</p>
+                <p>Vata: {dosha.vata}</p>
+                <p>Pitta: {dosha.pitta}</p>
+                <p>Kapha: {dosha.kapha}</p>
+                <div className="btn-anamnese">
+                  <button
+                    onClick={() => (
+                      setIdDoshas(dosha.id),
+                      setName(dosha.nome),
+                      setBirthday(dosha.nascimento),
+                      setAddress(dosha.endereco),
+                      setProfession(dosha.profissao),
+                      setSumV(dosha.vata),
+                      setSumP(dosha.pitta),
+                      setSumK(dosha.kapha)
+                    )}
+                  >
+                    <a href="#nome" style={{ textDecoration: "none" }}>
+                      carregar
+                    </a>
+                  </button>
+                  <button
+                    className="alert-danger"
+                    onClick={() => handleDelete(dosha.id)}
+                  >
+                    deletar
+                  </button>
+                </div>
+                <hr />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

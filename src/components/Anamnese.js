@@ -339,55 +339,64 @@ const Anamnese = () => {
         <button onClick={showAnamnese}>mostrar</button>
       </div>
       <h2>dados anamnese</h2>
-      <ul>
-        {anamneseDados.map(dado => {
-          return (
-            <li key={dado.id}>
-              <p>Nome: {dado.nome}</p>
-              <p>Nascimento: {dado.nascimento}</p>
-              <p>Endereço: {dado.endereco}</p>
-              <p>Profissão: {dado.profissao}</p>
-              <p>Alergias: {dado.alergia}</p>
-              <p>Hipertenção: {dado.hipertensao}</p>
-              <p>Diabetes: {dado.diabetes}</p>
-              <p>Marcapasso: {dado.marcapasso}</p>
-              <p>Pinos ou placas: {dado.pinos}</p>
-              <p>Hérnia: {dado.hernia}</p>
-              <p>Trombose: {dado.trombose}</p>
-              <p>Câncer: {dado.cancer}</p>
-              <p>HIV: {dado.hiv}</p>
-              <p>Gravidez: {dado.gravidez}</p>
-              <p>Meses: {dado.meses}</p>
-              <p>Gripe ou resfriado: {dado.gripe}</p>
-              <p>Depressão: {dado.depressao}</p>
-              <p>Ansiedade: {dado.ansiedade}</p>
-              <p>Dores: {dado.dores}</p>
-              <p>Local do corpo: {dado.corpo}</p>
-              <p>Outra questão de saúde: {dado.outraQuestao}</p>
-              <p>Qual: {dado.qual}</p>
-              <p>Anotações: {dado.anotacoes}</p>
-              <button
-                onClick={() => (
-                  setIdAnamnese(dado.id),
-                  setName(dado.nome),
-                  setBirthday(dado.nascimento),
-                  setAddress(dado.endereco),
-                  setProfession(dado.profissao),
-                  setPhone(dado.telefone),
-                  setCorpo(dado.corpo),
-                  setQual(dado.qual),
-                  setAnotacoes(dado.anotacoes)
-                )}
-              >
-                <a href="#nome" style={{ textDecoration: "none" }}>
-                  carregar
-                </a>
-              </button>
-              <button onClick={() => handleDelete(dado.id)}>deletar</button>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="card">
+        <ul>
+          {anamneseDados.map(dado => {
+            return (
+              <li key={dado.id}>
+                <p>Nome: {dado.nome}</p>
+                <p>Nascimento: {dado.nascimento}</p>
+                <p>Endereço: {dado.endereco}</p>
+                <p>Profissão: {dado.profissao}</p>
+                <p>Alergias: {dado.alergia}</p>
+                <p>Hipertenção: {dado.hipertensao}</p>
+                <p>Diabetes: {dado.diabetes}</p>
+                <p>Marcapasso: {dado.marcapasso}</p>
+                <p>Pinos ou placas: {dado.pinos}</p>
+                <p>Hérnia: {dado.hernia}</p>
+                <p>Trombose: {dado.trombose}</p>
+                <p>Câncer: {dado.cancer}</p>
+                <p>HIV: {dado.hiv}</p>
+                <p>Gravidez: {dado.gravidez}</p>
+                <p>Meses: {dado.meses}</p>
+                <p>Gripe ou resfriado: {dado.gripe}</p>
+                <p>Depressão: {dado.depressao}</p>
+                <p>Ansiedade: {dado.ansiedade}</p>
+                <p>Dores: {dado.dores}</p>
+                <p>Local do corpo: {dado.corpo}</p>
+                <p>Outra questão de saúde: {dado.outraQuestao}</p>
+                <p>Qual: {dado.qual}</p>
+                <p>Anotações: {dado.anotacoes}</p>
+                <div className="btn-anamnese">
+                  <button
+                    onClick={() => (
+                      setIdAnamnese(dado.id),
+                      setName(dado.nome),
+                      setBirthday(dado.nascimento),
+                      setAddress(dado.endereco),
+                      setProfession(dado.profissao),
+                      setPhone(dado.telefone),
+                      setCorpo(dado.corpo),
+                      setQual(dado.qual),
+                      setAnotacoes(dado.anotacoes)
+                    )}
+                  >
+                    <a href="#nome" style={{ textDecoration: "none" }}>
+                      carregar
+                    </a>
+                  </button>
+                  <button
+                    className="alert-danger"
+                    onClick={() => handleDelete(dado.id)}
+                  >
+                    deletar
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
