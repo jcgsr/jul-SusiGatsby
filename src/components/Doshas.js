@@ -2155,11 +2155,11 @@ const Doshas = () => {
           </p>
           <hr />
         </div>
-        <div className="btn-anamnese">
-          <button type="submit">gravar</button>
-          <button onClick={showDoshas}>mostrar</button>
-        </div>
+        <button type="submit">gravar</button>
       </form>
+      <div className="btn-anamnese">
+        <button onClick={showDoshas}>mostrar</button>
+      </div>
       <h2>dados doshas</h2>
       <div className="card">
         <ul>

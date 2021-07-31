@@ -91,7 +91,7 @@ const Sinergia = () => {
   return (
     <div>
       <h1>Sinergia</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <label htmlFor="sinergia">sinergia</label>
         <input
           id="sinergia"
@@ -137,39 +137,47 @@ const Sinergia = () => {
           onChange={e => setObs(e.target.value)}
         />
         <br />
-        <button type="submit">gravar</button>
-        <button type="button" onClick={handleEdit}>
-          editar
-        </button>
+        <div className="btn-anamnese">
+          <button type="submit">gravar</button>
+          <button type="button" onClick={handleEdit}>
+            editar
+          </button>
+        </div>
       </form>
-      <button onClick={showSinergia}>mostrar</button>
+      <div className="btn-anamnese">
+        <button onClick={showSinergia}>mostrar</button>
+      </div>
       <h2>Dados Sinergia</h2>
-      <ul>
-        {sinergiaDados.map(dado => {
-          return (
-            <li key={dado.id}>
-              <p>Sinergia: {dado.sinergia}</p>
-              <p>Carreador: {dado.carreador}</p>
-              <p>Óleos: {dado.oleos}</p>
-              <p>Observaçã: {dado.obs}</p>
-              <button
-                onClick={() => (
-                  setIdSinergia(dado.id),
-                  setSinergia(dado.sinergia),
-                  setCarreador(dado.carreador),
-                  setOleo(dado.oleos),
-                  setObs(dado.obs)
-                )}
-              >
-                <a href="#sinergia" style={{ textDecoration: "none" }}>
-                  carregar
-                </a>
-              </button>
-              <button onClick={() => handleDelete(dado.id)}>deletar</button>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="card">
+        <ul>
+          {sinergiaDados.map(dado => {
+            return (
+              <li key={dado.id}>
+                <p>Sinergia: {dado.sinergia}</p>
+                <p>Carreador: {dado.carreador}</p>
+                <p>Óleos: {dado.oleos}</p>
+                <p>Observaçã: {dado.obs}</p>
+                <div className="btn-anamnese">
+                  <button
+                    onClick={() => (
+                      setIdSinergia(dado.id),
+                      setSinergia(dado.sinergia),
+                      setCarreador(dado.carreador),
+                      setOleo(dado.oleos),
+                      setObs(dado.obs)
+                    )}
+                  >
+                    <a href="#sinergia" style={{ textDecoration: "none" }}>
+                      carregar
+                    </a>
+                  </button>
+                  <button onClick={() => handleDelete(dado.id)}>deletar</button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

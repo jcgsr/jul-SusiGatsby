@@ -131,9 +131,11 @@ const Login = () => {
           {showAnamnese && <Anamnese />}
           {showDoshas && <Doshas />}
           {showAntigos && <Antigos />}
-          <button id="btn-logout" onClick={handleLogout}>
-            logout
-          </button>
+          <div className="btn-anamnese">
+            <button id="btn-logout" onClick={handleLogout}>
+              logout
+            </button>
+          </div>
         </main>
       )}
     </Layout>

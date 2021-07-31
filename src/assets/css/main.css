@@ -351,8 +351,8 @@ button.block {
   color: var(--white);
 }
 .alert-danger {
-  color: var(--red-dark);
-  background-color: var(--primary);
+  color: var(--red-light);
+  background-color: #1e1c4c;
 }
 
 .container {
