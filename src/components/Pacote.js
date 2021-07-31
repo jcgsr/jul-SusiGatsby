@@ -194,7 +194,7 @@ const Pacote = () => {
   return (
     <div>
       <h1>Pacotes</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
           value={idPacote}
@@ -361,13 +361,17 @@ const Pacote = () => {
           value={s10Date}
           onChange={e => setS10Date(e.target.value)}
         />
-        <button type="submit">gravar</button>
+        <div className="btn-anamnese">
+          <button type="submit">gravar</button>
+        </div>
       </form>
 
-      <button onClick={showPacotes}>mostrar pacotes</button>
-      <button onClick={handleEdit}>editar</button>
-      <button onClick={handleFile}>arquivar</button>
-      <div className="pacotes">
+      <div className="btn-anamnese">
+        <button onClick={showPacotes}>mostrar pacotes</button>
+        <button onClick={handleEdit}>atualizar</button>
+        <button onClick={handleFile}>arquivar</button>
+      </div>
+      <div className="card">
         <ul>
           {pacoteDados.map(dado => {
             return (
@@ -440,39 +444,47 @@ const Pacote = () => {
                     <td>{dado.sessao10}</td>
                   </tr>
                 </table>
-                <button
-                  onClick={() => (
-                    setIdPacote(dado.id),
-                    setCliente(dado.cliente),
-                    setTerapia(dado.terapia),
-                    setPagamento(dado.pagamento),
-                    setS1Date(dado.data1),
-                    setS2Date(dado.data2),
-                    setS3Date(dado.data3),
-                    setS4Date(dado.data4),
-                    setS5Date(dado.data5),
-                    setS6Date(dado.data6),
-                    setS7Date(dado.data7),
-                    setS8Date(dado.data8),
-                    setS9Date(dado.data9),
-                    setS10Date(dado.data10),
-                    setSessao1(dado.sessao1),
-                    setSessao2(dado.sessao2),
-                    setSessao3(dado.sessao3),
-                    setSessao4(dado.sessao4),
-                    setSessao5(dado.sessao5),
-                    setSessao6(dado.sessao6),
-                    setSessao7(dado.sessao7),
-                    setSessao8(dado.sessao8),
-                    setSessao9(dado.sessao9),
-                    setSessao10(dado.sessao10)
-                  )}
-                >
-                  <a href="#cliente" style={{ textDecoration: "none" }}>
-                    carregar
-                  </a>
-                </button>
-                <button onClick={() => handleDelete(dado.id)}>deletar</button>
+                <div className="btn-anamnese">
+                  {" "}
+                  <button
+                    onClick={() => (
+                      setIdPacote(dado.id),
+                      setCliente(dado.cliente),
+                      setTerapia(dado.terapia),
+                      setPagamento(dado.pagamento),
+                      setS1Date(dado.data1),
+                      setS2Date(dado.data2),
+                      setS3Date(dado.data3),
+                      setS4Date(dado.data4),
+                      setS5Date(dado.data5),
+                      setS6Date(dado.data6),
+                      setS7Date(dado.data7),
+                      setS8Date(dado.data8),
+                      setS9Date(dado.data9),
+                      setS10Date(dado.data10),
+                      setSessao1(dado.sessao1),
+                      setSessao2(dado.sessao2),
+                      setSessao3(dado.sessao3),
+                      setSessao4(dado.sessao4),
+                      setSessao5(dado.sessao5),
+                      setSessao6(dado.sessao6),
+                      setSessao7(dado.sessao7),
+                      setSessao8(dado.sessao8),
+                      setSessao9(dado.sessao9),
+                      setSessao10(dado.sessao10)
+                    )}
+                  >
+                    <a href="#cliente" style={{ textDecoration: "none" }}>
+                      carregar
+                    </a>
+                  </button>
+                  <button
+                    className="alert-danger"
+                    onClick={() => handleDelete(dado.id)}
+                  >
+                    deletar
+                  </button>
+                </div>
               </li>
             );
           })}

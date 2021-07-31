@@ -84,6 +84,8 @@
 .login-btn {
   display: flex;
   justify-content: space-between;
+  padding: 1rem;
+  font-size: 1.5rem;
 }
 @media only screen and (max-width: 456px) {
   .login-btn {
@@ -107,8 +109,18 @@
 }
 @media screen and (max-width: 456px) {
   .card {
-    width: 80%;
+    width: 90%;
   }
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--primary);
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0 auto;
+  /* color: red; */
 }
 /* ###########  */
 
@@ -117,6 +129,8 @@
 
   --primary: #8080ff;
   --secondary: #99f;
+  --terciary: rgb(209, 196, 233);
+  --btn-color: #673ab7;
   --bgFooter: #9575cd;
   --bgColor: #ccf;
 
@@ -508,7 +522,7 @@ form > *:last-child {
   background: var(--bgFooter);
   color: var(--white);
   margin-top: 1rem;
-  padding: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 .page-footer p {
   margin-bottom: 0;
