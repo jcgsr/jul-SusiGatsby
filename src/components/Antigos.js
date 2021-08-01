@@ -19,7 +19,7 @@ const Antigos = () => {
   return (
     <div>
       <h1>Antigos</h1>
-      <div>
+      <div className="btn-anamnese">
         <button
           onClick={() => (
             setShowAnamnese(!showAnamnese),

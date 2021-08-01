@@ -13,11 +13,44 @@
 }
 
 /* MY STUFF */
+
+/* IDS */
 #author {
   text-align: right;
   width: 80%;
   margin: 1rem;
 }
+
+#btn-logout {
+  margin: 0 auto;
+}
+
+#login {
+  color: var(--primary);
+  margin-top: 1rem;
+}
+#login:hover {
+  color: var(--secondary);
+}
+
+#susi-img {
+  width: 50%;
+  margin: 0 auto;
+}
+#ola {
+  width: 30%;
+  text-align: center;
+}
+
+#ola h2 {
+  font-size: var(--defaultFontSize);
+}
+@media screen and (max-width: 768px) {
+  #susi-img {
+    width: 70%;
+  }
+}
+/* CLASSES */
 
 .checkboxes {
   text-align: left;
@@ -51,17 +84,24 @@
 .form button {
   margin-top: 1rem;
 }
+.form input:focus {
+  outline: none;
+  border: 2px solid var(--secondary);
+}
 .nao {
   background-color: #534272;
   padding: 0.5rem;
+  color: var(--white);
 }
 .as-vezes {
   background-color: #8269b1;
   padding: 0.5rem;
+  color: var(--white);
 }
 .sim {
   background-color: #ac8adf;
   padding: 0.5rem;
+  color: var(--white);
 }
 
 .checkboxes label {
@@ -78,16 +118,13 @@
   margin-left: 1rem;
   margin-bottom: 1rem;
 }
-#btn-logout {
-  margin: 0 auto;
-}
 .login-btn {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
   font-size: 1.5rem;
 }
-@media only screen and (max-width: 456px) {
+@media only screen and (max-width: 768px) {
   .login-btn {
     flex-direction: column;
     max-width: 70%;
@@ -113,6 +150,25 @@
   }
 }
 
+.gravar {
+  background-color: var(--seventh);
+  color: var(--white);
+}
+.mostrar {
+  background-color: var(--fifth);
+  color: var(--white);
+}
+.editar {
+  background-color: var(--sixth);
+  color: var(--white);
+}
+.arquivar {
+  background-color: var(--sixth);
+  color: var(--primary);
+}
+
+/* TAGS */
+
 table,
 th,
 td {
@@ -127,11 +183,13 @@ td {
 :root {
   /* COLORS  */
 
-  --primary: #8080ff;
+  --primary: #5e35b1;
   --secondary: #99f;
   --terciary: rgb(209, 196, 233);
-  --btn-color: #673ab7;
-  --bgFooter: #9575cd;
+  --fourth: #673ab7;
+  --fifth: #9575cd;
+  --sixth: #b39ddb;
+  --seventh: #7e57c2;
   --bgColor: #ccf;
 
   /* grey */
@@ -209,7 +267,7 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0 auto;
+  margin: 1rem auto;
   margin-bottom: 1.38rem;
   font-family: var(--headingFont);
   font-weight: 400;
@@ -260,8 +318,8 @@ a {
 }
 .form {
   width: 90%;
-  color: var(--white);
-  background: var(--primary);
+  color: var(--primary);
+  background: var(--sixth);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-1);
   padding: 2rem 2.5rem;
@@ -294,6 +352,7 @@ textarea {
   border-color: transparent;
   border: 1px solid var(--grey-300);
 }
+
 .form-row {
   margin-bottom: 1rem;
 }
@@ -320,21 +379,21 @@ button,
 .btn {
   cursor: pointer;
   appearance: none;
-  color: var(--white);
-  background: var(--primary);
+  color: var(--btnColor);
+  background: var(--bgColor);
   border: none;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
   padding: 0.375rem 0.75rem;
-  box-shadow: var(--shadow-1);
+  box-shadow: var(--shadow-2);
   transition: var(--transition);
   text-transform: capitalize;
 }
 button:hover,
 .btn:hover {
-  color: var(--primary);
-  background: var(--bgColor);
-  box-shadow: var(--shadow-2);
+  color: var(--bgColor);
+  background: var(--primary);
+  box-shadow: var(--shadow-1);
 }
 button.small {
   padding: 0.25rem 0.5rem;
@@ -382,10 +441,18 @@ button.block {
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
 .page {
   min-height: calc(100vh - (6rem + 4rem));
 }
 
+@media screen and (max-width: 768px) {
+  .page h2 {
+    width: 30%;
+    font-size: var(--smallTtext);
+    margin: 1rem auto;
+  }
+}
 /* .title {
   text-align: center;
   margin-bottom: 2rem;
@@ -519,7 +586,7 @@ form > *:last-child {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--bgFooter);
+  background: var(--fifth);
   color: var(--white);
   margin-top: 1rem;
   padding-bottom: 1.5rem;

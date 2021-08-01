@@ -330,12 +330,14 @@ const Anamnese = () => {
             <input type="text" value={anotacoes} />
           </div>
         </div>
-        <button type="submit" className="alert-success">
+        <button type="submit" className="gravar">
           gravar
         </button>
       </form>
       <div className="btn-anamnese">
-        <button onClick={handleEdit}>editar</button>
+        <button className="editar" onClick={handleEdit}>
+          editar
+        </button>
         <button onClick={showAnamnese}>mostrar</button>
       </div>
       <h2>dados anamnese</h2>

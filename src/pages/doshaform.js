@@ -2102,7 +2102,13 @@ const Doshas = () => {
           </p>
           <hr />
 
-          <button type="submit">gravar</button>
+          <button
+            style={{ margin: "1rem auto" }}
+            className="gravar"
+            type="submit"
+          >
+            gravar
+          </button>
         </div>
       </form>
     </Layout>

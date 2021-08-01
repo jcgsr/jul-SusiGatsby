@@ -62,12 +62,16 @@ const Login = () => {
               onChange={e => setPassword(e.target.value)}
             />
             <br />
-            <button onClick={handleSubmit}>login</button>
+            <button id="login" onClick={handleSubmit}>
+              login
+            </button>
           </form>
         </main>
       ) : (
         <main className="page">
-          <h2>olá, {email}</h2>
+          <div id="ola">
+            <h2>olá, {email}</h2>
+          </div>
           <div className="login-btn">
             <button
               onClick={() => (
@@ -133,7 +137,7 @@ const Login = () => {
           {showAntigos && <Antigos />}
           <div className="btn-anamnese">
             <button id="btn-logout" onClick={handleLogout}>
-              logout
+              sair
             </button>
           </div>
         </main>

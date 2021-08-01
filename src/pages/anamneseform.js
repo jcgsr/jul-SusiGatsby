@@ -257,7 +257,9 @@ const Anamnese = () => {
             <input type="text" value={anotacoes} />
           </div>
         </div>
-        <button type="submit">gravar</button>
+        <button className="gravar" type="submit">
+          gravar
+        </button>
       </form>
     </Layout>
   );

@@ -362,14 +362,22 @@ const Pacote = () => {
           onChange={e => setS10Date(e.target.value)}
         />
         <div className="btn-anamnese">
-          <button type="submit">gravar</button>
+          <button className="gravar" type="submit">
+            gravar
+          </button>
         </div>
       </form>
 
       <div className="btn-anamnese">
-        <button onClick={showPacotes}>mostrar pacotes</button>
-        <button onClick={handleEdit}>atualizar</button>
-        <button onClick={handleFile}>arquivar</button>
+        <button className="mostrar" onClick={showPacotes}>
+          mostrar pacotes
+        </button>
+        <button className="gravar" onClick={handleEdit}>
+          atualizar
+        </button>
+        <button className="arquivar" onClick={handleFile}>
+          arquivar
+        </button>
       </div>
       <div className="card">
         <ul>

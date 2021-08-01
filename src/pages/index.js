@@ -4,6 +4,8 @@
 import React from "react";
 import Layout from "../components/Layout";
 
+import { StaticImage } from "gatsby-plugin-image";
+
 const Home = () => {
   return (
     <Layout>
@@ -19,6 +21,15 @@ const Home = () => {
             tratamento de enfermidades.
           </q>
           <address id="author">Susi Pessôa</address>
+        </div>
+        <div id="susi-img">
+          <StaticImage
+            id="img"
+            src="../assets/images/susi.jpg"
+            alt="Foto de Susi"
+            layout="constrained"
+            placeholder="blurred"
+          />
         </div>
       </main>
     </Layout>

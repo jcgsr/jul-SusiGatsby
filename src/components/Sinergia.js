@@ -138,14 +138,18 @@ const Sinergia = () => {
         />
         <br />
         <div className="btn-anamnese">
-          <button type="submit">gravar</button>
-          <button type="button" onClick={handleEdit}>
+          <button className="gravar" type="submit">
+            gravar
+          </button>
+          <button className="editar" type="button" onClick={handleEdit}>
             editar
           </button>
         </div>
       </form>
       <div className="btn-anamnese">
-        <button onClick={showSinergia}>mostrar</button>
+        <button className="mostrar" onClick={showSinergia}>
+          mostrar
+        </button>
       </div>
       <h2>Dados Sinergia</h2>
       <div className="card">
@@ -171,7 +175,12 @@ const Sinergia = () => {
                       carregar
                     </a>
                   </button>
-                  <button onClick={() => handleDelete(dado.id)}>deletar</button>
+                  <button
+                    className="alert-danger"
+                    onClick={() => handleDelete(dado.id)}
+                  >
+                    deletar
+                  </button>
                 </div>
               </li>
             );

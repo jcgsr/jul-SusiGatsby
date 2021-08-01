@@ -25,5 +25,8 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/app/*`] },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`, // Needed for dynamic images
   ],
 };
