@@ -134,6 +134,7 @@ const Doshas = () => {
   return (
     <Layout>
       <h1>Doshas</h1>
+      <h3>Bem-vindo(a)!</h3>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"

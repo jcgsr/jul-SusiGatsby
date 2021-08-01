@@ -149,7 +149,15 @@
     width: 90%;
   }
 }
-
+.about-card {
+  background-color: var(--sixth);
+  color: #4527a0;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+  width: 50%;
+  box-shadow: var(--shadow-2);
+}
 .gravar {
   background-color: var(--seventh);
   color: var(--white);

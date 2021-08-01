@@ -19,7 +19,6 @@ export default function NavBar() {
             Início
           </Link>
           {` `} */}
-
           <Link
             to="/anamneseform"
             className="btn"
@@ -34,6 +33,10 @@ export default function NavBar() {
           {` `}
           <Link to="/login" className="btn" onClick={() => setShow(false)}>
             Login
+          </Link>
+          {` `}{" "}
+          <Link to="/about" className="btn" onClick={() => setShow(false)}>
+            Sobre mim
           </Link>
           {` `}
         </div>
