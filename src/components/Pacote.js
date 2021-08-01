@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import firebase from "firebase";
+import firebase from "gatsby-plugin-firebase";
 const Pacote = () => {
   const [cliente, setCliente] = useState("");
   const [terapia, setTerapia] = useState("");

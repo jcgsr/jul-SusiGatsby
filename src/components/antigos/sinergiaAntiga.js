@@ -7,7 +7,7 @@ const SinergiaAntiga = () => {
 
   const dbSinergia = firebase.database().ref("sinergia");
 
-  const fetchSinergia = () => {
+  const buscarSinergia = () => {
     const dadosSinergia = [];
     dbSinergia.on("value", snapshot => {
       snapshot.forEach(item => {
@@ -23,7 +23,7 @@ const SinergiaAntiga = () => {
     <div>
       <h1>Sinergia Antiga</h1>
       <div>
-        <button onClick={fetchSinergia}>dados</button>
+        <button onClick={buscarSinergia}>dados</button>
         <ul>
           {Object.entries(sinergia).map(([key, value]) => {
             return (

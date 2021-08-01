@@ -7,7 +7,7 @@ const Arquivo = () => {
 
   const dbArquivo = firebase.database().ref("arquivo");
 
-  const fetchArquivo = () => {
+  const buscarArquivo = () => {
     const dadosArquivo = [];
     dbArquivo.on("value", snapshot => {
       snapshot.forEach(item => {
@@ -23,7 +23,7 @@ const Arquivo = () => {
     <div>
       <h1>Arquivo Antigo</h1>
       <div>
-        <button onClick={fetchArquivo}>dados</button>
+        <button onClick={buscarArquivo}>dados</button>
         <ul>
           {Object.entries(arquivo).map(([key, value]) => {
             return (

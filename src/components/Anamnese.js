@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import firebase from "firebase";
+import firebase from "gatsby-plugin-firebase";
 
 import { getAge } from "../services/utils/age";
 

@@ -7,7 +7,7 @@ const AnamneseAntiga = () => {
 
   const dbAnamnese = firebase.database().ref("anamnese");
 
-  const fetchAnamnese = () => {
+  const buscarAnamnese = () => {
     const dadosAnamnese = [];
     dbAnamnese.on("value", snapshot => {
       snapshot.forEach(item => {
@@ -23,7 +23,7 @@ const AnamneseAntiga = () => {
     <div>
       <h1>Anamnese Antiga</h1>
       <div>
-        <button onClick={fetchAnamnese}>dados</button>
+        <button onClick={buscarAnamnese}>dados</button>
         <ul>
           {Object.entries(anamnese).map(([key, value]) => {
             return (

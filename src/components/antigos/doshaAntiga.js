@@ -7,7 +7,7 @@ const DoshaAntigo = () => {
 
   const dbDosha = firebase.database().ref("dosha");
 
-  const fetchDosha = () => {
+  const buscarDosha = () => {
     const dadosDosha = [];
     dbDosha.on("value", snapshot => {
       snapshot.forEach(item => {
@@ -23,7 +23,7 @@ const DoshaAntigo = () => {
     <div>
       <h1>Dosha Antigo</h1>
       <div>
-        <button onClick={fetchDosha}>dados</button>
+        <button onClick={buscarDosha}>dados</button>
         <ul>
           {Object.entries(dosha).map(([key, value]) => {
             return (

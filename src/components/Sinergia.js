@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import firebase from "firebase";
+import firebase from "gatsby-plugin-firebase";
 
 const Sinergia = () => {
   const [sinergia, setSinergia] = useState("");

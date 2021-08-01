@@ -7,7 +7,7 @@ const PacoteAntigo = () => {
 
   const dbPacote = firebase.database().ref("pacote");
 
-  const fetchPacote = () => {
+  const buscarPacote = () => {
     const dadosDosha = [];
     dbPacote.on("value", snapshot => {
       snapshot.forEach(item => {
@@ -23,7 +23,7 @@ const PacoteAntigo = () => {
     <div>
       <h1>Pacote Antigo</h1>
       <div>
-        <button onClick={fetchPacote}>dados</button>
+        <button onClick={buscarPacote}>dados</button>
         <ul>
           {Object.entries(pacote).map(([key, value]) => {
             return (

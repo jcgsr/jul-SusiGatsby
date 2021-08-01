@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { firebase } from "../services/firebase";
+import firebase from "gatsby-plugin-firebase";
 import { navigate } from "gatsby";
 
 import Layout from "../components/Layout";

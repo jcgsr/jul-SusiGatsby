@@ -4,7 +4,7 @@ import { navigate } from "gatsby";
 
 import Layout from "../components/Layout";
 
-import firebase from "firebase";
+import firebase from "gatsby-plugin-firebase";
 
 const Doshas = () => {
   const [name, setName] = useState("");
