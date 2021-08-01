@@ -84,7 +84,8 @@
 .form button {
   margin-top: 1rem;
 }
-.form input:focus {
+.form input:focus,
+textarea:focus {
   outline: none;
   border: 2px solid var(--secondary);
 }
@@ -174,7 +175,13 @@
   background-color: var(--sixth);
   color: var(--primary);
 }
-
+.btn-anamnese svg {
+  font-size: 3rem;
+  color: var(--fifth);
+}
+.btn-anamnese svg:hover {
+  color: var(--bgColor);
+}
 /* TAGS */
 
 table,

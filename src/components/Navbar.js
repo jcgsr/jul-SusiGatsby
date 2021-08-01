@@ -15,10 +15,6 @@ export default function NavBar() {
           <BiMenu />
         </button>
         <div className={show ? "dropdown-content" : "nav-links"}>
-          {/* <Link to="/" className="btn" onClick={() => setShow(false)}>
-            Início
-          </Link>
-          {` `} */}
           <Link
             to="/anamneseform"
             className="btn"
@@ -37,6 +33,10 @@ export default function NavBar() {
           {` `}{" "}
           <Link to="/about" className="btn" onClick={() => setShow(false)}>
             Sobre mim
+          </Link>
+          {` `}
+          <Link to="/contato" className="btn" onClick={() => setShow(false)}>
+            Contatos
           </Link>
           {` `}
         </div>
