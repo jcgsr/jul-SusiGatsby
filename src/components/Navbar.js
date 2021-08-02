@@ -22,22 +22,22 @@ export default function NavBar() {
         <div className="links-container show-container">
           <ul className="links">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/anamneseform">Anamnese</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/doshaform">Anamnese Ayurveda</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/about">Sobre mim</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/contato">Contatos</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/valores">Preços</Link>
             </li>
           </ul>
         </div>
