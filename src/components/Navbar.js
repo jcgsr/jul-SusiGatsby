@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
-import links from "../constants/nav-links.js";
+import links from "../constants/links.js";
 
-import { BiMenu } from "react-icons/bi";
-import { MdArrowDropDown } from "react-icons/md";
+import { MdArrowDropDown, MdClose, MdMenu } from "react-icons/md";
 
 export default function NavBar() {
-  const [show, setShow] = useState(false);
+  const [showLinks, setShowLinks] = useState(false);
   return (
     <nav>
       <div className="nav-center">
@@ -15,30 +14,27 @@ export default function NavBar() {
           <Link to="/">
             <span className="btn">Susi</span>
           </Link>
-          <button className="nav-toggle">
-            <BiMenu />
+          <button
+            className="nav-toggle"
+            onClick={() => setShowLinks(!showLinks)}
+          >
+            {!showLinks ? <MdMenu /> : <MdClose />}
           </button>
         </div>
-        <div className="links-container show-container">
+        <div
+          className={`${
+            showLinks ? "links-container show-container" : " links-container"
+          }`}
+        >
           <ul className="links">
-            <li>
-              <Link to="/anamneseform">Anamnese</Link>
-            </li>
-            <li>
-              <Link to="/doshaform">Anamnese Ayurveda</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/about">Sobre mim</Link>
-            </li>
-            <li>
-              <Link to="/contato">Contatos</Link>
-            </li>
-            <li>
-              <Link to="/valores">Preços</Link>
-            </li>
+            {links.map(link => {
+              const { id, url, text } = link;
+              return (
+                <li key={id}>
+                  <Link to={url}>{text}</Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const links = [
+const links = [
 	{
 		id: 1,
 		url: "/anamneseform",
@@ -32,3 +32,5 @@ export const links = [
 		text: "preços",
 	},
 ];
+
+export default links;

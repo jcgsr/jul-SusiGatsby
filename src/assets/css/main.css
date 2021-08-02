@@ -203,6 +203,11 @@ textarea:focus {
   width: 50%;
   box-shadow: var(--shadow-2);
 }
+@media screen and (max-width: 768px) {
+  .about-card {
+    width: 90%;
+  }
+}
 .gravar {
   background-color: var(--seventh);
   color: var(--white);
@@ -316,7 +321,7 @@ nav {
 .links a {
   color: var(--sixth);
   background-color: var(--primary);
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: capitalize;
   letter-spacing: var(--spacing);
   display: block;
@@ -335,7 +340,7 @@ nav {
   transition: var(--transition);
 }
 .show-container {
-  height: 17rem;
+  height: 17.5rem;
 }
 @media screen and (min-width: 800px) {
   .nav-center {
@@ -655,16 +660,6 @@ button.block {
     margin: 1rem auto;
   }
 }
-/* .title {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.title-underline {
-  height: 0.2rem;
-  width: 7rem;
-  background: var(--primary-600);
-  margin: 0 auto;
-} */
 
 form > *:last-child {
   margin-bottom: 0;
@@ -730,7 +725,7 @@ form > *:last-child {
 /*#########*/
 /* Navbar */
 /*#########*/
-.navbar {
+/* .navbar {
   background-color: var(--primary);
   justify-content: space-between;
   align-items: center;
@@ -755,7 +750,7 @@ form > *:last-child {
     display: none;
   }
 }
-
+ */
 /*#########*/
 /* Footer */
 /*#########*/
