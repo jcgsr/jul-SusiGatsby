@@ -39,6 +39,10 @@ export default function NavBar() {
             Contatos
           </Link>
           {` `}
+          <Link to="/valores" className="btn" onClick={() => setShow(false)}>
+            Preços
+          </Link>
+          {` `}
         </div>
       </div>
     </nav>

@@ -150,6 +150,46 @@ textarea:focus {
     width: 90%;
   }
 }
+.prices {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  background-color: var(--sixth);
+  color: var(--primary);
+  min-height: 100vh;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 1rem;
+  min-height: 100vh;
+  box-shadow: var(--shadow-2);
+  text-align: center;
+}
+.price {
+  background: var(--secondary);
+  box-shadow: var(--shadow-2);
+  transition: tansform ease-in-out 3s;
+  padding: 1rem;
+}
+.price:hover {
+  background-color: var(--seventh);
+  color: var(--white);
+  transform: scale(1.02);
+}
+
+.padrao {
+  font-size: larger;
+  color: orange;
+  text-shadow: 1px 1px var(--primary);
+}
+.casa {
+  font-size: larger;
+  color: green;
+  text-shadow: 1px 1px var(--primary);
+}
+@media screen and (max-width: 456px) {
+  .card-price {
+    width: 90%;
+  }
+}
 .about-card {
   background-color: var(--sixth);
   color: #4527a0;
@@ -181,6 +221,11 @@ textarea:focus {
 }
 .btn-anamnese svg:hover {
   color: var(--bgColor);
+}
+.price-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: gold;
 }
 /* TAGS */
 
@@ -231,7 +276,7 @@ td {
   --green-dark: #0f5132;
   /* box shadows */
   --shadow-1: 2px 2px 3px #fff;
-  --shadow-2: 2px 2px 3px rgb(24, 19, 43);
+  --shadow-2: 0 0 10px rgba(0, 0, 0, 0.4);
 
   /* typography */
   --defaultFontSize: 87.5%;
