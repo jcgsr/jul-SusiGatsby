@@ -15,7 +15,9 @@ const Valores = () => {
           return (
             <article key={id} className="price">
               <div className="">
-                <h3>{title}</h3>
+                <h3>
+                  <strong>{title}</strong>
+                </h3>
                 <p className="padrao">Padrão</p>
                 <p>{m1}</p>
                 <p className="price-value">{p1}</p>
@@ -34,6 +36,7 @@ const Valores = () => {
           );
         })}
       </section>
+      <p id="price-message">*Todos os valores com preço de à vista.</p>
       {/*</div>*/}
     </Layout>
   );

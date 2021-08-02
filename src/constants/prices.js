@@ -55,8 +55,10 @@ const prices = [
     title: "Aromaterapia",
     m1: "Consulta",
     p1: "R$ 80",
-    m2: "Consulta",
-    p2: "R$ 100",
+    m2: "",
+    p2: "",
+    p3: "R$ 100",
+    p4: "",
   },
   {
     id: 7,

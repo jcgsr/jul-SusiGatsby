@@ -50,6 +50,10 @@
     width: 70%;
   }
 }
+#price-message {
+  text-align: center;
+  margin: 0 auto;
+}
 /* CLASSES */
 
 .checkboxes {
@@ -183,7 +187,7 @@ textarea:focus {
 .casa {
   font-size: larger;
   color: green;
-  text-shadow: 1px 1px var(--primary);
+  text-shadow: 1px 1px var(--secondary);
 }
 @media screen and (max-width: 456px) {
   .card-price {
@@ -225,8 +229,146 @@ textarea:focus {
 .price-value {
   font-size: 2rem;
   font-weight: bold;
-  color: gold;
+  color: yellow;
+  text-shadow: 1px 1px var(--primary);
 }
+.terapias-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.terapias-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--terciary);
+  min-width: 160px;
+  height: 365px;
+  z-index: 1;
+}
+.terapias-dropdown-content a {
+  color: var(--primary);
+  padding: 0.8rem;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+.terapias-dropdown-content a:hover {
+  background-color: var(--primary);
+  color: var(--white);
+}
+.terapias-dropdown:hover .terapias-dropdown-content {
+  display: block;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: #f9f9f9;
+  position: absolute;
+  background-color: var(--terciary);
+
+  min-width: 100%;
+  overflow: auto;
+  z-index: 1;
+}
+.dropdown-content a {
+  padding: 1rem;
+  text-decoration: none;
+  display: block;
+  /* width: 8rem; */
+}
+
+/* MY NAVBAR */
+nav {
+  /* background: var(--clr-white); */
+  box-shadow: var(--shadow-1);
+  background-color: var(--primary);
+  color: var(--bgColor);
+  /* justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  display: flex; */
+  /* padding: 1rem; */
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--clr-primary-5);
+  background: transparent;
+  border-color: transparent;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  color: var(--sixth);
+  transform: rotate(90deg);
+}
+
+.links a {
+  color: var(--sixth);
+  background-color: var(--primary);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+.links a:hover {
+  background-color: var(--fourth);
+  color: var(--white);
+  padding-left: 1.5rem;
+}
+
+.links-container {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-container {
+  height: 12rem;
+}
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .nav-header {
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .links-container {
+    height: auto !important;
+  }
+  .links {
+    display: flex;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+}
+/* MY NAVBAR */
+
 /* TAGS */
 
 table,
@@ -597,34 +739,12 @@ form > *:last-child {
   padding: 1rem;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  z-index: 100;
-}
-
-.dropdown-content {
-  display: block;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-
-  z-index: 1;
-}
-.dropdown-content a {
-  padding: 1rem;
-  text-decoration: none;
-  display: block;
-  width: 8rem;
-}
-
 .navbar ul li a::after {
   transition: 0.7s;
 }
 
 .btn-menu {
   display: none;
-  margin-right: 4.5rem;
 }
 
 @media screen and (max-width: 768px) {
