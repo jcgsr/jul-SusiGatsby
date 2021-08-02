@@ -245,7 +245,7 @@ textarea:focus {
   display: none;
   position: absolute;
   background-color: var(--terciary);
-  min-width: 160px;
+  min-width: 180px;
   height: 365px;
   z-index: 1;
 }
@@ -340,7 +340,7 @@ nav {
   transition: var(--transition);
 }
 .show-container {
-  height: 17.5rem;
+  height: 22rem;
 }
 @media screen and (min-width: 800px) {
   .nav-center {
@@ -359,6 +359,7 @@ nav {
   }
   .links-container {
     height: auto !important;
+    overflow: visible;
   }
   .links {
     display: flex;

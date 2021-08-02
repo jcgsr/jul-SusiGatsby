@@ -27,6 +27,19 @@ export default function NavBar() {
           }`}
         >
           <ul className="links">
+            <div className="terapias-dropdown">
+              <Link>
+                Terapias <MdArrowDropDown />
+                <div className="terapias-dropdown-content show">
+                  <Link to="/anamneseform">Massagens</Link>
+                  <Link to="/anamneseform">Reiki</Link>
+                  <Link to="/anamneseform">Aromaterapia</Link>
+                  <Link to="/anamneseform">Auriculoterapia</Link>
+                  <Link to="/anamneseform">Ventosaterapia</Link>
+                  <Link to="/anamneseform">Magnetoterapia</Link>{" "}
+                </div>
+              </Link>
+            </div>
             {links.map(link => {
               const { id, url, text } = link;
               return (
