@@ -9,6 +9,9 @@ require("dotenv").config({
 });
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "Susi Pessôa",
+  },
   plugins: [
     {
       resolve: "gatsby-plugin-eslint",
@@ -46,5 +49,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `terapias`,
+        path: `${__dirname}/terapias`,
+      },
+    },
+    `gatsby-plugin-mdx`,
   ],
 };
