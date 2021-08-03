@@ -31,12 +31,12 @@ export default function NavBar() {
               <Link>
                 Terapias <MdArrowDropDown />
                 <div className="terapias-dropdown-content">
-                  <Link to="/massagens">Massagens</Link>
-                  <Link to="/reiki">Reiki</Link>
-                  <Link to="/aromaterapia">Aromaterapia</Link>
-                  <Link to="/auriculoterapia">Auriculoterapia</Link>
-                  <Link to="/ventosaterapia">Ventosaterapia</Link>
-                  <Link to="/magnetoterapia">Magnetoterapia</Link>{" "}
+                  <Link to="/terapias/massagens">Massagens</Link>
+                  <Link to="/terapias/reiki">Reiki</Link>
+                  <Link to="/terapias/aromaterapia">Aromaterapia</Link>
+                  <Link to="/terapias/auriculoterapia">Auriculoterapia</Link>
+                  <Link to="/terapias/ventosaterapia">Ventosaterapia</Link>
+                  <Link to="/terapias/magnetoterapia">Magnetoterapia</Link>{" "}
                 </div>
               </Link>
             </div>
