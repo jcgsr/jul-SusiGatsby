@@ -3,12 +3,14 @@
 
 import React from "react";
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 import { StaticImage } from "gatsby-plugin-image";
 
 const Home = () => {
   return (
     <Layout>
+      <SEO title="Home" description="Essa é a página inicial" />
       <main className="page">
         <h1>Susi Pessôa</h1>
         <h2>Terapias Holísticas</h2>

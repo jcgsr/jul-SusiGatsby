@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import firebase from "gatsby-plugin-firebase";
 import { navigate } from "gatsby";
 
+import SEO from "../components/SEO";
 import Layout from "../components/Layout";
 import Sinergia from "../components/Sinergia";
 import Pacote from "../components/Pacote";
@@ -44,6 +45,7 @@ const Login = () => {
   // FIM SHOW COMPONENTS
   return (
     <Layout>
+      <SEO title="Login" description="Essa é a página de login" />
       {!isLogged ? (
         <main className="container">
           <h2>Login</h2>

@@ -11,6 +11,9 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "Susi Pessôa",
+    description: "Site de Susi Pessôa - Terapeuta Holística",
+    url: "https://www.susipessoa.com.br",
+    image: `/susiMain.png`,
   },
   plugins: [
     {
@@ -31,6 +34,7 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-remark-images`,
     `gatsby-transformer-sharp`,
     // Needed for dynamic images
     {
@@ -53,9 +57,26 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: `terapias`,
-        path: `${__dirname}/terapias`,
+        path: `${__dirname}/terapias-mdx`,
       },
     },
     `gatsby-plugin-mdx`,
+    `gatsby-plugin-react-helmet`,
+    // {
+    //   resolve: `gatsby-transformer-remark`,
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: `gatsby-remark-images`,
+    //         options: {
+    //           // It's important to specify the maxWidth (in pixels) of
+    //           // the content container as this plugin uses this as the
+    //           // base for generating different widths of each image.
+    //           maxWidth: 590,
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
   ],
 };

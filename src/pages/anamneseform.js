@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import { navigate } from "gatsby";
-
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 import firebase from "gatsby-plugin-firebase";
 
@@ -90,6 +90,10 @@ const Anamnese = () => {
   };
   return (
     <Layout>
+      <SEO
+        title="Anamnese - Formulário"
+        description="Essa é a página para preenchimento da Anamnese"
+      />
       <h1>Anamnese</h1>
       <h3>Bem-vindo(a)!</h3>
       <h5>

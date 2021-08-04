@@ -8,7 +8,7 @@
   padding: 0;
   margin: 0;
   vertical-align: baseline;
-  list-style: none;
+  /* list-style: none; */
   border: 0;
 }
 
@@ -198,7 +198,7 @@ textarea:focus {
   background-color: var(--sixth);
   color: #4527a0;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   text-align: left;
   width: 50%;
   box-shadow: var(--shadow-2);
@@ -297,6 +297,7 @@ nav {
   box-shadow: var(--shadow-1);
   background-color: var(--primary);
   color: var(--bgColor);
+  list-style: none;
   /* justify-content: space-between;
   align-items: center;
   height: 4rem;
@@ -352,6 +353,9 @@ nav {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+  }
+  .nav-center ul li {
+    list-style: none;
   }
   .nav-header {
     padding: 0;
@@ -513,11 +517,11 @@ small,
 .text-small {
   font-size: var(--smallText);
 }
-
+/* 
 ul {
   padding: 0;
   list-style-type: none;
-}
+} */
 a {
   text-decoration: none;
 }

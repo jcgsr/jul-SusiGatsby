@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { navigate } from "gatsby";
 
 import Layout from "../components/Layout";
+import SEO from "../components/SEO";
 
 import firebase from "gatsby-plugin-firebase";
 
@@ -133,6 +134,10 @@ const Doshas = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Ayurveda - Formulário"
+        description="Essa é a página para preenchimento do formulário da Auyrveda"
+      />
       <h1>Doshas</h1>
       <h3>Bem-vindo(a)!</h3>
       <form onSubmit={handleSubmit} className="form">

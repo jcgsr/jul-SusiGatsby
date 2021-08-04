@@ -34,7 +34,7 @@ export default function NavBar() {
                   <Link to="/terapias/massagens">Massagens</Link>
                   <Link to="/terapias/reiki">Reiki</Link>
                   <Link to="/terapias/aromaterapia">Aromaterapia</Link>
-                  <Link to="/terapias/auriculoterapia">Auriculoterapia</Link>
+                  <Link to="/terapias/auricoloterapia">Auricoloterapia</Link>
                   <Link to="/terapias/ventosaterapia">Ventosaterapia</Link>
                   <Link to="/terapias/magnetoterapia">Magnetoterapia</Link>{" "}
                 </div>

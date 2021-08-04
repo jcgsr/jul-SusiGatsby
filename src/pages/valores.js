@@ -1,12 +1,16 @@
 import React from "react";
 import Layout from "../components/Layout";
 
-// import Title from "../components/Title";
+import SEO from "../components/SEO";
 import prices from "../constants/prices";
 
 const Valores = () => {
   return (
     <Layout>
+      <SEO
+        title="Valores"
+        description="Essa é a página informativa sobre os valores cobrados em cada terapia"
+      />
       <h1>Valores*</h1>
       {/*<div className="price-container">*/}{" "}
       <section className="prices">
