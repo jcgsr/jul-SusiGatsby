@@ -12,6 +12,11 @@ const SEO = ({ title, description, image, url }) => {
       title={`${title} | ${site.siteMetadata.title}`}
       meta={[
         { name: `description`, content: metaDescription },
+        {
+          name: `keywords`,
+          content:
+            "Susi Pessôa, Aracaju, Massoterapeuta, Aromaterapia, Reiki, Massagem, Ventosas, Magnetoterapia, Auricoloterapia",
+        },
         { name: `image`, content: image },
         { property: `og:title`, content: title },
         { property: `og:description`, content: description },
