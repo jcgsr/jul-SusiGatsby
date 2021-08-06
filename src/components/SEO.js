@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Helmet } from "react-helmet";
-
+import img from "../../static/susiMain.png";
 import { useStaticQuery, graphql } from "gatsby";
 const SEO = ({ title, description, image, url }) => {
   const { site } = useStaticQuery(query);
@@ -17,15 +17,15 @@ const SEO = ({ title, description, image, url }) => {
           content:
             "Susi Pessôa, Aracaju, Massoterapeuta, Aromaterapia, Reiki, Massagem, Ventosas, Magnetoterapia, Auricoloterapia",
         },
-        { name: `image`, content: image },
+        { name: `image`, content: { img } },
         { property: `og:title`, content: title },
         { property: `og:description`, content: description },
         { property: `og:url`, content: url },
-        { property: `og:image`, content: image },
+        { property: `og:image`, content: { img } },
         { name: `twitter:card`, content: "summary_large_image" },
         { name: `twitter:title`, content: title },
         { name: `twitter:description`, content: description },
-        { name: `twitter:image`, content: image },
+        { name: `twitter:image`, content: { img } },
       ]}
     ></Helmet>
   );
