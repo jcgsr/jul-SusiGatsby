@@ -384,7 +384,9 @@ const Pacote = () => {
           {pacoteDados.map(dado => {
             return (
               <li key={dado.id}>
-                <p>cliente: {dado.cliente}</p>
+                <p>
+                  cliente: <strong>{dado.cliente}</strong>
+                </p>
                 <p>terapia: {dado.terapia}</p>
                 <p>pagamento: {dado.pagamento}</p>
                 <table>
@@ -496,6 +498,7 @@ const Pacote = () => {
               </li>
             );
           })}
+          <hr />
         </ul>
       </div>
     </div>
