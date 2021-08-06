@@ -5,7 +5,7 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 const Contato = () => {
   return (
     <Layout>
-      <SEO title="Contatos" description="Essa é a página de contatos" />
+      <SEO title="Contatos" description="Página de contatos" />
       <h2>Contatos</h2>
       <section className="btn-anamnese">
         <button className="btn">

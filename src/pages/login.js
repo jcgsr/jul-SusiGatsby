@@ -45,7 +45,7 @@ const Login = () => {
   // FIM SHOW COMPONENTS
   return (
     <Layout>
-      <SEO title="Login" description="Essa é a página de login" />
+      <SEO title="Login" description="Página de login" />
       {!isLogged ? (
         <main className="container">
           <h2>Login</h2>

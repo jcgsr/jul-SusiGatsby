@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
+import susilogo from "../assets/images/susilogo3.svg";
+
 import links from "../constants/links.js";
 
 import { MdArrowDropDown, MdClose, MdMenu } from "react-icons/md";
@@ -12,7 +14,12 @@ export default function NavBar() {
       <div className="nav-center">
         <div className="nav-header">
           <Link to="/">
-            <span className="btn">Susi</span>
+            <img
+              id="logo"
+              src={susilogo}
+              alt="logo de Susi"
+              style={{ height: "1.5rem" }}
+            />
           </Link>
           <button
             className="nav-toggle"

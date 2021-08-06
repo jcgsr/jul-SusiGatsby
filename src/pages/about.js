@@ -4,10 +4,7 @@ import SEO from "../components/SEO";
 const About = () => {
   return (
     <Layout>
-      <SEO
-        title="Sobre mim"
-        description="Essa é a página sobre mim, Susi Pessôa"
-      />
+      <SEO title="Sobre mim" description="Página sobre mim, Susi Pessôa" />
       <section>
         <h2>Sobre Mim</h2>
         <div className="about-card">

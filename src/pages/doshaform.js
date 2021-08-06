@@ -136,7 +136,7 @@ const Doshas = () => {
     <Layout>
       <SEO
         title="Ayurveda - Formulário"
-        description="Essa é a página para preenchimento do formulário da Auyrveda"
+        description="Página para preenchimento do formulário da Auyrveda"
       />
       <h1>Doshas</h1>
       <h3>Bem-vindo(a)!</h3>

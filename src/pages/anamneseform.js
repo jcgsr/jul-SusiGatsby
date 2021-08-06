@@ -92,7 +92,7 @@ const Anamnese = () => {
     <Layout>
       <SEO
         title="Anamnese - Formulário"
-        description="Essa é a página para preenchimento da Anamnese"
+        description="Página para preenchimento da Anamnese"
       />
       <h1>Anamnese</h1>
       <h3>Bem-vindo(a)!</h3>

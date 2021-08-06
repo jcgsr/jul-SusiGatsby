@@ -9,7 +9,7 @@ const Valores = () => {
     <Layout>
       <SEO
         title="Valores"
-        description="Essa é a página informativa sobre os valores cobrados em cada terapia"
+        description="Página informativa sobre os valores cobrados em cada terapia"
       />
       <h1>Valores*</h1>
       {/*<div className="price-container">*/}{" "}

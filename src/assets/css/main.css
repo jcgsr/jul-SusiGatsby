@@ -343,7 +343,7 @@ nav {
   transition: var(--transition);
 }
 .show-container {
-  height: 22rem;
+  height: 27rem;
 }
 @media screen and (min-width: 800px) {
   .nav-center {
@@ -371,7 +371,7 @@ nav {
     display: flex;
   }
   .links a {
-    padding: 1px;
+    padding: 0;
     margin: 0 0.5rem;
   }
   .links a:hover {
@@ -434,8 +434,8 @@ td {
 
   /* typography */
   --defaultFontSize: 87.5%;
-  --headingFont: "Inconsolata", monospace;
-  --bodyFont: "Montserrat", sans-serif;
+  /*--headingFont: "Inconsolata", monospace;*/
+  /*--bodyFont: "Montserrat", sans-serif;*/
   --smallText: 0.8em;
   --extraSmallText: 0.7em;
   /* rest */
