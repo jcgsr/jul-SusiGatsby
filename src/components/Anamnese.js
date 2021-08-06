@@ -68,10 +68,10 @@ const Anamnese = () => {
       })
       .then(() => {
         handleReset();
-        alert("Anamnese Gravada!");
+        alert("Anamnese gravada com sucesso.");
       })
       .catch(e => {
-        console.log(e);
+        console.log(e + "Error ao gravar anamnese");
       });
   };
   const showAnamnese = () => {

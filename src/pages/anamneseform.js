@@ -68,11 +68,11 @@ const Anamnese = () => {
       })
       .then(() => {
         handleReset();
-        alert("Anamnese Gravada!");
+        alert("Anamnese gravada com sucesso.");
         navigate("/");
       })
       .catch(e => {
-        console.log(e);
+        console.log(e + "Error ao gravar anamnese");
       });
   };
 
