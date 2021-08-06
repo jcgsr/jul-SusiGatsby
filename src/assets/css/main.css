@@ -15,6 +15,10 @@
 /* MY STUFF */
 
 /* IDS */
+#nprogress {
+  position: fixed;
+  z-index: 100000;
+}
 #author {
   text-align: right;
   width: 80%;
