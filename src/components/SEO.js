@@ -3,7 +3,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import img from "../../static/susiMain.png";
 import { useStaticQuery, graphql } from "gatsby";
-const SEO = ({ title, description, image, url }) => {
+const SEO = ({ title, description, image, siteUrl }) => {
   const { site } = useStaticQuery(query);
   const metaDescription = description || site.siteMetadata.description;
   return (
@@ -20,7 +20,7 @@ const SEO = ({ title, description, image, url }) => {
         { name: `image`, content: { img } },
         { property: `og:title`, content: title },
         { property: `og:description`, content: description },
-        { property: `og:url`, content: url },
+        { property: `og:siteUrl`, content: siteUrl },
         { property: `og:image`, content: { img } },
         { name: `twitter:card`, content: "summary_large_image" },
         { name: `twitter:title`, content: title },
@@ -38,7 +38,7 @@ const query = graphql`
         description
         title
         image
-        url
+        siteUrl
       }
     }
   }

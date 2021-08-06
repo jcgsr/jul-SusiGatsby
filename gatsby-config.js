@@ -12,7 +12,7 @@ module.exports = {
   siteMetadata: {
     title: "Susi Pessôa",
     description: "Site de Susi Pessôa - Terapeuta Holística",
-    url: "https://www.susipessoa.com.br",
+    siteUrl: "https://www.susipessoa.com.br",
     image: `/susiMain.png`,
   },
   plugins: [
@@ -36,6 +36,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
     // Needed for dynamic images
     {
       resolve: "gatsby-plugin-firebase",
@@ -67,6 +68,12 @@ module.exports = {
       options: {
         fonts: [`lora\:400;400i,700`, `noticia text\:400;700 `],
         display: "swap",
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: `ca-pub-2008019372085379`,
       },
     },
   ],
