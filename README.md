@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7e306f9e-6bc9-449b-8f8b-0a7a2fd915e9/deploy-status)](https://app.netlify.com/sites/susipessoa/deploys)
 
-[!Susi Pessôa](./assets/imagens/susilogo3)
+![Susi Pessôa](./assets/imagens/susilogo3)
 
 <p align="center">
   <a href="www.susipessoa.com.br">
