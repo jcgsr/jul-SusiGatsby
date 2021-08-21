@@ -39,12 +39,15 @@ const Valores = () => {
                 <hr />
                 <div className="includes">
                   <p>
-                    Essa mensagem inclui:
                     {readMore ? includes : `${includes.substring(0, 50)}...`}
                   </p>
-                  <button onClick={() => setReadMore(!readMore)}>
-                    {readMore ? "mostrar menos" : "mostrar mais"}
-                  </button>
+                  {includes.length > 0 ? (
+                    <button onClick={() => setReadMore(!readMore)}>
+                      {readMore ? "mostrar menos" : "mostrar mais"}
+                    </button>
+                  ) : (
+                    <button style={{ display: "none" }}></button>
+                  )}
                 </div>
               </div>
             </article>
