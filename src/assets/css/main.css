@@ -294,6 +294,9 @@ textarea:focus {
   display: block;
   /* width: 8rem; */
 }
+.includes button {
+  background-color: transparent;
+}
 
 /* MY NAVBAR */
 nav {

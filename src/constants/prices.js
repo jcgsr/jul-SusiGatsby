@@ -9,6 +9,8 @@ const prices = [
     p2: "R$ 320",
     p3: "R$ 120",
     p4: "R$ 400",
+    includes:
+      "🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Pedras quentes (algumas sessões, conforme necessidade) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente",
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const prices = [
     p2: "R$ 320",
     p3: "R$ 120",
     p4: "R$ 400",
+    includes: "🌷 Em breve...",
   },
   {
     id: 3,
@@ -29,6 +32,8 @@ const prices = [
     p2: "R$ 380",
     p3: "R$ 140",
     p4: "R$ 480",
+    includes:
+      "🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Pedras quentes (algumas sessões, conforme necessidade) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente",
   },
   {
     id: 4,
@@ -39,6 +44,8 @@ const prices = [
     p2: "R$ 380",
     p3: "R$ 140",
     p4: "R$ 480",
+    includes:
+      "🌷 Suco e chá Detox 🌷 Manta térmica 🌷 Argila (opcional) 🌷 Óleos específicos com ativos desintoxicantes, estimulantes do metabolismo e do sistema linfático e circulatório, etc.🌷 Massagem no corpo todo (dura em média 1h30)",
   },
   {
     id: 5,
@@ -49,6 +56,7 @@ const prices = [
     p2: "R$ 240",
     p3: "R$ 90",
     p4: "R$ 320",
+    includes: "🌷Análise dos Chakras com o pêndulo 🌷 Aromaterapia 🌷Cristais",
   },
   {
     id: 6,
@@ -59,6 +67,8 @@ const prices = [
     p2: "",
     p3: "",
     p4: "",
+    includes:
+      "*A consulta inclui análise da situação, determinação da abordagem Terapêutica e aplicação com toque terapêutico e inalação. Por exemplo, massagem nas mãos e nos pés. Também está incluso a consulta de retorno. *As formulações que serão utilizadas no tratamento não estão inclusas nesse valor. Por exemplo: inalador pessoal, perfume terapêutico, óleo corporal e/ou facial e spray.",
   },
   {
     id: 7,
@@ -69,6 +79,7 @@ const prices = [
     p2: "R$ 240",
     p3: "R$ 90",
     p4: "R$ 320",
+    includes: "🌷 Em breve...",
   },
   {
     id: 8,
@@ -79,6 +90,7 @@ const prices = [
     p2: "R$ 240",
     p3: "R$ 90",
     p4: "R$ 320",
+    includes: "🌷 Em breve...",
   },
 ];
 

@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 
 import SEO from "../components/SEO";
 import prices from "../constants/prices";
 
 const Valores = () => {
+  const [readMore, setReadMore] = useState(false);
   return (
     <Layout>
       <SEO
@@ -15,7 +16,7 @@ const Valores = () => {
       {/*<div className="price-container">*/}{" "}
       <section className="prices">
         {prices.map(price => {
-          const { id, title, m1, m2, p1, p2, p3, p4 } = price;
+          const { id, title, m1, m2, p1, p2, p3, p4, includes } = price;
           return (
             <article key={id} className="price">
               <div className="">
@@ -35,6 +36,16 @@ const Valores = () => {
                 <p className="price-value">{p3}</p>
                 <p>{m2}</p>
                 <p className="price-value">{p4}</p>
+                <hr />
+                <div className="includes">
+                  <p>
+                    Essa mensagem inclui:
+                    {readMore ? includes : `${includes.substring(0, 50)}...`}
+                  </p>
+                  <button onClick={() => setReadMore(!readMore)}>
+                    {readMore ? "mostrar menos" : "mostrar mais"}
+                  </button>
+                </div>
               </div>
             </article>
           );
