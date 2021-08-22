@@ -13,7 +13,7 @@ module.exports = {
     title: "Susi Pessôa",
     description: "Site de Susi Pessôa - Terapeuta Holística",
     siteUrl: "https://www.susipessoa.com.br",
-    image: `/susiMain.png`,
+    image: `src/assets/images/susi.jpg`,
   },
   plugins: [
     {
@@ -59,6 +59,13 @@ module.exports = {
       options: {
         name: `terapias`,
         path: `${__dirname}/terapias-mdx`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-plugin-mdx`,
