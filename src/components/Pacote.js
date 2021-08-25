@@ -22,21 +22,6 @@ const Pacote = () => {
   const [sessao5, setSessao5] = useState("");
   const [s5Date, setS5Date] = useState("");
 
-  const [sessao6, setSessao6] = useState("");
-  const [s6Date, setS6Date] = useState("");
-
-  const [sessao7, setSessao7] = useState("");
-  const [s7Date, setS7Date] = useState("");
-
-  const [sessao8, setSessao8] = useState("");
-  const [s8Date, setS8Date] = useState("");
-
-  const [sessao9, setSessao9] = useState("");
-  const [s9Date, setS9Date] = useState("");
-
-  const [sessao10, setSessao10] = useState("");
-  const [s10Date, setS10Date] = useState("");
-
   const handleSubmit = async e => {
     e.preventDefault();
     await firebase
@@ -51,23 +36,15 @@ const Pacote = () => {
         data3: s3Date,
         data4: s4Date,
         data5: s5Date,
-        data6: s6Date,
-        data7: s7Date,
-        data8: s8Date,
-        data9: s9Date,
-        data10: s10Date,
         sessao1: sessao1,
         sessao2: sessao2,
         sessao3: sessao3,
         sessao4: sessao4,
         sessao5: sessao5,
-        sessao6: sessao6,
-        sessao7: sessao7,
-        sessao8: sessao8,
-        sessao9: sessao9,
-        sessao10: sessao10,
       })
-      .then(() => {});
+      .then(() => {
+        alert("Pacote gravado!");
+      });
   };
   const showPacotes = () => {
     firebase
@@ -86,21 +63,11 @@ const Pacote = () => {
             data3: item.data().data3,
             data4: item.data().data4,
             data5: item.data().data5,
-            data6: item.data().data6,
-            data7: item.data().data7,
-            data8: item.data().data8,
-            data9: item.data().data9,
-            data10: item.data().data10,
             sessao1: item.data().sessao1,
             sessao2: item.data().sessao2,
             sessao3: item.data().sessao3,
             sessao4: item.data().sessao4,
             sessao5: item.data().sessao5,
-            sessao6: item.data().sessao6,
-            sessao7: item.data().sessao7,
-            sessao8: item.data().sessao8,
-            sessao9: item.data().sessao9,
-            sessao10: item.data().sessao10,
           });
         });
         setPacoteDados(meusPacotes);
@@ -121,21 +88,11 @@ const Pacote = () => {
         data3: s3Date,
         data4: s4Date,
         data5: s5Date,
-        data6: s6Date,
-        data7: s7Date,
-        data8: s8Date,
-        data9: s9Date,
-        data10: s10Date,
         sessao1: sessao1,
         sessao2: sessao2,
         sessao3: sessao3,
         sessao4: sessao4,
         sessao5: sessao5,
-        sessao6: sessao6,
-        sessao7: sessao7,
-        sessao8: sessao8,
-        sessao9: sessao9,
-        sessao10: sessao10,
       })
       .then(() => {
         alert("Dados atualizados");
@@ -169,21 +126,11 @@ const Pacote = () => {
         data3: s3Date,
         data4: s4Date,
         data5: s5Date,
-        data6: s6Date,
-        data7: s7Date,
-        data8: s8Date,
-        data9: s9Date,
-        data10: s10Date,
         sessao1: sessao1,
         sessao2: sessao2,
         sessao3: sessao3,
         sessao4: sessao4,
         sessao5: sessao5,
-        sessao6: sessao6,
-        sessao7: sessao7,
-        sessao8: sessao8,
-        sessao9: sessao9,
-        sessao10: sessao10,
       })
       .then(() => console.log("arquivado"))
       .catch(e => {
@@ -291,76 +238,6 @@ const Pacote = () => {
           value={s5Date}
           onChange={e => setS5Date(e.target.value)}
         />
-        <label htmlFor="s6">Sessão 6</label>
-        <br />
-        <input
-          type="text"
-          value={sessao6}
-          placeholder="status"
-          onChange={e => setSessao6(e.target.value)}
-        />
-        <br />
-        <input
-          type="date"
-          value={s6Date}
-          onChange={e => setS6Date(e.target.value)}
-        />
-        <label htmlFor="s7">Sessão 7</label>
-        <br />
-        <input
-          type="text"
-          value={sessao7}
-          placeholder="status"
-          onChange={e => setSessao7(e.target.value)}
-        />
-        <br />
-        <input
-          type="date"
-          value={s7Date}
-          onChange={e => setS7Date(e.target.value)}
-        />
-        <label htmlFor="s8">Sessão 8</label>
-        <br />
-        <input
-          type="text"
-          value={sessao8}
-          placeholder="status"
-          onChange={e => setSessao8(e.target.value)}
-        />
-        <br />
-        <input
-          type="date"
-          value={s8Date}
-          onChange={e => setS8Date(e.target.value)}
-        />
-        <label htmlFor="s9">Sessão 9</label>
-        <br />
-        <input
-          type="text"
-          value={sessao9}
-          placeholder="status"
-          onChange={e => setSessao9(e.target.value)}
-        />
-        <br />
-        <input
-          type="date"
-          value={s9Date}
-          onChange={e => setS9Date(e.target.value)}
-        />
-        <label htmlFor="s10">Sessão 10</label>
-        <br />
-        <input
-          type="text"
-          value={sessao10}
-          placeholder="status"
-          onChange={e => setSessao10(e.target.value)}
-        />
-        <br />
-        <input
-          type="date"
-          value={s10Date}
-          onChange={e => setS10Date(e.target.value)}
-        />
         <div className="btn-anamnese">
           <button className="gravar" type="submit">
             gravar
@@ -423,36 +300,6 @@ const Pacote = () => {
                     <td>{dado.data5}</td>
                     <td>{dado.sessao5}</td>
                   </tr>
-
-                  <tr>
-                    <td>6ª</td>
-                    <td>{dado.data6}</td>
-                    <td>{dado.sessao6}</td>
-                  </tr>
-
-                  <tr>
-                    <td>7ª</td>
-                    <td>{dado.data7}</td>
-                    <td>{dado.sessao7}</td>
-                  </tr>
-
-                  <tr>
-                    <td>8ª</td>
-                    <td>{dado.data8}</td>
-                    <td>{dado.sessao8}</td>
-                  </tr>
-
-                  <tr>
-                    <td>9ª</td>
-                    <td>{dado.data9}</td>
-                    <td>{dado.sessao9}</td>
-                  </tr>
-
-                  <tr>
-                    <td>10ª</td>
-                    <td>{dado.data10}</td>
-                    <td>{dado.sessao10}</td>
-                  </tr>
                 </table>
                 <div className="btn-anamnese">
                   {" "}
@@ -467,21 +314,11 @@ const Pacote = () => {
                       setS3Date(dado.data3),
                       setS4Date(dado.data4),
                       setS5Date(dado.data5),
-                      setS6Date(dado.data6),
-                      setS7Date(dado.data7),
-                      setS8Date(dado.data8),
-                      setS9Date(dado.data9),
-                      setS10Date(dado.data10),
                       setSessao1(dado.sessao1),
                       setSessao2(dado.sessao2),
                       setSessao3(dado.sessao3),
                       setSessao4(dado.sessao4),
-                      setSessao5(dado.sessao5),
-                      setSessao6(dado.sessao6),
-                      setSessao7(dado.sessao7),
-                      setSessao8(dado.sessao8),
-                      setSessao9(dado.sessao9),
-                      setSessao10(dado.sessao10)
+                      setSessao5(dado.sessao5)
                     )}
                   >
                     <a href="#cliente" style={{ textDecoration: "none" }}>
