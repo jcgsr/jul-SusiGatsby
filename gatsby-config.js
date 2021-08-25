@@ -11,9 +11,10 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: "Susi Pessôa",
+    titleTemplate: "%s | Susi Pessôa",
     description: "Site de Susi Pessôa - Terapeuta Holística",
-    siteUrl: "https://www.susipessoa.com.br",
-    image: `src/assets/images/susi.jpg`,
+    url: "https://www.susipessoa.com.br",
+    image: `/images/susiMain.png`,
   },
   plugins: [
     {
