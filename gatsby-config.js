@@ -37,7 +37,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sitemap`,
+    //`gatsby-plugin-sitemap`,
     // Needed for dynamic images
     {
       resolve: "gatsby-plugin-firebase",
