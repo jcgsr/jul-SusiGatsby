@@ -25,15 +25,14 @@ const prices = [
   },
   {
     id: 3,
-    title: "Ayurveda**",
+    title: "Ayurveda",
     m1: "Massagem Única:",
     p1: "R$ 120",
     m2: "Pacote (4 sessões):",
     p2: "R$ 380",
     p3: "R$ 140",
     p4: "R$ 480",
-    includes:
-      "**Inclui: 🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Pedras quentes (algumas sessões, conforme necessidade) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente",
+    includes: "",
   },
   {
     id: 4,
