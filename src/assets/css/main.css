@@ -297,6 +297,11 @@ textarea:focus {
 .includes button {
   background-color: transparent;
 }
+.amazon {
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+}
 
 /* MY NAVBAR */
 nav {

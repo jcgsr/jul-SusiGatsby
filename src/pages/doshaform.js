@@ -140,6 +140,47 @@ const Doshas = () => {
       />
       <h1>Doshas</h1>
       <h3>Bem-vindo(a)!</h3>
+      <section className="amazon">
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07MGRB5VW&asins=B07MGRB5VW&linkId=69c251f70c474bc6851bbb3231bf433a&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07C89VHF4&asins=B07C89VHF4&linkId=f677b55d82369834d7104cb04d45e404&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B087Y36J2C&asins=B087Y36J2C&linkId=52b53543258c70340162fbb0c3fa6263&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+      </section>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
