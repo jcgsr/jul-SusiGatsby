@@ -2157,7 +2157,48 @@ const Doshas = () => {
             gravar
           </button>
         </div>
-      </form>
+      </form>{" "}
+      <section className="amazon">
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07KJTQ2KJ&asins=B07KJTQ2KJ&linkId=0fbf11a3881eb290aed540e95eeb4aa7&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07KYV4M5D&asins=B07KYV4M5D&linkId=daff4e320134debd45cd364d3d1b3dad&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07C9V9M37&asins=B07C9V9M37&linkId=dd2ad3868b5590f57147d64e0fa73793&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+      </section>
     </Layout>
   );
 };

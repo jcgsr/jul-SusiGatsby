@@ -299,8 +299,7 @@ textarea:focus {
 }
 .amazon {
   display: flex;
-  margin: 0 auto;
-  text-align: center;
+  flex-wrap: wrap;
 }
 
 /* MY NAVBAR */
