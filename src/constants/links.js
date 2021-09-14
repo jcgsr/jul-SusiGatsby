@@ -19,7 +19,7 @@ const links = [
   {
     id: 4,
     url: "/about",
-    text: "sobre mim",
+    text: "sobre",
   },
   {
     id: 5,
@@ -33,8 +33,8 @@ const links = [
   },
   {
     id: 7,
-    url: "/dicas",
-    text: "dicas de autocuidado",
+    url: "/susi-plus",
+    text: "susi+",
   },
 ];
 
