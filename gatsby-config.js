@@ -14,7 +14,7 @@ module.exports = {
     titleTemplate: "%s | Susi Pessôa",
     description: "Site de Susi Pessôa - Terapeuta Holística",
     url: "https://www.susipessoa.com.br",
-    image: `/images/susiMain.png`,
+    image: `/images/susi.jpg`,
   },
   plugins: [
     {
