@@ -22,7 +22,16 @@ const Login = () => {
       const result = await firebase
         .auth()
         .signInWithEmailAndPassword(email, password);
-      setIsLogged(true);
+
+      const susiEmail = "susipessoa@hotmail.com";
+      if (email === susiEmail) {
+        alert("É Susi");
+        setIsLogged(true);
+      } else {
+        alert("Não é Susi");
+        setIsLogged(false);
+        navigate("/");
+      }
       console.log(result);
     } catch (error) {
       console.log(error);
@@ -50,14 +59,14 @@ const Login = () => {
         <main className="container">
           <h2>Login</h2>
           <form className="form">
-            <label htmlFor="email">email</label>
+            <label htmlFor="email">e-mail</label>
             <input
               type="text"
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
             <br />
-            <label htmlFor="email">password</label>
+            <label htmlFor="password">Senha</label>
             <input
               type="password"
               value={password}

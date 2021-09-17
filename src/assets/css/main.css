@@ -307,6 +307,10 @@ textarea:focus {
 .card iframe {
   min-width: 100%;
 }
+.aviso {
+  text-align: center;
+  margin: 0 auto;
+}
 /* MY NAVBAR */
 nav {
   /* background: var(--clr-white); */
@@ -533,11 +537,6 @@ small,
 .text-small {
   font-size: var(--smallText);
 }
-/* 
-ul {
-  padding: 0;
-  list-style-type: none;
-} */
 a {
   text-decoration: none;
 }
@@ -740,39 +739,6 @@ form > *:last-child {
   border-top-color: var(--clr-primary-5);
   animation: spinner 0.6s linear infinite;
 }
-/*#########*/
-/* END OF GLOBALS */
-/*#########*/
-
-/*#########*/
-/* Navbar */
-/*#########*/
-/* .navbar {
-  background-color: var(--primary);
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-  height: 4rem;
-  padding: 1rem;
-}
-
-.navbar ul li a::after {
-  transition: 0.7s;
-}
-
-.btn-menu {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .btn-menu {
-    display: flex;
-  }
-  .nav-links {
-    display: none;
-  }
-}
- */
 /*#########*/
 /* Footer */
 /*#########*/

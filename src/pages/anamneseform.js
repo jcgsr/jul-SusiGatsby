@@ -14,6 +14,8 @@ const Anamnese = () => {
   const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
   const [idAnamnese, setIdAnamnese] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   // PERGUNTAS
   const [alergias, setAlergias] = useState("");
@@ -88,6 +90,30 @@ const Anamnese = () => {
     setQual("");
     setAnotacoes("");
   };
+  const handleSignUp = async e => {
+    e.preventDefault();
+    await firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        alert(`SUCESSO: ${email} cadastrado!`);
+        setEmail("");
+        setPassword("");
+      })
+      .catch(error => {
+        if (
+          error.code === "auth/weak-password" ||
+          error.code === "auth/invalid-password"
+        ) {
+          alert("ERRO: Senha deve ter pelo menos 6 caracteresi.");
+        } else if (error.code === "auth/email-already-in-use") {
+          alert("ERRO: E-mail já cadastrado.");
+        } else if (error.code === "auth/invalid-email") {
+          alert("ERRO: E-mail inválido.");
+        }
+      });
+  };
+
   return (
     <Layout>
       <SEO
@@ -95,11 +121,35 @@ const Anamnese = () => {
         description="Página para preenchimento da Anamnese"
       />
       <h1>Anamnese</h1>
-      <h3>Bem-vindo(a)!</h3>
-      <h5>
+      <h3>Bem-vindo(a), {name}!</h3>
+      <h4>Cadastro</h4>
+      <p className="aviso">
+        Para a sua segurança, seus dados só serão enviados após a realização do
+        cadastro abaixo.
+      </p>
+      <form className="form">
+        <label htmlFor="email">e-mail</label>
+        <input
+          type="text"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
+        <br />
+        <label htmlFor="password">senha</label>
+        <input
+          type="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
+        <br />
+        <button id="login" onClick={handleSignUp}>
+          cadastrar
+        </button>
+      </form>{" "}
+      <p className="aviso">
         Para um atendimento seguro e mais eficaz, preciso saber algumas questões
         de saúde.
-      </h5>
+      </p>{" "}
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
@@ -262,7 +312,7 @@ const Anamnese = () => {
           </div>
         </div>
         <button className="gravar" type="submit">
-          gravar
+          enviar
         </button>
       </form>
     </Layout>

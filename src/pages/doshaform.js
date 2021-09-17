@@ -14,6 +14,8 @@ const Doshas = () => {
   const [profession, setProfession] = useState("");
   const [phone, setPhone] = useState("");
   const [idDoshas, setIdDoshas] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   // VATA
   const [v1, setV1] = useState(0);
   const [v2, setV2] = useState(0);
@@ -132,6 +134,30 @@ const Doshas = () => {
     setSumK("");
   };
 
+  const handleSignUp = async e => {
+    e.preventDefault();
+    await firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        alert(`${email} cadastrado com sucesso`);
+        setEmail("");
+        setPassword("");
+      })
+      .catch(error => {
+        if (
+          error.code === "auth/weak-password" ||
+          error.code === "auth/invalid-password"
+        ) {
+          alert("Senha deve ter pelo menos 6 caracteres");
+        } else if (error.code === "auth/email-already-exists") {
+          alert("E-mail já cadastrado");
+        } else if (error.code === "auth/invalid-email") {
+          alert("E-mail inválido");
+        }
+      });
+  };
+
   return (
     <Layout>
       <SEO
@@ -139,7 +165,31 @@ const Doshas = () => {
         description="Página para preenchimento do formulário da Auyrveda"
       />
       <h1>Doshas</h1>
-      <h3>Bem-vindo(a)!</h3>
+      <h3>Bem-vindo(a), {name}!</h3>
+      <h4>Cadastro</h4>
+      <p className="aviso">
+        Para a sua segurança, seus dados só serão enviados após a realização do
+        cadastro abaixo.
+      </p>
+      <form className="form">
+        <label htmlFor="email">e-mail</label>
+        <input
+          type="text"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
+        <br />
+        <label htmlFor="password">senha</label>
+        <input
+          type="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
+        <br />
+        <button id="login" onClick={handleSignUp}>
+          cadastrar
+        </button>
+      </form>
       <section className="amazon">
         <iframe
           style={{
@@ -2154,7 +2204,7 @@ const Doshas = () => {
             className="gravar"
             type="submit"
           >
-            gravar
+            enviar
           </button>
         </div>
       </form>{" "}
