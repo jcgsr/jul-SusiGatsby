@@ -204,7 +204,7 @@ textarea:focus {
   margin: 0 auto;
   padding: 2rem;
   text-align: left;
-  width: 50%;
+  width: 70%;
   box-shadow: var(--shadow-2);
 }
 @media screen and (max-width: 768px) {
@@ -300,11 +300,9 @@ textarea:focus {
 .amazon {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
-.card ol li {
-  margin-left: 1rem;
-}
-.card iframe {
+.about-card iframe {
   min-width: 100%;
 }
 .aviso {
@@ -601,7 +599,7 @@ textarea {
 }
 hr {
   border-top: 1px solid var(--grey-600);
-  margin-top: 1rem;
+  margin: 1rem;
 }
 
 button,

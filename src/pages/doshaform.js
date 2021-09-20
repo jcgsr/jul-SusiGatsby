@@ -231,6 +231,7 @@ const Doshas = () => {
           src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B087Y36J2C&asins=B087Y36J2C&linkId=52b53543258c70340162fbb0c3fa6263&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
         ></iframe>
       </section>
+      <hr />
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"

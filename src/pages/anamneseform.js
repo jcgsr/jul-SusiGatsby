@@ -146,6 +146,48 @@ const Anamnese = () => {
           cadastrar
         </button>
       </form>{" "}
+      <hr />
+      <section className="amazon">
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07PDHSJ1H&asins=B07PDHSJ1H&linkId=494f186f8112c90dd420d257604da889&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B08N2GHTN6&asins=B08N2GHTN6&linkId=5267f8867dc21b11429d962501a2195b&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07DKFLT3S&asins=B07DKFLT3S&linkId=c269f48cd487fe9786d30c18a0d05fc7&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+      </section>
       <p className="aviso">
         Para um atendimento seguro e mais eficaz, preciso saber algumas questões
         de saúde.
@@ -315,6 +357,47 @@ const Anamnese = () => {
           enviar
         </button>
       </form>
+      <section className="amazon">
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07FB8C83X&asins=B07FB8C83X&linkId=fcb4c1719cd69293330849a95a964513&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07XL916B1&asins=B07XL916B1&linkId=0322612800920901536a25263a7dc7be&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+        <iframe
+          style={{
+            width: "120px",
+            height: "240px",
+            textAlign: "center",
+            margin: "0 auto",
+          }}
+          marginwidth="0"
+          marginheight="0"
+          scrolling="no"
+          frameborder="0"
+          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07FN7VP5Y&asins=B07FN7VP5Y&linkId=47500a44a2130ef2d230fac6469ec75f&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
+        ></iframe>
+      </section>
     </Layout>
   );
 };
