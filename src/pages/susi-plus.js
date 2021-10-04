@@ -73,6 +73,34 @@ const Dicas = () => {
             para um tratamento caso necessário.
           </p>
         </article>
+        <hr />
+        <article>
+          <iframe
+            height="315"
+            src="https://www.youtube.com/embed/Q-BRIWX_YOw"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <p>
+            Aprenda uma técnica simples de automassagem para aliviar a tensão e
+            as dores na região do trapézio superior, toda a região dos ombros e
+            pescoço.
+          </p>
+          <p>
+            É interessante aliar outras técnicas e hábitos para resultados mais
+            eficazes, a exemplo da RESPIRAÇÃO (LINK PARA ESSA TÉCNICA NO FINAL)
+            e alongamentos. - Nosso corpo é um só, todas as suas funções estão
+            interligadas, dentro de uma visão integral do ser. E cada indivíduo
+            é único, sendo que cada técnica pode se adequar mais ou menos a
+            depender de sua realidade.{" "}
+          </p>
+          <p>
+            ESSAS INFORMAÇÕES NÃO SUBSTITUEM TRATAMENTO COM PROFISSIONAL
+            HABILITADO!
+          </p>
+        </article>
       </section>
     </Layout>
   );
