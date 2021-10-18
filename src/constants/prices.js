@@ -91,6 +91,16 @@ const prices = [
     p3: "R$ 90",
     p4: "R$ 320",
     includes: "",
+  },{
+    id: 9,
+    title: "Massagens Especiais: Pedras Quentes • Velas • Pindas Chinesas",
+    m1: "Sessão Única:",
+    p1: "R$ 110",
+    m2: "Pacote (4 sessões):",
+    p2: "R$ 360",
+    p3: "R$ 130",
+    p4: "R$ 440",
+    includes: "",
   },
 ];
 
