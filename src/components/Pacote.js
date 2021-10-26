@@ -49,7 +49,7 @@ const Pacote = () => {
   const showPacotes = () => {
     firebase
       .firestore()
-      .collection("pacotes")
+      .collection("pacotes").orderBy("cliente")
       .onSnapshot(doc => {
         let meusPacotes = [];
         doc.forEach(item => {
