@@ -97,7 +97,7 @@ const prices = [
     m1: "Sessão Única:",
     p1: "R$ 110",
     m2: "Pacote (4 sessões):",
-    p2: "R$ 360",
+    p2: "R$ 380",
     p3: "R$ 130",
     p4: "R$ 440",
     includes: "",
