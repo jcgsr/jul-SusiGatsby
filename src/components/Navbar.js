@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
-import susilogo from "../assets/images/susilogo3.svg";
+import susilogo from "../assets/images/logoCorel.png";
 
 import links from "../constants/links.js";
 
@@ -18,7 +18,7 @@ export default function NavBar() {
               id="logo"
               src={susilogo}
               alt="logo de Susi"
-              style={{ height: "1.5rem" }}
+              style={{ height: "2.5rem" }}
             />
           </Link>
           <button
