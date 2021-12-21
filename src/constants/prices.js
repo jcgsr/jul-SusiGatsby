@@ -10,7 +10,7 @@ const prices = [
     p3: "R$ 120",
     p4: "R$ 400",
     includes:
-      "**Inclui: 🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Pedras quentes (algumas sessões, conforme necessidade) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente",
+      "**Inclui: 🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente",
   },
   {
     id: 2,
