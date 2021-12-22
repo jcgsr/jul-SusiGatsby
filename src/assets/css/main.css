@@ -159,7 +159,7 @@ textarea:focus {
   }
 }
 .prices {
-  display: grid;
+  /*display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   background-color: var(--sixth);
   color: var(--primary);
@@ -169,7 +169,15 @@ textarea:focus {
   padding: 1rem;
   min-height: 100vh;
   box-shadow: var(--shadow-2);
+  text-align: center;*/
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-2);
+  background-color: var(--sixth);
+  color: var(--primary);
+  min-height: 100vh;
   text-align: center;
+  margin: 1rem;
 }
 .price {
   background: var(--secondary);
@@ -197,6 +205,7 @@ textarea:focus {
   .card-price {
     width: 90%;
   }
+
 }
 .about-card {
   background-color: var(--sixth);
@@ -207,6 +216,7 @@ textarea:focus {
   width: 70%;
   box-shadow: var(--shadow-2);
 }
+
 @media screen and (max-width: 768px) {
   .about-card {
     width: 90%;
@@ -236,7 +246,7 @@ textarea:focus {
   color: var(--bgColor);
 }
 .price-value {
-  font-size: 2rem;
+  /*font-size: 2rem;*/
   font-weight: bold;
   color: yellow;
   text-shadow: 1px 1px var(--primary);
@@ -296,6 +306,13 @@ textarea:focus {
 }
 .includes button {
   background-color: transparent;
+}
+#inclui p {
+  font-size: smaller;
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding: .5rem;
 }
 .amazon {
   display: flex;
@@ -407,8 +424,14 @@ td {
   border: 1px solid var(--primary);
   padding: 0.5rem;
   text-align: center;
-  margin: 0 auto;
+  margin: .5rem auto;
   /* color: red; */
+}
+@media only screen and (max-width: 456px) {
+  table, th, td {
+    font-size: smaller;
+    padding: .2rem;
+  }
 }
 /* ###########  */
 
