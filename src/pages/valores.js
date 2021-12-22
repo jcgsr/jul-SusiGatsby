@@ -28,7 +28,7 @@ const Valores = () => {
             <th>inclui</th>
           </tr>
           <tr>
-            <td><strong>Relaxante</strong></td>
+            <td><strong>Massagem Terapêutica</strong></td>
             <td>R$ 100</td>
             <td>R$ 340</td>
             <td>R$ 130</td>
@@ -36,7 +36,7 @@ const Valores = () => {
             <td>*</td>
           </tr> 
           <tr>
-            <td><strong>Drenagem</strong></td>
+            <td><strong>Drenagem Linfática</strong></td>
             <td>R$ 100</td>
             <td>R$ 340</td>
             <td>R$ 130</td>
@@ -52,7 +52,7 @@ const Valores = () => {
             <td>**</td>
           </tr>
           <tr>
-            <td><strong>Ayurveda</strong></td>
+            <td><strong>Massagem Ayurveda</strong></td>
             <td>R$ 130</td>
             <td>R$ 400</td>
             <td>R$ 150</td>
@@ -60,7 +60,7 @@ const Valores = () => {
             <td></td>
           </tr> 
           <tr>
-            <td><strong>Pedras Quentes • Velas • Pindas Chinesas</strong></td>
+            <td><strong>Massagens: Pedras Quentes • Velas • Pindas Chinesas</strong></td>
             <td>R$ 120</td>
             <td>R$ 380</td>
             <td>-</td>
@@ -102,16 +102,16 @@ const Valores = () => {
         </table>
         <section id="inclui">
         <p>
-          * 🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente
+          * A Massagem Terapêutica inclui: 🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente
         </p>
         <p>
-          ** 🌷 Suco e chá Detox 🌷 Manta térmica 🌷 Argila (opcional) 🌷 Óleos específicos com ativos desintoxicantes, estimulantes do metabolismo e do sistema linfático e circulatório, etc.🌷 Massagem no corpo todo (dura em média 1h30)
+          ** A Lipomodelagem Vegana inclui: 🌷 Suco e chá Detox 🌷 Manta térmica 🌷 Argila (opcional) 🌷 Óleos específicos com ativos desintoxicantes, estimulantes do metabolismo e do sistema linfático e circulatório, etc.🌷 Massagem no corpo todo (dura em média 1h20)
         </p>
         <p>
-          *** 🌷Análise dos Chakras com o pêndulo 🌷 Aromaterapia 🌷Cristais
+          *** O Reiki inclui: 🌷Análise dos Chakras com o pêndulo 🌷 Aromaterapia 🌷Cristais
         </p>
         <p>
-          **** 🌷 A consulta inclui análise da situação, determinação da abordagem Terapêutica e aplicação com toque terapêutico e inalação. Por exemplo, massagem nas mãos e nos pés. Também está incluso a consulta de retorno. 🌷 As formulações que serão utilizadas no tratamento não estão inclusas nesse valor. Por exemplo: inalador pessoal, perfume terapêutico, óleo corporal e/ou facial e spray.
+          **** A Aromaterapia inclui: 🌷 A consulta inclui análise da situação, determinação da abordagem Terapêutica e aplicação com toque terapêutico e inalação. Por exemplo, massagem nas mãos e nos pés. Também está incluso a consulta de retorno. 🌷 As formulações que serão utilizadas no tratamento não estão inclusas nesse valor. Por exemplo: inalador pessoal, perfume terapêutico, óleo corporal e/ou facial e spray.
         </p>
         </section>
       </section>
