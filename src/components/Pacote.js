@@ -132,7 +132,7 @@ const Pacote = () => {
         sessao4: sessao4,
         sessao5: sessao5,
       })
-      .then(() => console.log("arquivado"))
+      .then(() => alert("Pacote Arquivado"))
       .catch(e => {
         console.log("erro: " + e);
       });
