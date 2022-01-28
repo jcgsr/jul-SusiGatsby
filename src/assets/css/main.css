@@ -205,7 +205,6 @@ textarea:focus {
   .card-price {
     width: 90%;
   }
-
 }
 .about-card {
   background-color: var(--sixth);
@@ -312,7 +311,7 @@ textarea:focus {
   text-align: left;
   margin: 0 auto;
   margin-bottom: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 .amazon {
   display: flex;
@@ -424,13 +423,15 @@ td {
   border: 1px solid var(--primary);
   padding: 0.5rem;
   text-align: center;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
   /* color: red; */
 }
 @media only screen and (max-width: 456px) {
-  table, th, td {
+  table,
+  th,
+  td {
     font-size: smaller;
-    padding: .2rem;
+    padding: 0.2rem;
   }
 }
 /* ###########  */
@@ -837,4 +838,8 @@ form > *:last-child {
   .about-img {
     height: 100%;
   }
+}
+.controle {
+  font-size: smaller;
+  margin-bottom: 0.5rem;
 }

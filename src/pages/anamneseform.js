@@ -20,23 +20,46 @@ const Anamnese = () => {
   // PERGUNTAS
   const [alergias, setAlergias] = useState("");
   const [hipertensao, setHipertensao] = useState("");
+  const [hipertensaoMedicacao, setHipertensaoMedicacao] = useState("");
+  const [hipertensaoControlada, setHipertensaoControlada] = useState("");
   const [diabetes, setDiabetes] = useState("");
+  const [diabetesMedicacao, setDiabetesMedicacao] = useState("");
+  const [diabetesControlada, setDiabetesControlada] = useState("");
   const [marcapasso, setMarcapasso] = useState("");
   const [pinos, setPinos] = useState("");
   const [hernia, setHernia] = useState("");
   const [trombose, setTrombose] = useState("");
+  const [tromboseTempo, setTromboseTempo] = useState("");
   const [cancer, setCancer] = useState("");
+  const [cancerTempo, setCancerTempo] = useState("");
   const [hiv, setHIV] = useState("");
+  const [diu, setDiu] = useState("");
   const [gravidez, setGravidez] = useState("");
   const [meses, setMeses] = useState(0);
+  const [gestacaoNormal, setGestacaoNormal] = useState("");
+  const [arteria, setArteria] = useState("");
+  const [recMedica, setRecMedica] = useState("");
   const [gripe, setGripe] = useState("");
+  const [covid, setCovid] = useState("");
+  const [covidTempo, setCovidTempo] = useState("");
+  const [vacina, setVacina] = useState("");
+  const [vacinaTempo, setVacinaTempo] = useState("");
   const [depressao, setDepressao] = useState("");
   const [ansiedade, setAnsiedade] = useState("");
   const [dores, setDores] = useState("");
+  const [inflamacao, setInflamacao] = useState("");
+  const [inflamacaoTipo, setInflamacaoTipo] = useState("");
+  const [hipertireoide, setHipertireoide] = useState("");
+  const [asma, setAsma] = useState("");
+  const [cardio, setCardio] = useState("");
+  const [cirurgia, setCirurgia] = useState("");
+  const [cirurgiaTipo, setCirurgiaTipo] = useState("");
+  const [cirurgiaTempo, setCirurgiaTempo] = useState("");
   const [corpo, setCorpo] = useState("");
   const [outraQuestao, setOutraQuestao] = useState("");
   const [qual, setQual] = useState("");
   const [anotacoes, setAnotacoes] = useState("");
+  const [razao, setRazao] = useState("");
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -50,23 +73,46 @@ const Anamnese = () => {
         telefone: phone,
         alergia: alergias,
         hipertensao: hipertensao,
+        hipertensaoMedicacao: hipertensaoMedicacao,
+        hipertensaoControlada: hipertensaoControlada,
         diabetes: diabetes,
+        diabetesMedicacao: diabetesMedicacao,
+        diabetesControlada: diabetesControlada,
         marcapasso: marcapasso,
         pinos: pinos,
         hernia: hernia,
         trombose: trombose,
+        tromboseTempo: tromboseTempo,
         cancer: cancer,
+        cancerTempo: cancerTempo,
         hiv: hiv,
+        diu: diu,
         gravidez: gravidez,
+        gestacaoNormal: gestacaoNormal,
+        arteria: arteria,
+        recMedica: recMedica,
         meses: meses,
         gripe: gripe,
+        covid: covid,
+        covidTempo: covidTempo,
+        vacina: vacina,
+        vacinaTempo: vacinaTempo,
         depressao: depressao,
         ansiedade: ansiedade,
         dores: dores,
+        inflamacao: inflamacao,
+        inflamacaoTipo: inflamacaoTipo,
+        hipertireoide: hipertireoide,
+        asma: asma,
+        cardio: cardio,
         corpo: corpo,
+        cirurgia: cirurgia,
+        cirurgiaTipo: cirurgiaTipo,
+        cirurgiaTempo: cirurgiaTempo,
         outraQuestao: outraQuestao,
         qual: qual,
         anotacoes: anotacoes,
+        razao: razao,
       })
       .then(() => {
         handleReset();
@@ -86,6 +132,8 @@ const Anamnese = () => {
     setAddress("");
     setProfession("");
     setPhone("");
+    setCancerTempo("");
+    setTromboseTempo("");
     setCorpo("");
     setQual("");
     setAnotacoes("");
@@ -147,47 +195,6 @@ const Anamnese = () => {
         </button>
       </form>{" "}
       <hr />
-      <section className="amazon">
-        <iframe
-          style={{
-            width: "120px",
-            height: "240px",
-            textAlign: "center",
-            margin: "0 auto",
-          }}
-          marginwidth="0"
-          marginheight="0"
-          scrolling="no"
-          frameborder="0"
-          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07PDHSJ1H&asins=B07PDHSJ1H&linkId=494f186f8112c90dd420d257604da889&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
-        ></iframe>
-        <iframe
-          style={{
-            width: "120px",
-            height: "240px",
-            textAlign: "center",
-            margin: "0 auto",
-          }}
-          marginwidth="0"
-          marginheight="0"
-          scrolling="no"
-          frameborder="0"
-          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B08N2GHTN6&asins=B08N2GHTN6&linkId=5267f8867dc21b11429d962501a2195b&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
-        ></iframe>
-        <iframe
-          style={{
-            width: "120px",
-            height: "240px",
-            textAlign: "center",
-            margin: "0 auto",
-          }}
-          marginwidth="0"
-          marginheight="0"
-          scrolling="no"
-          frameborder="0"
-          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07DKFLT3S&asins=B07DKFLT3S&linkId=c269f48cd487fe9786d30c18a0d05fc7&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
-        ></iframe>
-      </section>
       <p className="aviso">
         Para um atendimento seguro e mais eficaz, preciso saber algumas questões
         de saúde.
@@ -242,14 +249,60 @@ const Anamnese = () => {
           <div onChange={e => setHipertensao(e.target.value)}>
             <p>2. Hipertensão?</p>
             <input type="radio" name="hipertensao" value="sim" />
-            <label htmlFor="hipertensao">Sim</label> <br />
+            <label htmlFor="hipertensao">Sim</label>
+            <div onChange={e => setHipertensaoControlada(e.target.value)}>
+              <span className="controle">→ Está controlada?</span>{" "}
+              <input type="radio" name="hipertensaoControlada" value="sim" />
+              <label className="controle" htmlFor="hipertensaoControlada">
+                Sim
+              </label>
+              <input type="radio" name="hipertensaoControlada" value="não" />
+              <label className="controle" htmlFor="hipertensaoControlada">
+                Não
+              </label>
+            </div>
+            <div onChange={e => setHipertensaoMedicacao(e.target.value)}>
+              <span className="controle">→ Toma medicação?</span>
+              {""}
+              <input type="radio" name="hipertensaoMedicacao" value="sim" />
+              <label className="controle" htmlFor="hipertensaoMedicacao">
+                Sim
+              </label>
+              <input type="radio" name="hipertensaoMedicacao" value="não" />
+              <label className="controle" htmlFor="hipertensaoMedicacao">
+                Não
+              </label>
+            </div>
             <input type="radio" name="hipertensao" value="não" />
             <label htmlFor="hipertensao">Não</label>
           </div>
           <div onChange={e => setDiabetes(e.target.value)}>
             <p>3.Diabetes?</p>
             <input type="radio" name="diabetes" value="sim" />
-            <label htmlFor="diabetes">Sim</label> <br />
+            <label htmlFor="diabetes">Sim</label>{" "}
+            <div onChange={e => setDiabetesControlada(e.target.value)}>
+              <span className="controle">→ Está controlada?</span>{" "}
+              <input type="radio" name="diabetesControlada" value="sim" />
+              <label className="controle" htmlFor="diabetesControlada">
+                Sim
+              </label>
+              <input type="radio" name="diabetesControlada" value="não" />
+              <label className="controle" htmlFor="diabetesControlada">
+                Não
+              </label>
+            </div>
+            <div onChange={e => setDiabetesMedicacao(e.target.value)}>
+              <span className="controle">→ Toma medicação?</span>
+              {""}
+              <input type="radio" name="diabetesMedicacao" value="sim" />
+              <label className="controle" htmlFor="diabetesMedicacao">
+                Sim
+              </label>
+              <input type="radio" name="diabetesMedicacao" value="não" />
+              <label className="controle" htmlFor="diabetesMedicacao">
+                Não
+              </label>
+            </div>
             <input type="radio" name="diabetes" value="não" />
             <label htmlFor="diabetes">Não</label>
           </div>
@@ -275,18 +328,34 @@ const Anamnese = () => {
             <label htmlFor="hernia">Não</label>
           </div>
           <div onChange={e => setTrombose(e.target.value)}>
-            <p>7. Trombose?</p>
+            <p>7. Trombose (atual ou anterior)?</p>
             <input type="radio" name="trombose" value="sim" />
             <label htmlFor="trombose">Sim</label> <br />
             <input type="radio" name="trombose" value="não" />
             <label htmlFor="trombose">Não</label>
+            <div className="controle">
+              <p>Se anterior, há quanto tempo teve?</p>
+              <input
+                type="text"
+                value={tromboseTempo}
+                onChange={e => setTromboseTempo(e.target.value)}
+              />
+            </div>
           </div>
           <div onChange={e => setCancer(e.target.value)}>
-            <p>8. Câncer?</p>
+            <p>8. Câncer (atual ou anterior)? </p>
             <input type="radio" name="cancer" value="sim" />
             <label htmlFor="cancer">Sim</label> <br />
             <input type="radio" name="cancer" value="não" />
             <label htmlFor="cancer">Não</label>
+            <div className="controle">
+              <p>Se anterior, há quanto tempo se curou?</p>
+              <input
+                type="text"
+                value={cancerTempo}
+                onChange={e => setCancerTempo(e.target.value)}
+              />
+            </div>
           </div>
           <div onChange={e => setHIV(e.target.value)}>
             <p>9. HIV?</p>
@@ -295,51 +364,188 @@ const Anamnese = () => {
             <input type="radio" name="hiv" value="não" />
             <label htmlFor="hiv">Não</label>
           </div>
+          <div onChange={e => setDiu(e.target.value)}>
+            <p>10. Usa DIU ou diafragma?</p>
+            <input type="radio" name="diu" value="sim" />
+            <label htmlFor="diu">Sim</label> <br />
+            <input type="radio" name="diu" value="não" />
+            <label htmlFor="diu">Não</label>
+          </div>
           <div onChange={e => setGravidez(e.target.value)}>
-            <p>10. Gravidez?</p>
+            <p>11. Gravidez?</p>
             <input type="radio" name="gravidez" value="sim" />
             <label htmlFor="gravidez">Sim</label> <br />
             <input type="radio" name="gravidez" value="não" />
             <label htmlFor="gravidez">Não</label>
-            <div onChange={e => setMeses(e.target.value)}>
+            <div className="controle" onChange={e => setMeses(e.target.value)}>
               <label htmlFor="meses">Quantos meses</label>
               <input type="number" value={meses} />
             </div>
+            <div onChange={e => setGestacaoNormal(e.target.value)}>
+              <span className="controle">→ Gestação normal?</span>{" "}
+              <input type="radio" name="gestacaoNormal" value="sim" />
+              <label className="controle" htmlFor="gestacaoNormal">
+                Sim
+              </label>
+              <input type="radio" name="gestacaoNormal" value="não" />
+              <label className="controle" htmlFor="gestacaoNormal">
+                Não
+              </label>
+            </div>
+            <div onChange={e => setArteria(e.target.value)}>
+              <span className="controle">→ Problemas de pressão arterial?</span>{" "}
+              <input type="radio" name="arteria" value="sim" />
+              <label className="controle" htmlFor="arteria">
+                Sim
+              </label>
+              <input type="radio" name="arteria" value="não" />
+              <label className="controle" htmlFor="arteria">
+                Não
+              </label>
+            </div>
+            <div onChange={e => setRecMedica(e.target.value)}>
+              <span className="controle">→ Recomendação médica?</span>
+              <input
+                type="text"
+                value={recMedica}
+                onChange={e => setRecMedica(e.target.value)}
+              />
+            </div>
           </div>
           <div onChange={e => setGripe(e.target.value)}>
-            <p>11. Gripe ou resfriado?</p>
+            <p>12. Gripe ou resfriado?</p>
             <input type="radio" name="gripe" value="sim" />
             <label htmlFor="gripe">Sim</label> <br />
             <input type="radio" name="gripe" value="não" />
             <label htmlFor="gripe">Não</label>
           </div>
+          <div onChange={e => setCovid(e.target.value)}>
+            <p>13. Teve COVID?</p>
+            <input type="radio" name="covid" value="sim" />
+            <label htmlFor="covid">Sim</label> <br />
+            <input type="radio" name="covid" value="não" />
+            <label htmlFor="covid">Não</label>
+            <div
+              className="controle"
+              onChange={e => setCovidTempo(e.target.value)}
+            >
+              <label>Há quanto tempo?</label>
+              <input
+                type="text"
+                value={covidTempo}
+                onChange={e => setCovidTempo(e.target.value)}
+              />
+            </div>
+          </div>
+          <div onChange={e => setVacina(e.target.value)}>
+            <p>14. Tomou vacina?</p>
+            <input type="radio" name="vacina" value="sim" />
+            <label htmlFor="vacina">Sim</label> <br />
+            <input type="radio" name="vacina" value="não" />
+            <label htmlFor="vacina">Não</label>
+            <div
+              className="controle"
+              onChange={e => setVacinaTempo(e.target.value)}
+            >
+              <label>Há quanto tempo?</label>
+              <input
+                type="text"
+                value={vacinaTempo}
+                onChange={e => setVacinaTempo(e.target.value)}
+              />
+            </div>
+          </div>
           <div onChange={e => setDepressao(e.target.value)}>
-            <p>12. Depressão?</p>
+            <p>15. Depressão?</p>
             <input type="radio" name="depressao" value="sim" />
             <label htmlFor="depressao">Sim</label> <br />
             <input type="radio" name="depressao" value="não" />
             <label htmlFor="depressao">Não</label>
           </div>
           <div onChange={e => setAnsiedade(e.target.value)}>
-            <p>13. Ansiedade?</p>
+            <p>16. Ansiedade?</p>
             <input type="radio" name="ansiedade" value="sim" />
             <label htmlFor="ansiedade">Sim</label> <br />
             <input type="radio" name="ansiedade" value="não" />
             <label htmlFor="ansiedade">Não</label>
           </div>
           <div onChange={e => setDores(e.target.value)}>
-            <p>14. Dores?</p>
+            <p>17. Dores?</p>
             <input type="radio" name="dores" value="sim" />
             <label htmlFor="dores">Sim</label> <br />
             <input type="radio" name="dores" value="não" />
             <label htmlFor="dores">Não</label>
-            <div onChange={e => setCorpo(e.target.value)}>
-              <label htmlFor="corpo">Local do corpo</label>
+            <div className="controle" onChange={e => setCorpo(e.target.value)}>
+              <label htmlFor="corpo">Local do corpo:</label>
               <input type="text" value={corpo} />
             </div>
           </div>
+          <div onChange={e => setInflamacao(e.target.value)}>
+            <p>18. Alguma inflamação crônica ou aguda?</p>
+            <input type="radio" name="inflamacao" value="sim" />
+            <label htmlFor="inflamacao">Sim</label> <br />
+            <input type="radio" name="inflamacao" value="não" />
+            <label htmlFor="inflamacao">Não</label>
+            <div
+              className="controle"
+              onChange={e => setInflamacaoTipo(e.target.value)}
+            >
+              <label htmlFor="inflamacaoTipo">De que tipo:</label>
+              <input type="text" value={inflamacaoTipo} />
+            </div>
+          </div>
+          <div onChange={e => setHipertireoide(e.target.value)}>
+            <p>19. Hipertireoidismo?</p>
+            <input type="radio" name="hipertireoide" value="sim" />
+            <label htmlFor="hipertireoide">Sim</label> <br />
+            <input type="radio" name="hipertireoide" value="não" />
+            <label htmlFor="hipertireoide">Não</label>
+          </div>
+          <div onChange={e => setAsma(e.target.value)}>
+            <p>20. Asma brônquica?</p>
+            <input type="radio" name="asma" value="sim" />
+            <label htmlFor="asma">Sim</label> <br />
+            <input type="radio" name="asma" value="não" />
+            <label htmlFor="asma">Não</label>
+          </div>
+          <div onChange={e => setCardio(e.target.value)}>
+            <p>21. Insuficiência cardíaca?</p>
+            <input type="radio" name="cardio" value="sim" />
+            <label htmlFor="cardio">Sim</label> <br />
+            <input type="radio" name="cardio" value="não" />
+            <label htmlFor="cardio">Não</label>
+          </div>
+          <div onChange={e => setCirurgia(e.target.value)}>
+            <p>22. Fez alguma cirurgia?</p>
+            <input type="radio" name="cirurgia" value="sim" />
+            <label htmlFor="cirurgia">Sim</label> <br />
+            <input type="radio" name="cirurgia" value="não" />
+            <label htmlFor="cirurgia">Não</label>
+            <div
+              className="controle"
+              onChange={e => setCirurgiaTipo(e.target.value)}
+            >
+              <label>De que tipo?</label>
+              <input
+                type="text"
+                value={cirurgiaTipo}
+                onChange={e => setCirurgiaTipo(e.target.value)}
+              />
+            </div>
+            <div
+              className="controle"
+              onChange={e => setCirurgiaTempo(e.target.value)}
+            >
+              <label>Há quanto tempo?</label>
+              <input
+                type="text"
+                value={cirurgiaTempo}
+                onChange={e => setCirurgiaTempo(e.target.value)}
+              />
+            </div>
+          </div>
           <div onChange={e => setOutraQuestao(e.target.value)}>
-            <p>15. Alguma outra questão de saúde relevante para considerar?</p>
+            <p>23. Alguma outra questão de saúde relevante para considerar?</p>
             <input type="radio" name="questão" value="sim" />
             <label htmlFor="questão">Sim</label> <br />
             <input type="radio" name="questão" value="não" />
@@ -348,56 +554,20 @@ const Anamnese = () => {
               <input type="text" value={qual} />
             </div>
           </div>
+
           <div onChange={e => setAnotacoes(e.target.value)}>
-            <p>16. Anotações?</p>
+            <p>24. Anotações?</p>
             <input type="text" value={anotacoes} />
+          </div>
+          <div onChange={e => setRazao(e.target.value)}>
+            <p>25. Por que razão você procurou essa terapia?</p>
+            <input type="text" value={razao} />
           </div>
         </div>
         <button className="gravar" type="submit">
           enviar
         </button>
       </form>
-      <section className="amazon">
-        <iframe
-          style={{
-            width: "120px",
-            height: "240px",
-            textAlign: "center",
-            margin: "0 auto",
-          }}
-          marginwidth="0"
-          marginheight="0"
-          scrolling="no"
-          frameborder="0"
-          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07FB8C83X&asins=B07FB8C83X&linkId=fcb4c1719cd69293330849a95a964513&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
-        ></iframe>
-        <iframe
-          style={{
-            width: "120px",
-            height: "240px",
-            textAlign: "center",
-            margin: "0 auto",
-          }}
-          marginwidth="0"
-          marginheight="0"
-          scrolling="no"
-          frameborder="0"
-          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07XL916B1&asins=B07XL916B1&linkId=0322612800920901536a25263a7dc7be&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
-        ></iframe>
-        <iframe
-          style={{
-            width: "120px",
-            height: "240px",
-            textAlign: "center",
-            margin: "0 auto",
-          }}
-          marginwidth="0"
-          marginheight="0"
-          scrolling="no"
-          frameborder="0"
-          src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=jcgsr-20&marketplace=amazon&amp;region=BR&placement=B07FN7VP5Y&asins=B07FN7VP5Y&linkId=47500a44a2130ef2d230fac6469ec75f&show_border=true&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=eae4ed"
-        ></iframe>
-      </section>
     </Layout>
   );
 };
