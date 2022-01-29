@@ -69,6 +69,7 @@ const Anamnese = () => {
       .add({
         nome: name,
         nascimento: birthday,
+        address: address,
         profissao: profession,
         telefone: phone,
         alergia: alergias,
@@ -490,15 +491,16 @@ const Anamnese = () => {
             <label htmlFor="inflamacao">Sim</label> <br />
             <input type="radio" name="inflamacao" value="não" />
             <label htmlFor="inflamacao">Não</label>
-            <div className="controle">
-              <label htmlFor="inflamacaoTipo">De que tipo:</label>
-              <input
-                type="text"
-                value={inflamacaoTipo}
-                onChange={e => setInflamacaoTipo(e.target.value)}
-              />
-            </div>
           </div>
+          <div className="controle">
+            <label htmlFor="inflamacaoTipo">De que tipo:</label>
+            <input
+              type="text"
+              value={inflamacaoTipo}
+              onChange={e => setInflamacaoTipo(e.target.value)}
+            />
+          </div>
+
           <div onChange={e => setHipertireoide(e.target.value)}>
             <p>19. Hipertireoidismo?</p>
             <input type="radio" name="hipertireoide" value="sim" />
