@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
+import { StaticImage } from "gatsby-plugin-image";
 
 import SEO from "../components/SEO";
 import prices from "../constants/prices";
@@ -20,10 +21,30 @@ const Valores = () => {
         <table>
           <tr>
             <th>Terapias</th>
-            <th>1 sessão</th>
-            <th>4 sessões</th>
-            <th>Domicílio/ Espaço Bia Munaretto - 1 sessão</th>
-            <th>Domicílio/ Espaço Bia Munaretto - 4 sessões</th>
+            <th>
+              1 sessão
+              <StaticImage
+                id="img"
+                src="../assets/images/submarcaBranca2.png"
+                alt="Foto de Susi"
+                layout="constrained"
+                placeholder="blurred"
+                width="68"
+              />
+            </th>
+            <th>
+              4 sessões
+              <StaticImage
+                id="img"
+                src="../assets/images/submarcaBranca2.png"
+                alt="Foto de Susi"
+                layout="constrained"
+                placeholder="blurred"
+                width="68"
+              />
+            </th>
+            <th>Em domicílio/ Espaço Bia Munaretto¹ - 1 sessão</th>
+            <th>Em domicílio/ Espaço Bia Munaretto¹ - 4 sessões</th>
             <th>inclui</th>
           </tr>
           <tr>
@@ -147,6 +168,18 @@ const Valores = () => {
             Por exemplo: inalador pessoal, perfume terapêutico, óleo corporal
             e/ou facial e spray.
           </p>
+        </section>
+        <hr />
+        <section className="map">
+          <p>¹Espaço Bia Munaretto</p>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.3907333541215!2d-37.05833468547132!3d-10.933828525170622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab3940744dd47%3A0x8804eab28a3aa0b1!2sR.%20Ter%C3%AAncio%20Sampaio%2C%20354%20-%20Grageru%2C%20Aracaju%20-%20SE%2C%2049025-700!5e0!3m2!1spt-BR!2sbr!4v1643807541989!5m2!1spt-BR!2sbr"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
         </section>
       </section>
     </Layout>

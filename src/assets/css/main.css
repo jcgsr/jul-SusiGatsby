@@ -782,6 +782,11 @@ form > *:last-child {
 .page-footer span {
   color: var(--white);
 }
+@media only screen and (max-width: 456px) {
+  .page-footer p {
+    font-size: smaller;
+  }
+}
 
 /*#########*/
 /* Error */
@@ -842,4 +847,19 @@ form > *:last-child {
 .controle {
   font-size: smaller;
   margin-bottom: 0.5rem;
+}
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.map p {
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 456px) {
+  .map iframe {
+    width: 90%;
+  }
 }
