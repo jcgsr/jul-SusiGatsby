@@ -850,8 +850,9 @@ form > *:last-child {
 }
 .map {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
   margin-bottom: 1rem;
 }
 .map p {
@@ -861,5 +862,8 @@ form > *:last-child {
 @media only screen and (max-width: 456px) {
   .map iframe {
     width: 90%;
+  }
+  .map {
+    flex-direction: column;
   }
 }

@@ -21,30 +21,10 @@ const Valores = () => {
         <table>
           <tr>
             <th>Terapias</th>
-            <th>
-              1 sessão
-              <StaticImage
-                id="img"
-                src="../assets/images/submarcaBranca2.png"
-                alt="Foto de Susi"
-                layout="constrained"
-                placeholder="blurred"
-                width="68"
-              />
-            </th>
-            <th>
-              4 sessões
-              <StaticImage
-                id="img"
-                src="../assets/images/submarcaBranca2.png"
-                alt="Foto de Susi"
-                layout="constrained"
-                placeholder="blurred"
-                width="68"
-              />
-            </th>
-            <th>Em domicílio/ Espaço Bia Munaretto¹ - 1 sessão</th>
-            <th>Em domicílio/ Espaço Bia Munaretto¹ - 4 sessões</th>
+            <th>1 sessão no meu espaço¹</th>
+            <th>4 sessões no meu espaço¹</th>
+            <th>Em domicílio/ Espaço Bia Munaretto² - 1 sessão</th>
+            <th>Em domicílio/ Espaço Bia Munaretto² - 4 sessões</th>
             <th>inclui</th>
           </tr>
           <tr>
@@ -171,15 +151,28 @@ const Valores = () => {
         </section>
         <hr />
         <section className="map">
-          <p>¹Espaço Bia Munaretto</p>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.3907333541215!2d-37.05833468547132!3d-10.933828525170622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab3940744dd47%3A0x8804eab28a3aa0b1!2sR.%20Ter%C3%AAncio%20Sampaio%2C%20354%20-%20Grageru%2C%20Aracaju%20-%20SE%2C%2049025-700!5e0!3m2!1spt-BR!2sbr!4v1643807541989!5m2!1spt-BR!2sbr"
-            width="600"
-            height="450"
-            style={{ border: 0 }}
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
+          <div className="map-item">
+            <p>¹Bairro Luzia</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15669.401241986749!2d-37.077940976890915!3d-10.936888557359238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab3c70bf41913%3A0x5dac985da18161af!2sLuzia%2C%20Aracaju%20-%20SE!5e0!3m2!1spt-BR!2sbr!4v1645654040523!5m2!1spt-BR!2sbr"
+              width="400"
+              height="300"
+              style={{ border: 0 }}
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div className="map-item">
+            <p>²Espaço Bia Munaretto</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.3907333541215!2d-37.05833468547132!3d-10.933828525170622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab3940744dd47%3A0x8804eab28a3aa0b1!2sR.%20Ter%C3%AAncio%20Sampaio%2C%20354%20-%20Grageru%2C%20Aracaju%20-%20SE%2C%2049025-700!5e0!3m2!1spt-BR!2sbr!4v1643807541989!5m2!1spt-BR!2sbr"
+              width="400"
+              height="300"
+              style={{ border: 0 }}
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
         </section>
       </section>
     </Layout>
