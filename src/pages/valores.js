@@ -29,7 +29,9 @@ const Valores = () => {
           </tr>
           <tr>
             <td>
-              <strong>Massagem Terapêutica</strong>
+              <strong>
+                Massagem Terapêutica/Pedras Quentes • Velas • Pindas Chinesas
+              </strong>
             </td>
             <td>R$ 100</td>
             <td>R$ 340</td>
@@ -65,18 +67,6 @@ const Valores = () => {
             <td>R$ 400</td>
             <td>R$ 150</td>
             <td>R$ 490</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <strong>
-                Massagens: Pedras Quentes • Velas • Pindas Chinesas
-              </strong>
-            </td>
-            <td>R$ 120</td>
-            <td>R$ 380</td>
-            <td>-</td>
-            <td>-</td>
             <td></td>
           </tr>
           <tr>
