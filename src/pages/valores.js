@@ -33,8 +33,8 @@ const Valores = () => {
                 Massagem Terapêutica/Pedras Quentes • Velas • Pindas Chinesas
               </strong>
             </td>
-            <td>R$ 100</td>
-            <td>R$ 340</td>
+            <td>R$ 110</td>
+            <td>R$ 380</td>
             <td>R$ 130</td>
             <td>R$ 440</td>
             <td>*</td>
@@ -43,8 +43,8 @@ const Valores = () => {
             <td>
               <strong>Drenagem Linfática</strong>
             </td>
-            <td>R$ 100</td>
-            <td>R$ 340</td>
+            <td>R$ 110</td>
+            <td>R$ 380</td>
             <td>R$ 130</td>
             <td>R$ 440</td>
             <td></td>
@@ -73,8 +73,8 @@ const Valores = () => {
             <td>
               <strong>Reiki</strong>
             </td>
-            <td>R$ 70</td>
-            <td>R$ 240</td>
+            <td>R$ 80</td>
+            <td>R$ 300</td>
             <td>R$ 100</td>
             <td>R$ 360</td>
             <td>***</td>
@@ -83,8 +83,8 @@ const Valores = () => {
             <td>
               <strong>Auricoloterapia</strong>
             </td>
-            <td>R$ 70</td>
-            <td>R$ 240</td>
+            <td>R$ 80</td>
+            <td>R$ 300</td>
             <td>R$ 100</td>
             <td>R$ 360</td>
             <td></td>
@@ -93,8 +93,8 @@ const Valores = () => {
             <td>
               <strong>Ventosaterapia</strong>
             </td>
-            <td>R$ 70</td>
-            <td>R$ 240</td>
+            <td>R$ 80</td>
+            <td>R$ 300</td>
             <td>R$ 100</td>
             <td>R$ 360</td>
             <td></td>
@@ -103,7 +103,7 @@ const Valores = () => {
             <td>
               <strong>Aromaterapia</strong>
             </td>
-            <td>R$ 120</td>
+            <td>R$ 130</td>
             <td>-</td>
             <td>-</td>
             <td>-</td>

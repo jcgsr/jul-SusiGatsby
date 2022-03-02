@@ -4,9 +4,9 @@ const prices = [
     id: 1,
     title: "Relaxante**",
     m1: "Massagem Única:",
-    p1: "R$ 100",
+    p1: "R$ 110",
     m2: "Pacote (4 sessões):",
-    p2: "R$ 340",
+    p2: "R$ 380",
     p3: "R$ 130",
     p4: "R$ 440",
     includes:
@@ -16,9 +16,9 @@ const prices = [
     id: 2,
     title: "Drenagem Linfática",
     m1: "Massagem Individual:",
-    p1: "R$ 100",
+    p1: "R$ 110",
     m2: "Pacote (4 sessões):",
-    p2: "R$ 340",
+    p2: "R$ 380",
     p3: "R$ 130",
     p4: "R$ 440",
     includes: "",
@@ -91,7 +91,8 @@ const prices = [
     p3: "R$ 100",
     p4: "R$ 360",
     includes: "",
-  },{
+  },
+  {
     id: 9,
     title: "Massagens Especiais: Pedras Quentes • Velas • Pindas Chinesas",
     m1: "Sessão Única:",
@@ -104,9 +105,11 @@ const prices = [
   },
 ];
 
-export const terapias = ["Relaxante", "Drenagem", "Lipo"] 
-export const titulos = ["Terapias", "1 sessão", "4 sessões"]
-export const valores = ["R$ 100", "R$ 340", "R$ 130"]
-export const inclui = ["🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente"]
+export const terapias = ["Relaxante", "Drenagem", "Lipo"];
+export const titulos = ["Terapias", "1 sessão", "4 sessões"];
+export const valores = ["R$ 100", "R$ 340", "R$ 130"];
+export const inclui = [
+  "🌷 Aromaterapia - com óleos terapêuticos totalmente naturais, preparados especialmente para cada indivíduo. 🌷 Aplicação de magnetos (auxilia no equilíbrio geral e alívio de dores). 🌷 Ventosas (caso necessário) 🌷 Reiki (algumas sessões, conforme necessidade)🌷 Alinhamento de Chakras com cristais, conforme necessidade e desejo do cliente",
+];
 
 export default prices;
