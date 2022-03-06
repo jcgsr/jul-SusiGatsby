@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import { StaticImage } from "gatsby-plugin-image";
 
 import SEO from "../components/SEO";
-import prices from "../constants/prices";
+/*import prices from "../constants/prices";*/
 
-import terapias from "../constants/prices";
+/*import terapias from "../constants/prices";*/
 
 const Valores = () => {
-  const [readMore, setReadMore] = useState(false);
+  /*const [readMore, setReadMore] = useState(false);*/
   return (
     <Layout>
       <SEO
@@ -73,9 +72,9 @@ const Valores = () => {
             <td>
               <strong>Reiki</strong>
             </td>
-            <td>R$ 80</td>
+            <td>R$ 90</td>
             <td>R$ 300</td>
-            <td>R$ 100</td>
+            <td>R$ 110</td>
             <td>R$ 360</td>
             <td>***</td>
           </tr>
