@@ -4,7 +4,13 @@ import firebase from "gatsby-plugin-firebase";
 
 import { getAge } from "../services/utils/age";
 
+import RingLoader from "react-spinners/RingLoader";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Anamnese = () => {
+  const [loading, setLoading] = useState(true);
   // DADOS
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
@@ -58,6 +64,28 @@ const Anamnese = () => {
   const [qual, setQual] = useState("");
   const [anotacoes, setAnotacoes] = useState("");
   const [razao, setRazao] = useState("");
+
+  const notify = () =>
+    toast.success("Anamnese gravada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const notifyDel = () =>
+    toast.warning("Anamnese deletada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -115,7 +143,7 @@ const Anamnese = () => {
       })
       .then(() => {
         handleReset();
-        alert("Anamnese gravada com sucesso.");
+        notify();
       })
       .catch(e => {
         console.log(e + "Error ao gravar anamnese");
@@ -182,6 +210,7 @@ const Anamnese = () => {
           });
         });
         setAnamneseDados(minhasAnamneses);
+        setLoading(false);
       });
   };
   const handleDelete = async id => {
@@ -191,7 +220,7 @@ const Anamnese = () => {
       .doc(id)
       .delete()
       .then(() => {
-        alert("Deletado");
+        notifyDel();
       })
       .catch(e => {
         console.log(e);
@@ -249,8 +278,10 @@ const Anamnese = () => {
     setAnotacoes("");
     setRazao("");
   };
+
   return (
     <div>
+      <ToastContainer />
       <h1>Anamnese</h1>
       <h5>
         Para um atendimento seguro e mais eficaz, preciso saber algumas questões
@@ -638,6 +669,13 @@ const Anamnese = () => {
       <div className="card">
         <ul>
           {anamneseDados.map(dado => {
+            if (loading) {
+              return (
+                <div className="spinner">
+                  <RingLoader color="#5e35b1" />
+                </div>
+              );
+            }
             return (
               <li key={dado.id}>
                 <p>Nome: {dado.nome}</p>

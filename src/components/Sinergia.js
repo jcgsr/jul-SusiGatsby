@@ -2,7 +2,14 @@ import React, { useState } from "react";
 
 import firebase from "gatsby-plugin-firebase";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import RingLoader from "react-spinners/RingLoader";
+
 const Sinergia = () => {
+  const [loading, setLoading] = useState(true);
+
   const [sinergia, setSinergia] = useState("");
   const [carreador, setCarreador] = useState("");
   const [oleo, setOleo] = useState("");
@@ -10,6 +17,38 @@ const Sinergia = () => {
 
   const [sinergiaDados, setSinergiaDados] = useState([]);
   const [idSinergia, setIdSinergia] = useState("");
+
+  const notify = () =>
+    toast.success("Sinergia gravada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const notifyInfo = () =>
+    toast.info("Sinergia atualizada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const notifyDel = () =>
+    toast.warning("Sinergia deletada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   const showSinergia = () => {
     firebase
@@ -27,6 +66,7 @@ const Sinergia = () => {
           });
         });
         setSinergiaDados(minhasSinergias);
+        setLoading(false);
       });
   };
   const handleSubmit = async e => {
@@ -44,7 +84,7 @@ const Sinergia = () => {
         .then(() => {
           handleReset();
         });
-      alert("sinergia gravada");
+      notify();
     } catch (error) {
       alert(error);
     }
@@ -68,7 +108,7 @@ const Sinergia = () => {
         obs: obs,
       })
       .then(() => {
-        alert("Dados atualizados");
+        notifyInfo();
         setIdSinergia("");
         handleReset();
       });
@@ -81,7 +121,7 @@ const Sinergia = () => {
       .doc(id)
       .delete()
       .then(() => {
-        alert("Deletado");
+        notifyDel();
       })
       .catch(e => {
         console.log(e);
@@ -90,6 +130,7 @@ const Sinergia = () => {
 
   return (
     <div>
+      <ToastContainer />
       <h1>Sinergia</h1>
       <form onSubmit={handleSubmit} className="form">
         <label htmlFor="sinergia">sinergia</label>
@@ -155,6 +196,13 @@ const Sinergia = () => {
       <div className="card">
         <ul>
           {sinergiaDados.map(dado => {
+            if (loading) {
+              return (
+                <div className="spinner">
+                  <RingLoader color="#5e35b1" />
+                </div>
+              );
+            }
             return (
               <li key={dado.id}>
                 <p>Sinergia: {dado.sinergia}</p>

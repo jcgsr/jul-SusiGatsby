@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 import { navigate } from "gatsby";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
@@ -102,6 +105,28 @@ const Doshas = () => {
       return previous + current;
     });
   };
+
+  const notify = () =>
+    toast.success("Dosha enviada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const notifyInfo = () =>
+    toast.info(`SUCESSO: ${email} cadastrado!`, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   const handleSubmit = async e => {
     e.preventDefault();
     await firebase
@@ -119,7 +144,7 @@ const Doshas = () => {
       })
       .then(() => {
         handleReset();
-        alert("Dosha Enviado");
+        notify();
         navigate("/");
       });
   };
@@ -140,7 +165,7 @@ const Doshas = () => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        alert(`${email} cadastrado com sucesso`);
+        notifyInfo();
         setEmail("");
         setPassword("");
       })
@@ -164,6 +189,7 @@ const Doshas = () => {
         title="Ayurveda - Formulário"
         description="Página para preenchimento do formulário da Auyrveda"
       />
+      <ToastContainer />
       <h1>Doshas</h1>
       <h3>Bem-vindo(a), {name}!</h3>
       <h4>Cadastro</h4>

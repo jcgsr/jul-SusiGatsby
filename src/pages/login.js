@@ -4,155 +4,78 @@ import { navigate } from "gatsby";
 
 import SEO from "../components/SEO";
 import Layout from "../components/Layout";
-import Sinergia from "../components/Sinergia";
-import Pacote from "../components/Pacote";
-import Anamnese from "../components/Anamnese";
-import Doshas from "../components/Doshas";
-import Antigos from "../components/Antigos";
+import { Router } from "@reach/router";
+import PrivateRoute from "./dashboard.js";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   // LOGIN
-  const [isLogged, setIsLogged] = useState(false);
+  // const [isLogged, setIsLogged] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = async e => {
+  const notify = () =>
+    toast("Logada com sucesso, Susi!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const handleLogin = async e => {
     e.preventDefault();
-    try {
-      const result = await firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password);
+    await firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(userCredential => {
+        // Signed in
+        navigate("/dashboard");
+        notify();
 
-      const susiEmail = "susipessoa@hotmail.com";
-      if (email === susiEmail) {
-        alert("É Susi");
-        setIsLogged(true);
-      } else {
-        alert("Não é Susi");
-        setIsLogged(false);
-        navigate("/");
-      }
-      console.log(result);
-    } catch (error) {
-      console.log(error);
-    }
+        // ...
+      })
+      .catch(error => {
+        alert(error.code);
+        alert(error.message);
+      });
   };
 
-  const handleLogout = () => {
-    firebase.auth().signOut();
-    navigate("/");
-  };
-  // FIM LOGIN
-
-  // SHOW COMPONENTS
-  const [showSinergias, setShowSinergias] = useState(false);
-  const [showPacotes, setShowPacotes] = useState(false);
-  const [showAnamnese, setShowAnamnese] = useState(false);
-  const [showDoshas, setShowDoshas] = useState(false);
-  const [showAntigos, setShowAntigos] = useState(false);
-
-  // FIM SHOW COMPONENTS
   return (
     <Layout>
-      <SEO title="Login" description="Página de login" />
-      {!isLogged ? (
-        <main className="container">
-          <h2>Login</h2>
-          <form className="form">
-            <label htmlFor="email">e-mail</label>
-            <input
-              type="text"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-            <br />
-            <label htmlFor="password">Senha</label>
-            <input
-              type="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-            <br />
-            <button id="login" onClick={handleSubmit}>
-              login
-            </button>
-          </form>
-        </main>
-      ) : (
-        <main className="page">
-          <div id="ola">
-            <h2>olá, {email}</h2>
-          </div>
-          <div className="login-btn">
-            <button
-              onClick={() => (
-                setShowAnamnese(true),
-                setShowSinergias(false),
-                setShowPacotes(false),
-                setShowDoshas(false),
-                setShowAntigos(false)
-              )}
-            >
-              anamnese
-            </button>
+      <Router basepath="/">
+        <PrivateRoute path="/dashboard" />
+      </Router>
 
-            <button
-              onClick={() => (
-                setShowSinergias(false),
-                setShowPacotes(true),
-                setShowAnamnese(false),
-                setShowDoshas(false),
-                setShowAntigos(false)
-              )}
-            >
-              pacotes
-            </button>
-            <button
-              onClick={() => (
-                setShowSinergias(true),
-                setShowPacotes(false),
-                setShowAnamnese(false),
-                setShowDoshas(false),
-                setShowAntigos(false)
-              )}
-            >
-              sinergias
-            </button>
-            <button
-              onClick={() => (
-                setShowDoshas(true),
-                setShowSinergias(false),
-                setShowPacotes(false),
-                setShowAnamnese(false),
-                setShowAntigos(false)
-              )}
-            >
-              doshas
-            </button>
-            <button
-              onClick={() => (
-                setShowAntigos(true),
-                setShowDoshas(false),
-                setShowSinergias(false),
-                setShowPacotes(false),
-                setShowAnamnese(false)
-              )}
-            >
-              antigos
-            </button>
-          </div>
-          {showSinergias && <Sinergia />}
-          {showPacotes && <Pacote />}
-          {showAnamnese && <Anamnese />}
-          {showDoshas && <Doshas />}
-          {showAntigos && <Antigos />}
-          <div className="btn-anamnese">
-            <button id="btn-logout" onClick={handleLogout}>
-              sair
-            </button>
-          </div>
-        </main>
-      )}
+      <SEO title="Login" description="Página de login" />
+
+      <main className="container">
+        <h2>Login</h2>
+        <form className="form">
+          <label htmlFor="email">e-mail</label>
+          <input
+            type="text"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+          <br />
+          <label htmlFor="password">Senha</label>
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <br />
+          <button id="login" onClick={handleLogin}>
+            login
+          </button>
+        </form>
+      </main>
+      <ToastContainer />
     </Layout>
   );
 };

@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import firebase from "gatsby-plugin-firebase";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import RingLoader from "react-spinners/RingLoader";
+
 const Pacote = () => {
+  const [loading, setLoading] = useState(true);
+
   const [cliente, setCliente] = useState("");
   const [terapia, setTerapia] = useState("");
   const [pagamento, setPagamento] = useState("");
@@ -21,6 +29,38 @@ const Pacote = () => {
 
   const [sessao5, setSessao5] = useState("");
   const [s5Date, setS5Date] = useState("");
+
+  const notify = () =>
+    toast.success("Pacote gravado com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const notifyInfo = () =>
+    toast.info("Pacote atualizado com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const notifyDel = () =>
+    toast.warning("Pacote deletado com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -43,13 +83,14 @@ const Pacote = () => {
         sessao5: sessao5,
       })
       .then(() => {
-        alert("Pacote gravado!");
+        notify();
       });
   };
   const showPacotes = () => {
     firebase
       .firestore()
-      .collection("pacotes").orderBy("cliente")
+      .collection("pacotes")
+      .orderBy("cliente")
       .onSnapshot(doc => {
         let meusPacotes = [];
         doc.forEach(item => {
@@ -71,6 +112,7 @@ const Pacote = () => {
           });
         });
         setPacoteDados(meusPacotes);
+        setLoading(false);
         console.log(meusPacotes);
       });
   };
@@ -95,7 +137,7 @@ const Pacote = () => {
         sessao5: sessao5,
       })
       .then(() => {
-        alert("Dados atualizados");
+        notifyInfo();
         setIdPacote("");
       });
   };
@@ -106,7 +148,7 @@ const Pacote = () => {
       .doc(id)
       .delete()
       .then(() => {
-        alert("Deletado");
+        notifyDel();
       })
       .catch(e => {
         console.log(e);
@@ -140,6 +182,7 @@ const Pacote = () => {
 
   return (
     <div>
+      <ToastContainer />
       <h1>Pacotes</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
@@ -259,6 +302,13 @@ const Pacote = () => {
       <div className="card">
         <ul>
           {pacoteDados.map(dado => {
+            if (loading) {
+              return (
+                <div className="spinner">
+                  <RingLoader color="#5e35b1" />
+                </div>
+              );
+            }
             return (
               <li key={dado.id}>
                 <p>

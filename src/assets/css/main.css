@@ -866,3 +866,8 @@ form > *:last-child {
     flex-direction: column;
   }
 }
+
+.spinner {
+  margin: 4rem auto;
+  text-align: center;
+}

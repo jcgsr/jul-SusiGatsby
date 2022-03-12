@@ -4,6 +4,9 @@ import { navigate } from "gatsby";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import firebase from "gatsby-plugin-firebase";
 
 const Anamnese = () => {
@@ -61,6 +64,26 @@ const Anamnese = () => {
   const [anotacoes, setAnotacoes] = useState("");
   const [razao, setRazao] = useState("");
 
+  const notify = () =>
+    toast.success("Anamnese gravada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const notifyInfo = () =>
+    toast.info(`SUCESSO: ${email} cadastrado!`, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   const handleSubmit = async e => {
     e.preventDefault();
     await firebase
@@ -117,7 +140,7 @@ const Anamnese = () => {
       })
       .then(() => {
         handleReset();
-        alert("Anamnese gravada com sucesso.");
+        notify();
         navigate("/");
       })
       .catch(e => {
@@ -145,7 +168,7 @@ const Anamnese = () => {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        alert(`SUCESSO: ${email} cadastrado!`);
+        notifyInfo();
         setEmail("");
         setPassword("");
       })
@@ -169,6 +192,7 @@ const Anamnese = () => {
         title="Anamnese - Formulário"
         description="Página para preenchimento da Anamnese"
       />
+      <ToastContainer />
       <h1>Anamnese</h1>
       <h3>Bem-vindo(a), {name}!</h3>
       <h4>Cadastro</h4>

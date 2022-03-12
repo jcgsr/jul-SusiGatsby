@@ -2,9 +2,16 @@ import React, { useState } from "react";
 
 import firebase from "gatsby-plugin-firebase";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import RingLoader from "react-spinners/RingLoader";
+
 import { getAge } from "../services/utils/age";
 
 const Doshas = () => {
+  const [loading, setLoading] = useState(true);
+
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
   const [address, setAddress] = useState("");
@@ -81,6 +88,38 @@ const Doshas = () => {
   const [k20, setK20] = useState(0);
   const [sumK, setSumK] = useState(0);
 
+  const notify = () =>
+    toast.success("Dosha gravada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const notifyInfo = () =>
+    toast.info("Dosha atualizada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const notifyDel = () =>
+    toast.warning("Dosha deletada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   const sumVata = (...args) => {
     return args.reduce((previous, current) => {
       return previous + current;
@@ -112,6 +151,7 @@ const Doshas = () => {
         totalKapha: sumK,
       })
       .then(() => {
+        notify();
         handleReset();
       });
   };
@@ -146,6 +186,7 @@ const Doshas = () => {
           });
         });
         setDoshasDados(meusDoshas);
+        setLoading(false);
       });
   };
   const handleDelete = async id => {
@@ -155,7 +196,7 @@ const Doshas = () => {
       .doc(id)
       .delete()
       .then(() => {
-        alert("Deletado");
+        notifyDel();
       })
       .catch(e => {
         console.log(e);
@@ -177,13 +218,14 @@ const Doshas = () => {
         totalKapha: sumK,
       })
       .then(() => {
-        alert("Dados atualizados");
+        notifyInfo();
         setIdDoshas("");
         handleReset();
       });
   };
   return (
     <div>
+      <ToastContainer />
       <h1>Doshas</h1>
       <form onSubmit={handleSubmit} className="form">
         <input
@@ -2168,6 +2210,13 @@ const Doshas = () => {
       <div className="card">
         <ul>
           {doshasDados.map(dosha => {
+            if (loading) {
+              return (
+                <div className="spinner">
+                  <RingLoader color="#5e35b1" />
+                </div>
+              );
+            }
             return (
               <li key={dosha.id}>
                 <p>Nome: {dosha.nome}</p>
