@@ -29,7 +29,7 @@ const prices = [
     m1: "Massagem Única:",
     p1: "R$ 130",
     m2: "Pacote (4 sessões):",
-    p2: "R$ 400",
+    p2: "R$ 440",
     p3: "R$ 150",
     p4: "R$ 490",
     includes: "",
@@ -40,7 +40,7 @@ const prices = [
     m1: "Massagem Individual:",
     p1: "R$ 130",
     m2: "Pacote (4 sessões):",
-    p2: "R$ 400",
+    p2: "R$ 440",
     p3: "R$ 150",
     p4: "R$ 490",
     includes:
