@@ -53,7 +53,7 @@ const Valores = () => {
               <strong>Lipomodelagem Vegana</strong>
             </td>
             <td>R$ 130</td>
-            <td>R$ 400</td>
+            <td>R$ 440</td>
             <td>R$ 150</td>
             <td>R$ 490</td>
             <td>**</td>
@@ -63,7 +63,7 @@ const Valores = () => {
               <strong>Massagem Ayurveda</strong>
             </td>
             <td>R$ 130</td>
-            <td>R$ 400</td>
+            <td>R$ 440</td>
             <td>R$ 150</td>
             <td>R$ 490</td>
             <td></td>
