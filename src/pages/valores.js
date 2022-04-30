@@ -6,28 +6,15 @@ import SEO from "../components/SEO";
 
 /*import terapias from "../constants/prices";*/
 
-import { ToastContainer, toast } from "react-toastify";
 const Valores = () => {
   /*const [readMore, setReadMore] = useState(false);*/
 
-  const notify = () =>
-    toast.info("ATENÇÃO: o pacote é válido por apenas 2 meses!", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  notify();
   return (
     <Layout>
       <SEO
         title="Valores"
         description="Página informativa sobre os valores cobrados em cada terapia"
       />
-      <ToastContainer />
       <h1>Valores</h1>
       {/*<div className="price-container">*/}{" "}
       <section className="prices">
@@ -123,6 +110,8 @@ const Valores = () => {
             <td>****</td>
           </tr>
         </table>
+        <span>OBS.: Qualquer pacote é válido por somente 2 meses.</span>
+        <hr />
         <section id="inclui">
           <p>
             * A Massagem Terapêutica inclui: 🌷 Aromaterapia - com óleos
