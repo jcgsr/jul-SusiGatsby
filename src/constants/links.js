@@ -29,7 +29,7 @@ const links = [
   {
     id: 6,
     url: "/valores",
-    text: "preços",
+    text: "valores",
   },
   {
     id: 7,
