@@ -20,6 +20,14 @@ const Anamnese = () => {
   const [idAnamnese, setIdAnamnese] = useState("");
   const [anamneseDados, setAnamneseDados] = useState([]);
 
+  // birthday reminder
+  const today = new Date();
+  const dataAtual = today.toISOString().substring(0, 10);
+  // const dataAtual = `${current.getFullYear()}-${
+  //   current.getMonth() + 1
+  // }-${current.getDate()}
+  // `;
+
   // PERGUNTAS
   const [alergias, setAlergias] = useState("");
   const [hipertensao, setHipertensao] = useState("");
@@ -78,6 +86,16 @@ const Anamnese = () => {
 
   const notifyDel = () =>
     toast.warning("Anamnese deletada com sucesso", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  const notifyBirthday = () =>
+    toast.info("Hoje tem aniversário!", {
       position: "top-center",
       autoClose: 3000,
       hideProgressBar: false,
@@ -287,6 +305,7 @@ const Anamnese = () => {
         Para um atendimento seguro e mais eficaz, preciso saber algumas questões
         de saúde.
       </h5>
+
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
@@ -666,9 +685,15 @@ const Anamnese = () => {
         <button onClick={showAnamnese}>mostrar</button>
       </div>
       <h2>dados anamnese</h2>
+      <p style={{ textAlign: "center", margin: "0 auto" }}>
+        A data de hoje é: {dataAtual}
+      </p>
       <div className="card">
         <ul>
           {anamneseDados.map(dado => {
+            if (dado.nascimento === dataAtual) {
+              notifyBirthday();
+            }
             if (loading) {
               return (
                 <div className="spinner">
@@ -680,6 +705,7 @@ const Anamnese = () => {
               <li key={dado.id}>
                 <p>Nome: {dado.nome}</p>
                 <p>Nascimento: {dado.nascimento}</p>
+
                 <p>Endereço: {dado.endereco}</p>
                 <p>Profissão: {dado.profissao}</p>
                 <p>Alergias: {dado.alergia}</p>
