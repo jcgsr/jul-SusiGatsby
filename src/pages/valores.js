@@ -5,9 +5,19 @@ import SEO from "../components/SEO";
 /*import prices from "../constants/prices";*/
 
 /*import terapias from "../constants/prices";*/
+import Lottie from "react-lottie";
+import animationData from "../../src/assets/lotties/77070-cash.json";
 
 const Valores = () => {
   /*const [readMore, setReadMore] = useState(false);*/
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <Layout>
@@ -15,7 +25,13 @@ const Valores = () => {
         title="Valores"
         description="Página informativa sobre os valores cobrados em cada terapia"
       />
-      <h1>Valores</h1>
+      <h1>Valores</h1>{" "}
+      <Lottie
+        className="lotties"
+        options={defaultOptions}
+        height={100}
+        width={400}
+      />
       {/*<div className="price-container">*/}{" "}
       <section className="prices">
         <table>

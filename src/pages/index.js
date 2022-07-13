@@ -7,9 +7,12 @@ import SEO from "../components/SEO";
 import Lottie from "react-lottie";
 import animationData from "../../src/assets/lotties/110375-bapcelebration.json";
 
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Home = () => {
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 0.9], [0.2, 1]);
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -34,7 +37,8 @@ const Home = () => {
           </q>
           <address id="author">Susi Pessôa</address>
         </div>
-        <div id="susi-img">
+        <motion.div style={{ scale }} id="susi-img">
+          <motion.div style={{ scaleY: scrollYProgress }} />
           <StaticImage
             id="img"
             src="../assets/images/susi2.jpg"
@@ -42,7 +46,7 @@ const Home = () => {
             layout="constrained"
             placeholder="blurred"
           />
-        </div>
+        </motion.div>
         <Lottie
           className="lotties"
           options={defaultOptions}
