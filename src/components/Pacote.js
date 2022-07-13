@@ -211,64 +211,60 @@ const Pacote = () => {
           onChange={e => setPagamento(e.target.value)}
         />
         {/* SESSÃO*/}
-        <label htmlFor="s1">Sessão 1</label>
         <br />
+        <label htmlFor="s1">Sessão 1</label>
         <input
           type="text"
           value={sessao1}
           placeholder="status"
           onChange={e => setSessao1(e.target.value)}
         />
-        <br />
         <input
           type="date"
           value={s1Date}
           onChange={e => setS1Date(e.target.value)}
         />
+        <hr />
         <label htmlFor="s2">Sessão 2</label>
-        <br />
         <input
           type="text"
           value={sessao2}
           placeholder="status"
           onChange={e => setSessao2(e.target.value)}
         />
-        <br />
         <input
           type="date"
           value={s2Date}
           onChange={e => setS2Date(e.target.value)}
         />
+        <hr />
         <label htmlFor="s3">Sessão 3</label>
-        <br />
         <input
           type="text"
           value={sessao3}
           placeholder="status"
           onChange={e => setSessao3(e.target.value)}
         />
-        <br />
         <input
           type="date"
           value={s3Date}
           onChange={e => setS3Date(e.target.value)}
         />
+        <hr />
         <label htmlFor="s4">Sessão 4</label>
-        <br />
         <input
           type="text"
           value={sessao4}
           placeholder="status"
           onChange={e => setSessao4(e.target.value)}
         />
-        <br />
         <input
           type="date"
           value={s4Date}
           onChange={e => setS4Date(e.target.value)}
         />
+        <hr />
         <label htmlFor="s5">Sessão 5</label>
-        <br />
         <input
           type="text"
           value={sessao5}

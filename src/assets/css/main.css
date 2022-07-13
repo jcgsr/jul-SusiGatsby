@@ -601,6 +601,7 @@ textarea {
   background: var(--grey-0);
   border-color: transparent;
   border: 1px solid var(--grey-300);
+  margin-bottom: 0.2rem;
 }
 
 .form-row {
