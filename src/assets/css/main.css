@@ -40,6 +40,8 @@
 #susi-img {
   width: 50%;
   margin: 0 auto;
+  z-index: 1;
+  position: relative;
 }
 #ola {
   width: 30%;
@@ -565,6 +567,8 @@ a {
   width: 100%;
   display: block;
   object-fit: cover;
+  z-index: 1;
+  position: relative;
 }
 .form {
   width: 90%;
@@ -871,4 +875,8 @@ form > *:last-child {
 .spinner {
   margin: 4rem auto;
   text-align: center;
+}
+.lotties {
+  z-index: 2;
+  margin: 0 auto;
 }
