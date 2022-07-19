@@ -6,7 +6,7 @@ import SEO from "../components/SEO";
 
 /*import terapias from "../constants/prices";*/
 import Lottie from "react-lottie";
-import animationData from "../../src/assets/lotties/77070-cash.json";
+import animationData from "../../src/assets/lotties/98454-success.json";
 
 const Valores = () => {
   /*const [readMore, setReadMore] = useState(false);*/
@@ -29,7 +29,7 @@ const Valores = () => {
       <Lottie
         className="lotties"
         options={defaultOptions}
-        height={100}
+        height={250}
         width={400}
       />
       {/*<div className="price-container">*/}{" "}
