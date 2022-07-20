@@ -25,12 +25,7 @@ const Valores = () => {
         title="Valores"
         description="Página informativa sobre os valores cobrados em cada terapia"
       />
-      <h1>Valores</h1>{" "}
-      <div className="lotties">
-        {" "}
-        <Lottie options={defaultOptions} height={150} width={150} />
-      </div>
-      {/*<div className="price-container">*/}{" "}
+      <h1>Valores</h1> {/*<div className="price-container">*/}{" "}
       <section className="prices">
         <table>
           <tr>
@@ -180,6 +175,10 @@ const Valores = () => {
             ></iframe>
           </div>
         </section>
+        <div className="lotties">
+          {" "}
+          <Lottie options={defaultOptions} height={150} width={150} />
+        </div>
       </section>
     </Layout>
   );
