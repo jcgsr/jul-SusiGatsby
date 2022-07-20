@@ -880,3 +880,9 @@ form > *:last-child {
   z-index: 2;
   margin: 0 auto;
 }
+@media only screen and (max-width: 456px) {
+  .lotties {
+    height: 200px;
+    width: 200px;
+  }
+}

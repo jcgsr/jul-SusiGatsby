@@ -26,12 +26,10 @@ const Valores = () => {
         description="Página informativa sobre os valores cobrados em cada terapia"
       />
       <h1>Valores</h1>{" "}
-      <Lottie
-        className="lotties"
-        options={defaultOptions}
-        height={250}
-        width={400}
-      />
+      <div className="lotties">
+        {" "}
+        <Lottie options={defaultOptions} height={150} width={150} />
+      </div>
       {/*<div className="price-container">*/}{" "}
       <section className="prices">
         <table>
