@@ -32,8 +32,8 @@ const Valores = () => {
             <th>Terapias</th>
             <th>1 sessão no meu espaço¹</th>
             <th>4 sessões no meu espaço¹</th>
-            <th>Em domicílio/ Espaço Bia Munaretto² - 1 sessão</th>
-            <th>Em domicílio/ Espaço Bia Munaretto² - 4 sessões</th>
+            <th>Espaço Bia Munaretto² - 1 sessão</th>
+            <th>Espaço Bia Munaretto² - 4 sessões</th>
             <th>inclui</th>
           </tr>
           <tr>
