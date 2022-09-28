@@ -60,6 +60,18 @@
   text-align: center;
   margin: 0 auto;
 }
+
+main #imgLogo {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 10rem;
+}
+@media only screen and (max-width: 456px) {
+  main #imgLogo {
+    padding: 3rem;
+  }
+}
 /* CLASSES */
 
 .checkboxes {
