@@ -25,8 +25,14 @@ const Home = () => {
     <Layout>
       <SEO title="Home" description="Susi Pessôa - Terapeuta Holística" />
       <main className="page">
-        <h1>Susi Pessôa</h1>
-        <h2>Terapias Holísticas</h2>
+        <div id="imgLogo">
+          <StaticImage
+            src="../assets/images/submarcaRoxa.png"
+            alt="Foto de Susi"
+            layout="constrained"
+            placeholder="blurred"
+          />
+        </div>
         <div style={{ maxWidth: "60%", textAlign: "left", margin: "0 auto" }}>
           <q>
             O caminho para o equilíbrio integral de cada indivíduo começa pela
