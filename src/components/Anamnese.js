@@ -30,6 +30,7 @@ const Anamnese = () => {
 
   // PERGUNTAS
   const [alergias, setAlergias] = useState("");
+  const [alergiasTipo, setAlergiasTipo] = useState("");
   const [hipertensao, setHipertensao] = useState("");
   const [hipertensaoMedicacao, setHipertensaoMedicacao] = useState("");
   const [hipertensaoControlada, setHipertensaoControlada] = useState("");
@@ -40,6 +41,7 @@ const Anamnese = () => {
   const [marcapasso, setMarcapasso] = useState("");
   const [pinos, setPinos] = useState("");
   const [hernia, setHernia] = useState("");
+  const [herniaTipo, setHerniaTipo] = useState("");
   const [trombose, setTrombose] = useState("");
   const [tromboseTempo, setTromboseTempo] = useState("");
   const [cancer, setCancer] = useState("");
@@ -117,6 +119,7 @@ const Anamnese = () => {
         profissao: profession,
         telefone: phone,
         alergia: alergias,
+        alergiasTipo: alergiasTipo,
         hipertensao: hipertensao,
         hipertensaoMedicacao: hipertensaoMedicacao,
         hipertensaoControlada: hipertensaoControlada,
@@ -126,6 +129,7 @@ const Anamnese = () => {
         marcapasso: marcapasso,
         pinos: pinos,
         hernia: hernia,
+        herniaTipo: herniaTipo,
         trombose: trombose,
         tromboseTempo: tromboseTempo,
         cancer: cancer,
@@ -184,6 +188,7 @@ const Anamnese = () => {
             profissao: item.data().profissao,
             telefone: item.data().telefone,
             alergia: item.data().alergia,
+            alergiasTipo: item.data().alergiasTipo,
             hipertensao: item.data().hipertensao,
             hipertensaoMedicacao: item.data().hipertensaoMedicacao,
             hipertensaoControlada: item.data().hipertensaoControlada,
@@ -193,6 +198,7 @@ const Anamnese = () => {
             marcapasso: item.data().marcapasso,
             pinos: item.data().pinos,
             hernia: item.data().hernia,
+            herniaTipo: item.data().herniaTipo,
             trombose: item.data().trombose,
             tromboseTempo: item.data().tromboseTempo,
             cancer: item.data().cancer,
@@ -256,6 +262,8 @@ const Anamnese = () => {
         profissao: profession,
         telefone: phone,
         meses: meses,
+        alergiasTipo: alergiasTipo,
+        herniaTipo: herniaTipo,
         tromboseTempo: tromboseTempo,
         cancerTempo: cancerTempo,
         recMedica: recMedica,
@@ -283,6 +291,8 @@ const Anamnese = () => {
     setAddress("");
     setProfession("");
     setPhone("");
+    setAlergiasTipo("");
+    setHerniaTipo("");
     setTromboseTempo("");
     setCancerTempo("");
     setRecMedica("");
@@ -355,6 +365,14 @@ const Anamnese = () => {
             <br />
             <input type="radio" name="alergias" value="não" />
             <label htmlFor="alergias">Não</label>
+            <div className="controle">
+              <p>Se sim, de que tipo?</p>
+              <input
+                type="text"
+                value={alergiasTipo}
+                onChange={e => setAlergiasTipo(e.target.value)}
+              />
+            </div>
           </div>
           <div onChange={e => setHipertensao(e.target.value)}>
             <p>2. Hipertensão?</p>
@@ -436,6 +454,14 @@ const Anamnese = () => {
             <label htmlFor="hernia">Sim</label> <br />
             <input type="radio" name="hernia" value="não" />
             <label htmlFor="hernia">Não</label>
+            <div className="controle">
+              <p>Se sim, de que tipo?</p>
+              <input
+                type="text"
+                value={herniaTipo}
+                onChange={e => setHerniaTipo(e.target.value)}
+              />
+            </div>
           </div>
           <div onChange={e => setTrombose(e.target.value)}>
             <p>7. Trombose (atual ou anterior)?</p>
