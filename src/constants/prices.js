@@ -1,4 +1,3 @@
-import React from "react";
 const prices = [
   {
     id: 1,

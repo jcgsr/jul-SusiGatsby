@@ -72,6 +72,7 @@ main #imgLogo {
     padding: 3rem;
   }
 }
+
 /* CLASSES */
 
 .checkboxes {
@@ -326,11 +327,6 @@ textarea:focus {
   margin: 0 auto;
   margin-bottom: 1rem;
   padding: 0.5rem;
-}
-.amazon {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
 }
 .about-card iframe {
   min-width: 100%;

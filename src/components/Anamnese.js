@@ -1,3 +1,4 @@
+/*eslint no-sequences: "error"*/
 import React, { useState } from "react";
 
 import firebase from "gatsby-plugin-firebase";
@@ -780,6 +781,7 @@ const Anamnese = () => {
                 <div className="btn-anamnese">
                   <button
                     onClick={() => (
+                      // eslint-disable-next-line no-sequences
                       setIdAnamnese(dado.id),
                       setName(dado.nome),
                       setBirthday(dado.nascimento),

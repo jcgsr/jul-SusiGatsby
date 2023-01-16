@@ -202,6 +202,7 @@ const Doshas = () => {
         console.log(e);
       });
   };
+  // eslint-disable-next-line no-unused-vars
   const handleEdit = async () => {
     await firebase
       .firestore()
@@ -2229,6 +2230,7 @@ const Doshas = () => {
                 <div className="btn-anamnese">
                   <button
                     onClick={() => (
+                      // eslint-disable-next-line no-sequences
                       setIdDoshas(dosha.id),
                       setName(dosha.nome),
                       setBirthday(dosha.nascimento),

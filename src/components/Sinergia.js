@@ -212,6 +212,7 @@ const Sinergia = () => {
                 <div className="btn-anamnese">
                   <button
                     onClick={() => (
+                      // eslint-disable-next-line no-sequences
                       setIdSinergia(dado.id),
                       setSinergia(dado.sinergia),
                       setCarreador(dado.carreador),

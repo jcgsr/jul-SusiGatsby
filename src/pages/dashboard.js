@@ -32,6 +32,7 @@ const Dashboard = ({ location, ...rest }) => {
 			navigate("/");
 			return null;
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
@@ -44,6 +45,7 @@ const Dashboard = ({ location, ...rest }) => {
 				<div className="login-btn">
 					<button
 						onClick={() => (
+							// eslint-disable-next-line no-sequences
 							setShowAnamnese(true),
 							setShowSinergias(false),
 							setShowPacotes(false),
@@ -56,6 +58,7 @@ const Dashboard = ({ location, ...rest }) => {
 
 					<button
 						onClick={() => (
+							// eslint-disable-next-line no-sequences
 							setShowSinergias(false),
 							setShowPacotes(true),
 							setShowAnamnese(false),
@@ -67,6 +70,7 @@ const Dashboard = ({ location, ...rest }) => {
 					</button>
 					<button
 						onClick={() => (
+							// eslint-disable-next-line no-sequences
 							setShowSinergias(true),
 							setShowPacotes(false),
 							setShowAnamnese(false),
@@ -78,6 +82,7 @@ const Dashboard = ({ location, ...rest }) => {
 					</button>
 					<button
 						onClick={() => (
+							// eslint-disable-next-line no-sequences
 							setShowDoshas(true),
 							setShowSinergias(false),
 							setShowPacotes(false),
@@ -89,6 +94,7 @@ const Dashboard = ({ location, ...rest }) => {
 					</button>
 					<button
 						onClick={() => (
+							// eslint-disable-next-line no-sequences
 							setShowAntigos(true),
 							setShowDoshas(false),
 							setShowSinergias(false),

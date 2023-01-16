@@ -1,3 +1,4 @@
+/*eslint no-sequences: "error"*/
 import React, { useState } from "react";
 
 // import firebase from "firebase";
@@ -22,6 +23,7 @@ const Antigos = () => {
       <div className="btn-anamnese">
         <button
           onClick={() => (
+            // eslint-disable-next-line no-sequences
             setShowAnamnese(!showAnamnese),
             setShowDosha(false),
             setShowPacote(false),
@@ -33,6 +35,7 @@ const Antigos = () => {
         </button>
         <button
           onClick={() => (
+            // eslint-disable-next-line no-sequences
             setShowAnamnese(false),
             setShowDosha(!showDosha),
             setShowPacote(false),
@@ -44,6 +47,7 @@ const Antigos = () => {
         </button>
         <button
           onClick={() => (
+            // eslint-disable-next-line no-sequences
             setShowAnamnese(false),
             setShowDosha(false),
             setShowPacote(!showPacote),
@@ -55,6 +59,7 @@ const Antigos = () => {
         </button>
         <button
           onClick={() => (
+            // eslint-disable-next-line no-sequences
             setShowAnamnese(false),
             setShowDosha(false),
             setShowPacote(false),
@@ -66,6 +71,7 @@ const Antigos = () => {
         </button>
         <button
           onClick={() => (
+            // eslint-disable-next-line no-sequences
             setShowAnamnese(false),
             setShowDosha(false),
             setShowPacote(false),

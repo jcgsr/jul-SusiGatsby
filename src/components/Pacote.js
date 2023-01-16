@@ -351,6 +351,7 @@ const Pacote = () => {
                   {" "}
                   <button
                     onClick={() => (
+                      // eslint-disable-next-line no-sequences
                       setIdPacote(dado.id),
                       setCliente(dado.cliente),
                       setTerapia(dado.terapia),
