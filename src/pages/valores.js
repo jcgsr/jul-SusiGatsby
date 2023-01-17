@@ -40,7 +40,7 @@ const Valores = () => {
               </strong>
             </td>
             <td>R$ 120</td>
-            <td>R$ 420</td>
+            <td>R$ 400</td>
             <td>R$ 130</td>
             <td>R$ 440</td>
             <td>*</td>
@@ -49,8 +49,8 @@ const Valores = () => {
             <td>
               <strong>Drenagem Linfática</strong>
             </td>
-            <td>R$ 110</td>
-            <td>R$ 380</td>
+            <td>R$ 120</td>
+            <td>R$ 400</td>
             <td>R$ 130</td>
             <td>R$ 440</td>
             <td></td>
@@ -153,7 +153,7 @@ const Valores = () => {
             <p>¹Bairro Luzia</p>
             <iframe
               title="luzia"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15669.401241986749!2d-37.077940976890915!3d-10.936888557359238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab3c70bf41913%3A0x5dac985da18161af!2sLuzia%2C%20Aracaju%20-%20SE!5e0!3m2!1spt-BR!2sbr!4v1645654040523!5m2!1spt-BR!2sbr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.2625769633396!2d-37.07185884885153!3d-10.943527125300607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71ab3c501b9f377%3A0xd24f42c45111e4b9!2sR.%20Ant%C3%B4nio%20Vieira%20de%20Menezes%2C%2073%20-%20Luzia%2C%20Aracaju%20-%20SE%2C%2049048-260!5e0!3m2!1spt-BR!2sbr!4v1673973553572!5m2!1spt-BR!2sbr"
               width="400"
               height="300"
               style={{ border: 0 }}
