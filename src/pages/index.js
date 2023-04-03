@@ -25,6 +25,13 @@ const Home = () => {
     <Layout>
       <SEO title="Home" description="Susi Pessôa - Terapeuta Holística" />
       <main className="page">
+        <div id="destaque">
+          <h4>
+            <span>Atendimento</span>
+            <span id="blink-01"> presencial </span> <span>e à </span>
+            <span id="blink-02">distância</span>
+          </h4>
+        </div>
         <div id="imgLogo">
           <StaticImage
             src="../assets/images/submarcaRoxa.png"

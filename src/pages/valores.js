@@ -138,13 +138,20 @@ const Valores = () => {
             Aromaterapia 🌷Cristais
           </p>
           <p>
-            **** A Aromaterapia inclui: 🌷 A consulta inclui análise da
-            situação, determinação da abordagem Terapêutica e aplicação com
-            toque terapêutico e inalação. Por exemplo, massagem nas mãos e nos
-            pés. Também está incluso a consulta de retorno. 🌷 As formulações
-            que serão utilizadas no tratamento não estão inclusas nesse valor.
-            Por exemplo: inalador pessoal, perfume terapêutico, óleo corporal
-            e/ou facial e spray.
+            **** A consulta da Aromaterapia inclui: 🌷 Análise da situação,
+            determinação da abordagem Terapêutica, aplicação com toque
+            terapêutico (atendimento presencial) e aplicação de reiki
+            (atendimento on-line).
+            <br />
+            🌷 As formulações que serão utilizadas no tratamento não estão
+            inclusas nesse valor, por exemplo: inalador pessoal, perfume
+            terapêutico, óleo corporal e/ou facial e spray. Em caso de
+            atendimentos à distância, as formulações poderão ser enviadas pelos
+            correios (com frete por conta do cliente) ou poderão ser adquiridas
+            de outras formas, assim como poderão ser manipuladas pelo próprio
+            cliente, conforme a individualidade de cada um.
+            <br />
+            🌷 Também está inclusa a consulta de retorno
           </p>
         </section>
         <hr />

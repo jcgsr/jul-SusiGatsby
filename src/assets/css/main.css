@@ -65,13 +65,120 @@ main #imgLogo {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-  padding: 9rem;
+  padding: 8rem;
 }
 @media only screen and (max-width: 456px) {
   main #imgLogo {
     padding: 3rem;
   }
 }
+
+#destaque {
+  padding-top: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  /*   animation: blink 2s infinite; */
+  font-style: italic;
+  font-size: 2rem;
+}
+
+/* @keyframes blink {
+  0% {
+    opacity: 1;
+    color: red;
+  }
+  100% {
+    opacity: 0;
+    color: white;
+  }
+} */
+
+#blink-01 {
+  position: relative;
+  animation: blink01 2s infinite alternate;
+}
+#blink-01::before {
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  /* filter: blur(40px); */
+  width: 100%;
+  height: 100%;
+  /* content: ""; */
+  animation: bg_blink01 2s infinite alternate;
+}
+#blink-01::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* filter: blur(20px); */
+  /* content: "Blinking"; */
+  animation: blink01 2s infinite alternate;
+}
+#blink-02 {
+  position: relative;
+  animation: blink02 2s infinite alternate;
+}
+#blink-02::before {
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  /* filter: blur(40px); */
+  width: 100%;
+  height: 100%;
+  /* content: ""; */
+  animation: bg_blink02 2s infinite alternate;
+}
+#blink-02::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* filter: blur(20px); */
+  /* content: "Text"; */
+  animation: blink02 2s infinite alternate;
+}
+@keyframes blink01 {
+  0% {
+    color: var(--primary);
+  }
+  100% {
+    color: var(--white);
+  }
+}
+@keyframes blink02 {
+  0% {
+    color: var(--white);
+  }
+  100% {
+    color: var(--primary);
+  }
+}
+/* @keyframes bg_blink01 {
+  0% {
+    filter: blur(40px);
+    background-color: var(--red-dark);
+  }
+  100% {
+    filter: blur(40px);
+    background-color: var(--grey-1100);
+  }
+}
+@keyframes bg_blink02 {
+  0% {
+    filter: blur(40px);
+    background-color: var(--grey-1100);
+  }
+  100% {
+    filter: blur(40px);
+    background-color: var(--red-dark);
+  }
+} */
 
 /* CLASSES */
 
@@ -530,7 +637,7 @@ q {
 h1,
 h2,
 h3,
-h4,
+/* h4, */
 h5 {
   margin: 1rem auto;
   margin-bottom: 1.38rem;
