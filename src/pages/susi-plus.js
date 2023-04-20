@@ -25,9 +25,8 @@ const Dicas = () => {
           <p>
             Você pode tratar questões físicas, emocionais, mentais e energéticas
             com o uso seguro e eficaz dos óleos essenciais. Maiores informações,
-            favor acessar meus
+            favor acessar meus{" "}
             <Link id="contatos" to="/contato">
-              {" "}
               contatos
             </Link>
             .
