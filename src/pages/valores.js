@@ -77,7 +77,7 @@ const Valores = () => {
           </tr>
           <tr>
             <td>
-              <strong>Reiki</strong>
+              <strong>Reiki (presencial ou on-line)</strong>
             </td>
             <td>R$ 90</td>
             <td>R$ 300</td>
@@ -107,7 +107,7 @@ const Valores = () => {
           </tr>
           <tr>
             <td>
-              <strong>Aromaterapia</strong>
+              <strong>Aromaterapia (presencial ou on-line)</strong>
             </td>
             <td>R$ 130</td>
             <td>-</td>

@@ -54,7 +54,7 @@ const Contato = () => {
           />
         </form>*/}
 
-        <form
+        {/* <form
           action="https://formspree.io/f/mbjqzyeq"
           method="POST"
           className="form"
@@ -81,7 +81,7 @@ const Contato = () => {
             onVerify={token => submit(token)}
             submitted={submitted}
           />
-        </form>
+        </form>*/}
       </section>
     </Layout>
   );

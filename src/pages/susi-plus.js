@@ -1,6 +1,9 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
+
+import { Link } from "gatsby";
+
 const Dicas = () => {
   return (
     <Layout>
@@ -19,7 +22,16 @@ const Dicas = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
-          <p>Consultas on-line agora!</p>
+          <p>
+            Você pode tratar questões físicas, emocionais, mentais e energéticas
+            com o uso seguro e eficaz dos óleos essenciais. Maiores informações,
+            favor acessar meus
+            <Link id="contatos" to="/contato">
+              {" "}
+              contatos
+            </Link>
+            .
+          </p>
           <hr />
         </article>
         <article>
