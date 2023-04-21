@@ -54,10 +54,11 @@ const Home = () => {
           <motion.div style={{ scaleY: scrollYProgress }} />
           <StaticImage
             id="img"
-            src="../assets/images/susi2.jpg"
+            src="../assets/images/susi_front.jpg"
             alt="Foto de Susi"
             layout="constrained"
             placeholder="blurred"
+            style={{ borderRadius: "10%" }}
           />
         </motion.div>
         <Lottie
