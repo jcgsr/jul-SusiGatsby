@@ -13,6 +13,21 @@ const Dicas = () => {
       />
       <h2>Dicas de Autocuidado</h2>
       <section className="about-card youtube">
+      <article>
+          <iframe
+            height="315"
+            src="https://www.youtube.com/embed/6nO64XgD3GU"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <p>
+            Diferença entre óleo essencial e essência.
+          </p>
+          <hr />
+        </article>
+ 
         <article>
           <iframe
             height="315"
