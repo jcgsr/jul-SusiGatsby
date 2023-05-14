@@ -3,17 +3,13 @@ import Layout from "../components/Layout";
 
 import SEO from "../components/SEO";
 
-import Lottie from "react-lottie";
-import animationData from "../../src/assets/lotties/98454-success.json";
+import Lottie from "lottie-react";
+import animationData from "../../src/assets/lotties/99977-money-pf.json";
 
 const Valores = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
+  const style = {
+    height: 200,
+    color: "#ddd",
   };
 
   return (
@@ -181,10 +177,12 @@ const Valores = () => {
             ></iframe>
           </div>
         </section>
-        <div className="lotties">
-          {" "}
-          <Lottie options={defaultOptions} height={150} width={150} />
-        </div>
+        <Lottie
+          className="lotties"
+          animationData={animationData}
+          loop={true}
+          style={style}
+        />
       </section>
     </Layout>
   );

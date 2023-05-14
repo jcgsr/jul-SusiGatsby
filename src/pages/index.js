@@ -4,23 +4,19 @@
 import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import animationData from "../../src/assets/lotties/110375-bapcelebration.json";
 
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Home = () => {
+  const style = {
+    height: 250,
+  };
+
   const { scrollYProgress } = useViewportScroll();
   const scale = useTransform(scrollYProgress, [0, 0.9], [0.2, 1]);
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
     <Layout>
       <SEO title="Home" description="Susi Pessôa - Terapeuta Holística" />
@@ -63,9 +59,9 @@ const Home = () => {
         </motion.div>
         <Lottie
           className="lotties"
-          options={defaultOptions}
-          height={200}
-          width={400}
+          animationData={animationData}
+          loop={true}
+          style={style}
         />
       </main>
     </Layout>
