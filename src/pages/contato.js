@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
 // import { useForm, ValidationError } from "@formspree/react";
 
-import ReCaptcha from "@pittica/gatsby-plugin-recaptcha";
+// import ReCaptcha from "@pittica/gatsby-plugin-recaptcha";
 
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 const Contato = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const submit = token => {};
+  // const [submitted, setSubmitted] = useState(false);
+  // const submit = token => {};
   //   const [state, handleSubmit] = useForm("https://formspree.io/f/mbjqzyeq");
   //   if (state.succeeded) {
   //     return <p>Obrigada por sua mensagem!</p>;

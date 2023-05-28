@@ -192,7 +192,7 @@ const Doshas = () => {
       <ToastContainer />
       <h1>Doshas</h1>
       <h3>Bem-vindo(a), {name}!</h3>
-      <h4>Cadastro</h4>
+      <h4 style={{ textAlign: "center" }}>Cadastro</h4>
       <p className="aviso">
         Para a sua segurança, seus dados só serão enviados após a realização do
         cadastro abaixo.

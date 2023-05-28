@@ -285,6 +285,7 @@ textarea:focus {
   width: 60%;
   box-shadow: var(--shadow-2);
 }
+
 @media screen and (max-width: 456px) {
   .card {
     width: 90%;

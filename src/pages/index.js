@@ -7,6 +7,8 @@ import SEO from "../components/SEO";
 import Lottie from "lottie-react";
 import animationData from "../../src/assets/lotties/110375-bapcelebration.json";
 
+import CookieConsent from "react-cookie-consent";
+
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -63,6 +65,9 @@ const Home = () => {
           loop={true}
           style={style}
         />
+        <CookieConsent buttonText="Entendi">
+          Este site usa cookies para melhorar a experiência do usuário.
+        </CookieConsent>
       </main>
     </Layout>
   );
