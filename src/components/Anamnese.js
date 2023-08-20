@@ -7,7 +7,7 @@ import { getAge } from "../services/utils/age";
 
 import RingLoader from "react-spinners/RingLoader";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Anamnese = () => {
@@ -75,7 +75,12 @@ const Anamnese = () => {
   const [qual, setQual] = useState("");
   const [anotacoes, setAnotacoes] = useState("");
   const [razao, setRazao] = useState("");
-
+  const [epilepsia, setEpilepsia] = useState("");
+  // const [medicao, setMedicacao] = useState("");
+  // const [medicacaoTempo, setMedicacaoTempo] = useState("");
+  // const [medicaoTipo, setMedicacaoTipo] = useState("");
+  const [perfume, setPerfume] = useState("");
+  const [cosmetico, setCosmetico] = useState("");
   const notify = () =>
     toast.success("Anamnese gravada com sucesso", {
       position: "top-center",
@@ -108,7 +113,7 @@ const Anamnese = () => {
       progress: undefined,
     });
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     await firebase
       .firestore()
@@ -163,12 +168,15 @@ const Anamnese = () => {
         qual: qual,
         anotacoes: anotacoes,
         razao: razao,
+        epilepsia: epilepsia,
+        perfume: perfume,
+        cosmetico: cosmetico,
       })
       .then(() => {
         handleReset();
         notify();
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e + "Error ao gravar anamnese");
       });
   };
@@ -177,9 +185,9 @@ const Anamnese = () => {
       .firestore()
       .collection("anamneses")
       .orderBy("nome")
-      .onSnapshot(doc => {
+      .onSnapshot((doc) => {
         let minhasAnamneses = [];
-        doc.forEach(item => {
+        doc.forEach((item) => {
           minhasAnamneses.push({
             id: item.id,
             nome: item.data().nome,
@@ -228,6 +236,9 @@ const Anamnese = () => {
             cirurgia: item.data().cirurgia,
             cirurgiaTipo: item.data().cirurgiaTipo,
             cirurgiaTempo: item.data().cirurgiaTempo,
+            epilepsia: item.data().epilepsia,
+            perfume: item.data().perfume,
+            cosmetico: item.data().cosmetico,
             outraQuestao: item.data().outraQuestao,
             qual: item.data().qual,
             anotacoes: item.data().anotacoes,
@@ -238,7 +249,7 @@ const Anamnese = () => {
         setLoading(false);
       });
   };
-  const handleDelete = async id => {
+  const handleDelete = async (id) => {
     await firebase
       .firestore()
       .collection("anamneses")
@@ -247,7 +258,7 @@ const Anamnese = () => {
       .then(() => {
         notifyDel();
       })
-      .catch(e => {
+      .catch((e) => {
         console.log(e);
       });
   };
@@ -321,7 +332,7 @@ const Anamnese = () => {
         <input
           type="text"
           value={idAnamnese}
-          onChange={e => setIdAnamnese(e.target.value)}
+          onChange={(e) => setIdAnamnese(e.target.value)}
           style={{ display: "none" }}
         />
         <label htmlFor="name">Nome</label>
@@ -329,13 +340,13 @@ const Anamnese = () => {
           id="nome"
           type="text"
           value={name}
-          onChange={e => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
         />
         <label htmlFor="age">Data de nascimento</label>
         <input
           type="date"
           value={birthday}
-          onChange={e => setBirthday(e.target.value)}
+          onChange={(e) => setBirthday(e.target.value)}
         />
         <p>idade: {getAge(birthday)}</p>
 
@@ -343,23 +354,23 @@ const Anamnese = () => {
         <input
           type="text"
           value={address}
-          onChange={e => setAddress(e.target.value)}
+          onChange={(e) => setAddress(e.target.value)}
         />
         <label htmlFor="profession">Profissão</label>
         <input
           type="text"
           value={profession}
-          onChange={e => setProfession(e.target.value)}
+          onChange={(e) => setProfession(e.target.value)}
         />
         <label htmlFor="phone">Telefone</label>
         <input
           type="text"
           value={phone}
-          onChange={e => setPhone(e.target.value)}
+          onChange={(e) => setPhone(e.target.value)}
         />
         {/* PERGUNTAS */}
         <div className="checkboxes" style={{ marginTop: "1rem" }}>
-          <div onChange={e => setAlergias(e.target.value)}>
+          <div onChange={(e) => setAlergias(e.target.value)}>
             <p>1. Alergias?</p>
             <input type="radio" name="alergias" value="sim" />
             <label htmlFor="alergias">Sim</label>
@@ -371,15 +382,15 @@ const Anamnese = () => {
               <input
                 type="text"
                 value={alergiasTipo}
-                onChange={e => setAlergiasTipo(e.target.value)}
+                onChange={(e) => setAlergiasTipo(e.target.value)}
               />
             </div>
           </div>
-          <div onChange={e => setHipertensao(e.target.value)}>
+          <div onChange={(e) => setHipertensao(e.target.value)}>
             <p>2. Hipertensão?</p>
             <input type="radio" name="hipertensao" value="sim" />
             <label htmlFor="hipertensao">Sim</label>
-            <div onChange={e => setHipertensaoControlada(e.target.value)}>
+            <div onChange={(e) => setHipertensaoControlada(e.target.value)}>
               <span className="controle">→ Está controlada?</span>{" "}
               <input type="radio" name="hipertensaoControlada" value="sim" />
               <label className="controle" htmlFor="hipertensaoControlada">
@@ -390,7 +401,7 @@ const Anamnese = () => {
                 Não
               </label>
             </div>
-            <div onChange={e => setHipertensaoMedicacao(e.target.value)}>
+            <div onChange={(e) => setHipertensaoMedicacao(e.target.value)}>
               <span className="controle">→ Toma medicação?</span>
               {""}
               <input type="radio" name="hipertensaoMedicacao" value="sim" />
@@ -405,11 +416,11 @@ const Anamnese = () => {
             <input type="radio" name="hipertensao" value="não" />
             <label htmlFor="hipertensao">Não</label>
           </div>
-          <div onChange={e => setDiabetes(e.target.value)}>
+          <div onChange={(e) => setDiabetes(e.target.value)}>
             <p>3.Diabetes?</p>
             <input type="radio" name="diabetes" value="sim" />
             <label htmlFor="diabetes">Sim</label>{" "}
-            <div onChange={e => setDiabetesControlada(e.target.value)}>
+            <div onChange={(e) => setDiabetesControlada(e.target.value)}>
               <span className="controle">→ Está controlada?</span>{" "}
               <input type="radio" name="diabetesControlada" value="sim" />
               <label className="controle" htmlFor="diabetesControlada">
@@ -420,7 +431,7 @@ const Anamnese = () => {
                 Não
               </label>
             </div>
-            <div onChange={e => setDiabetesMedicacao(e.target.value)}>
+            <div onChange={(e) => setDiabetesMedicacao(e.target.value)}>
               <span className="controle">→ Toma medicação?</span>
               {""}
               <input type="radio" name="diabetesMedicacao" value="sim" />
@@ -435,21 +446,21 @@ const Anamnese = () => {
             <input type="radio" name="diabetes" value="não" />
             <label htmlFor="diabetes">Não</label>
           </div>
-          <div onChange={e => setMarcapasso(e.target.value)}>
+          <div onChange={(e) => setMarcapasso(e.target.value)}>
             <p>4. Marcapasso?</p>
             <input type="radio" name="marcapasso" value="sim" />
             <label htmlFor="marcapasso">Sim</label> <br />
             <input type="radio" name="marcapasso" value="não" />
             <label htmlFor="marcapasso">Não</label>
           </div>
-          <div onChange={e => setPinos(e.target.value)}>
+          <div onChange={(e) => setPinos(e.target.value)}>
             <p>5. Pinos ou placas?</p>
             <input type="radio" name="pinos" value="sim" />
             <label htmlFor="pinos">Sim</label> <br />
             <input type="radio" name="pinos" value="não" />
             <label htmlFor="pinos">Não</label>
           </div>
-          <div onChange={e => setHernia(e.target.value)}>
+          <div onChange={(e) => setHernia(e.target.value)}>
             <p>6. Hérnia?</p>
             <input type="radio" name="hernia" value="sim" />
             <label htmlFor="hernia">Sim</label> <br />
@@ -460,11 +471,11 @@ const Anamnese = () => {
               <input
                 type="text"
                 value={herniaTipo}
-                onChange={e => setHerniaTipo(e.target.value)}
+                onChange={(e) => setHerniaTipo(e.target.value)}
               />
             </div>
           </div>
-          <div onChange={e => setTrombose(e.target.value)}>
+          <div onChange={(e) => setTrombose(e.target.value)}>
             <p>7. Trombose (atual ou anterior)?</p>
             <input type="radio" name="trombose" value="sim" />
             <label htmlFor="trombose">Sim</label> <br />
@@ -476,11 +487,11 @@ const Anamnese = () => {
             <input
               type="text"
               value={tromboseTempo}
-              onChange={e => setTromboseTempo(e.target.value)}
+              onChange={(e) => setTromboseTempo(e.target.value)}
             />
           </div>
-          <div onChange={e => setCancer(e.target.value)}>
-            <p>8. Câncer (atual ou anterior)? </p>
+          <div onChange={(e) => setCancer(e.target.value)}>
+            <p>8. Câncer (atual ou anterior)?</p>
             <input type="radio" name="cancer" value="sim" />
             <label htmlFor="cancer">Sim</label> <br />
             <input type="radio" name="cancer" value="não" />
@@ -491,24 +502,24 @@ const Anamnese = () => {
             <input
               type="text"
               value={cancerTempo}
-              onChange={e => setCancerTempo(e.target.value)}
+              onChange={(e) => setCancerTempo(e.target.value)}
             />
           </div>
-          <div onChange={e => setHIV(e.target.value)}>
+          <div onChange={(e) => setHIV(e.target.value)}>
             <p>9. HIV?</p>
             <input type="radio" name="hiv" value="sim" />
             <label htmlFor="hiv">Sim</label> <br />
             <input type="radio" name="hiv" value="não" />
             <label htmlFor="hiv">Não</label>
           </div>
-          <div onChange={e => setDiu(e.target.value)}>
+          <div onChange={(e) => setDiu(e.target.value)}>
             <p>10. Usa DIU ou diafragma?</p>
             <input type="radio" name="diu" value="sim" />
             <label htmlFor="diu">Sim</label> <br />
             <input type="radio" name="diu" value="não" />
             <label htmlFor="diu">Não</label>
           </div>
-          <div onChange={e => setGravidez(e.target.value)}>
+          <div onChange={(e) => setGravidez(e.target.value)}>
             <p>11. Gravidez?</p>
             <input type="radio" name="gravidez" value="sim" />
             <label htmlFor="gravidez">Sim</label> <br />
@@ -520,10 +531,10 @@ const Anamnese = () => {
             <input
               type="number"
               value={meses}
-              onChange={e => setMeses(e.target.value)}
+              onChange={(e) => setMeses(e.target.value)}
             />
           </div>
-          <div onChange={e => setGestacaoNormal(e.target.value)}>
+          <div onChange={(e) => setGestacaoNormal(e.target.value)}>
             <span className="controle">→ Gestação normal?</span>{" "}
             <input type="radio" name="gestacaoNormal" value="sim" />
             <label className="controle" htmlFor="gestacaoNormal">
@@ -534,8 +545,9 @@ const Anamnese = () => {
               Não
             </label>
           </div>
-          <div onChange={e => setArteria(e.target.value)}>
-            <span className="controle">→ Problemas de pressão arterial?</span>{" "}
+          <div onChange={(e) => setArteria(e.target.value)}>
+            <span className="controle">→ Problemas de pressão arterial?</span>
+            {" "}
             <input type="radio" name="arteria" value="sim" />
             <label className="controle" htmlFor="arteria">
               Sim
@@ -550,18 +562,18 @@ const Anamnese = () => {
             <input
               type="text"
               value={recMedica}
-              onChange={e => setRecMedica(e.target.value)}
+              onChange={(e) => setRecMedica(e.target.value)}
             />
           </div>
 
-          <div onChange={e => setGripe(e.target.value)}>
+          <div onChange={(e) => setGripe(e.target.value)}>
             <p>12. Gripe ou resfriado?</p>
             <input type="radio" name="gripe" value="sim" />
             <label htmlFor="gripe">Sim</label> <br />
             <input type="radio" name="gripe" value="não" />
             <label htmlFor="gripe">Não</label>
           </div>
-          <div onChange={e => setCovid(e.target.value)}>
+          <div onChange={(e) => setCovid(e.target.value)}>
             <p>13. Teve COVID?</p>
             <input type="radio" name="covid" value="sim" />
             <label htmlFor="covid">Sim</label> <br />
@@ -570,17 +582,17 @@ const Anamnese = () => {
           </div>
           <div
             className="controle"
-            onChange={e => setCovidTempo(e.target.value)}
+            onChange={(e) => setCovidTempo(e.target.value)}
           >
             <label>Há quanto tempo?</label>
             <input
               type="text"
               value={covidTempo}
-              onChange={e => setCovidTempo(e.target.value)}
+              onChange={(e) => setCovidTempo(e.target.value)}
             />
           </div>
 
-          <div onChange={e => setVacina(e.target.value)}>
+          <div onChange={(e) => setVacina(e.target.value)}>
             <p>14. Tomou vacina?</p>
             <input type="radio" name="vacina" value="sim" />
             <label htmlFor="vacina">Sim</label> <br />
@@ -592,36 +604,39 @@ const Anamnese = () => {
             <input
               type="text"
               value={vacinaTempo}
-              onChange={e => setVacinaTempo(e.target.value)}
+              onChange={(e) => setVacinaTempo(e.target.value)}
             />
           </div>
 
-          <div onChange={e => setDepressao(e.target.value)}>
+          <div onChange={(e) => setDepressao(e.target.value)}>
             <p>15. Depressão?</p>
             <input type="radio" name="depressao" value="sim" />
             <label htmlFor="depressao">Sim</label> <br />
             <input type="radio" name="depressao" value="não" />
             <label htmlFor="depressao">Não</label>
           </div>
-          <div onChange={e => setAnsiedade(e.target.value)}>
+          <div onChange={(e) => setAnsiedade(e.target.value)}>
             <p>16. Ansiedade?</p>
             <input type="radio" name="ansiedade" value="sim" />
             <label htmlFor="ansiedade">Sim</label> <br />
             <input type="radio" name="ansiedade" value="não" />
             <label htmlFor="ansiedade">Não</label>
           </div>
-          <div onChange={e => setDores(e.target.value)}>
+          <div onChange={(e) => setDores(e.target.value)}>
             <p>17. Dores?</p>
             <input type="radio" name="dores" value="sim" />
             <label htmlFor="dores">Sim</label> <br />
             <input type="radio" name="dores" value="não" />
             <label htmlFor="dores">Não</label>
-            <div className="controle" onChange={e => setCorpo(e.target.value)}>
+            <div
+              className="controle"
+              onChange={(e) => setCorpo(e.target.value)}
+            >
               <label htmlFor="corpo">Local do corpo:</label>
               <input type="text" value={corpo} />
             </div>
           </div>
-          <div onChange={e => setInflamacao(e.target.value)}>
+          <div onChange={(e) => setInflamacao(e.target.value)}>
             <p>18. Alguma inflamação crônica ou aguda?</p>
             <input type="radio" name="inflamacao" value="sim" />
             <label htmlFor="inflamacao">Sim</label> <br />
@@ -633,31 +648,31 @@ const Anamnese = () => {
             <input
               type="text"
               value={inflamacaoTipo}
-              onChange={e => setInflamacaoTipo(e.target.value)}
+              onChange={(e) => setInflamacaoTipo(e.target.value)}
             />
           </div>
-          <div onChange={e => setHipertireoide(e.target.value)}>
+          <div onChange={(e) => setHipertireoide(e.target.value)}>
             <p>19. Hipertireoidismo?</p>
             <input type="radio" name="hipertireoide" value="sim" />
             <label htmlFor="hipertireoide">Sim</label> <br />
             <input type="radio" name="hipertireoide" value="não" />
             <label htmlFor="hipertireoide">Não</label>
           </div>
-          <div onChange={e => setAsma(e.target.value)}>
+          <div onChange={(e) => setAsma(e.target.value)}>
             <p>20. Asma brônquica?</p>
             <input type="radio" name="asma" value="sim" />
             <label htmlFor="asma">Sim</label> <br />
             <input type="radio" name="asma" value="não" />
             <label htmlFor="asma">Não</label>
           </div>
-          <div onChange={e => setCardio(e.target.value)}>
+          <div onChange={(e) => setCardio(e.target.value)}>
             <p>21. Insuficiência cardíaca?</p>
             <input type="radio" name="cardio" value="sim" />
             <label htmlFor="cardio">Sim</label> <br />
             <input type="radio" name="cardio" value="não" />
             <label htmlFor="cardio">Não</label>
           </div>
-          <div onChange={e => setCirurgia(e.target.value)}>
+          <div onChange={(e) => setCirurgia(e.target.value)}>
             <p>22. Fez alguma cirurgia?</p>
             <input type="radio" name="cirurgia" value="sim" />
             <label htmlFor="cirurgia">Sim</label> <br />
@@ -669,7 +684,7 @@ const Anamnese = () => {
             <input
               type="text"
               value={cirurgiaTipo}
-              onChange={e => setCirurgiaTipo(e.target.value)}
+              onChange={(e) => setCirurgiaTipo(e.target.value)}
             />
           </div>
           <div className="controle">
@@ -677,27 +692,77 @@ const Anamnese = () => {
             <input
               type="text"
               value={cirurgiaTempo}
-              onChange={e => setCirurgiaTempo(e.target.value)}
+              onChange={(e) => setCirurgiaTempo(e.target.value)}
             />
           </div>
 
-          <div onChange={e => setOutraQuestao(e.target.value)}>
-            <p>23. Alguma outra questão de saúde relevante para considerar?</p>
+          <div onChange={(e) => setEpilepsia(e.target.value)}>
+            <p>23. Tem epilepsia ou histórico de convulsão?</p>
+            <input type="radio" name="epilepsia" value="sim" />
+            <label htmlFor="epilepsia">Sim</label> <br />
+            <input type="radio" name="epilepsia" value="não" />
+            <label htmlFor="epilepsia">Não</label>
+          </div>
+
+          {
+            /*
+          <div onChange={(e) => setMedicacao(e.target.value)}>
+            <p>24. Toma medicação?</p>
+            <input type="radio" name="medicao" value="sim" />
+            <label htmlFor="medicao">Sim</label> <br />
+            <input type="radio" name="medicao" value="não" />
+            <label htmlFor="medicao">Não</label>
+          </div>
+          <div className="controle">
+            <label>Qual(is)?</label>
+            <input
+              type="text"
+              value={medicaoTipo}
+              onChange={(e) => setMedicacaoTipo(e.target.value)}
+            />
+          </div>
+          <div className="controle">
+            <label>Há quanto tempo?</label>
+            <input
+              type="text"
+              value={medicacaoTempo}
+              onChange={(e) => setMedicacaoTempo(e.target.value)}
+            />
+          </div> */
+          }
+          <div onChange={(e) => setPerfume(e.target.value)}>
+            <p>24. Tem sensibilidade a perfume, a fragrâncias?</p>
+            <input type="radio" name="perfume" value="sim" />
+            <label htmlFor="perfume">Sim</label> <br />
+            <input type="radio" name="perfume" value="não" />
+            <label htmlFor="perfume">Não</label>
+          </div>
+          <div onChange={(e) => setCosmetico(e.target.value)}>
+            <p>
+              25. Tem sensibilidade a cosméticos ou outros produtos na pele?
+            </p>
+            <input type="radio" name="cosmetico" value="sim" />
+            <label htmlFor="cosmetico">Sim</label> <br />
+            <input type="radio" name="cosmetico" value="não" />
+            <label htmlFor="cosmetico">Não</label>
+          </div>
+          <div onChange={(e) => setOutraQuestao(e.target.value)}>
+            <p>26. Alguma outra questão de saúde relevante para considerar?</p>
             <input type="radio" name="questão" value="sim" />
             <label htmlFor="questão">Sim</label> <br />
             <input type="radio" name="questão" value="não" />
             <label htmlFor="questão">Não</label>
-            <div onChange={e => setQual(e.target.value)}>
+            <div onChange={(e) => setQual(e.target.value)}>
               <input type="text" value={qual} />
             </div>
           </div>
 
-          <div onChange={e => setAnotacoes(e.target.value)}>
-            <p>24. Anotações?</p>
+          <div onChange={(e) => setAnotacoes(e.target.value)}>
+            <p>27. Anotações?</p>
             <input type="text" value={anotacoes} />
           </div>
-          <div onChange={e => setRazao(e.target.value)}>
-            <p>25. Por que razão você procurou essa terapia?</p>
+          <div onChange={(e) => setRazao(e.target.value)}>
+            <p>28. Por que razão você procurou essa terapia?</p>
             <input type="text" value={razao} />
           </div>
         </div>
@@ -717,7 +782,7 @@ const Anamnese = () => {
       </p>
       <div className="card">
         <ul>
-          {anamneseDados.map(dado => {
+          {anamneseDados.map((dado) => {
             if (dado.nascimento === dataAtual) {
               notifyBirthday();
             }
@@ -769,9 +834,12 @@ const Anamnese = () => {
                 <p>Hipertireoidismo: {dado.hipertireoide}</p>
                 <p>Asma brônquica: {dado.asma}</p>
                 <p>Insuficiência Cardíaca: {dado.cardio}</p>
+                <p>Epilepsia: {dado.epilepsia}</p>
                 <p>Cirurgia: {dado.cirurgia}</p>
                 <p>Cirurgia (tipo): {dado.cirurgiaTipo}</p>
                 <p>Cirurgia (tempo): {dado.cirurgiaTempo}</p>
+                <p>Perfume/Fragrância: {dado.perfume}</p>
+                <p>Cosméticos: {dado.cosmetico}</p>
                 <p>Local do corpo: {dado.corpo}</p>
                 <p>Outra questão de saúde: {dado.outraQuestao}</p>
                 <p>Qual: {dado.qual}</p>
@@ -783,23 +851,23 @@ const Anamnese = () => {
                     onClick={() => (
                       // eslint-disable-next-line no-sequences
                       setIdAnamnese(dado.id),
-                      setName(dado.nome),
-                      setBirthday(dado.nascimento),
-                      setAddress(dado.endereco),
-                      setProfession(dado.profissao),
-                      setPhone(dado.telefone),
-                      setTromboseTempo(""),
-                      setCancerTempo(dado.cancerTempo),
-                      setRecMedica(dado.recMedica),
-                      setCovidTempo(dado.covidTempo),
-                      setVacinaTempo(dado.vacinaTempo),
-                      setInflamacaoTipo(dado.inflamacaoTipo),
-                      setCirurgiaTipo(dado.cirurgiaTipo),
-                      setCirurgiaTempo(dado.cirurgiaTempo),
-                      setCorpo(dado.corpo),
-                      setQual(dado.qual),
-                      setAnotacoes(dado.anotacoes),
-                      setRazao(dado.razao)
+                        setName(dado.nome),
+                        setBirthday(dado.nascimento),
+                        setAddress(dado.endereco),
+                        setProfession(dado.profissao),
+                        setPhone(dado.telefone),
+                        setTromboseTempo(""),
+                        setCancerTempo(dado.cancerTempo),
+                        setRecMedica(dado.recMedica),
+                        setCovidTempo(dado.covidTempo),
+                        setVacinaTempo(dado.vacinaTempo),
+                        setInflamacaoTipo(dado.inflamacaoTipo),
+                        setCirurgiaTipo(dado.cirurgiaTipo),
+                        setCirurgiaTempo(dado.cirurgiaTempo),
+                        setCorpo(dado.corpo),
+                        setQual(dado.qual),
+                        setAnotacoes(dado.anotacoes),
+                        setRazao(dado.razao)
                     )}
                   >
                     <a href="#nome" style={{ textDecoration: "none" }}>
