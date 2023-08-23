@@ -57,8 +57,6 @@ const Anamnese = () => {
   const [gripe, setGripe] = useState("");
   const [covid, setCovid] = useState("");
   const [covidTempo, setCovidTempo] = useState("");
-  const [vacina, setVacina] = useState("");
-  const [vacinaTempo, setVacinaTempo] = useState("");
   const [depressao, setDepressao] = useState("");
   const [ansiedade, setAnsiedade] = useState("");
   const [dores, setDores] = useState("");
@@ -76,9 +74,9 @@ const Anamnese = () => {
   const [anotacoes, setAnotacoes] = useState("");
   const [razao, setRazao] = useState("");
   const [epilepsia, setEpilepsia] = useState("");
-  // const [medicao, setMedicacao] = useState("");
+  const [medicacao, setMedicacao] = useState("");
   // const [medicacaoTempo, setMedicacaoTempo] = useState("");
-  // const [medicaoTipo, setMedicacaoTipo] = useState("");
+  const [medicacaoTipo, setMedicacaoTipo] = useState("");
   const [perfume, setPerfume] = useState("");
   const [cosmetico, setCosmetico] = useState("");
   const notify = () =>
@@ -150,8 +148,6 @@ const Anamnese = () => {
         gripe: gripe,
         covid: covid,
         covidTempo: covidTempo,
-        vacina: vacina,
-        vacinaTempo: vacinaTempo,
         depressao: depressao,
         ansiedade: ansiedade,
         dores: dores,
@@ -171,6 +167,8 @@ const Anamnese = () => {
         epilepsia: epilepsia,
         perfume: perfume,
         cosmetico: cosmetico,
+        medicacao: medicacao,
+        medicacaoTipo: medicacaoTipo,
       })
       .then(() => {
         handleReset();
@@ -222,8 +220,8 @@ const Anamnese = () => {
             gripe: item.data().gripe,
             covid: item.data().covid,
             covidTempo: item.data().covidTempo,
-            vacina: item.data().vacina,
-            vacinaTempo: item.data().vacinaTempo,
+            medicacao: item.data().medicacao,
+            medicacaoTipo: item.data().medicacaoTipo,
             depressao: item.data().depressao,
             ansiedade: item.data().ansiedade,
             dores: item.data().dores,
@@ -280,7 +278,6 @@ const Anamnese = () => {
         cancerTempo: cancerTempo,
         recMedica: recMedica,
         covidTempo: covidTempo,
-        vacinaTempo: vacinaTempo,
         inflamacaoTipo: inflamacaoTipo,
         cirurgiaTipo: cirurgiaTipo,
         cirurgiaTempo: cirurgiaTempo,
@@ -309,7 +306,7 @@ const Anamnese = () => {
     setCancerTempo("");
     setRecMedica("");
     setCovidTempo("");
-    setVacinaTempo("");
+    setMedicacaoTipo("");
     setInflamacaoTipo("");
     setCirurgiaTipo("");
     setCirurgiaTempo("");
@@ -592,6 +589,24 @@ const Anamnese = () => {
             />
           </div>
 
+          <div onChange={(e) => setMedicacao(e.target.value)}>
+            <p>14. Toma medicação?</p>
+            <input type="radio" name="medicacao" value="sim" />
+            <label htmlFor="medicacao">Sim</label> <br />
+            <input type="radio" name="medicacao" value="não" />
+            <label htmlFor="medicacao">Não</label>
+          </div>
+          <div className="controle">
+            <label>Qual(is)?</label>
+            <input
+              type="text"
+              value={medicacaoTipo}
+              onChange={(e) => setMedicacaoTipo(e.target.value)}
+            />
+          </div>
+
+          {
+            /*
           <div onChange={(e) => setVacina(e.target.value)}>
             <p>14. Tomou vacina?</p>
             <input type="radio" name="vacina" value="sim" />
@@ -607,7 +622,8 @@ const Anamnese = () => {
               onChange={(e) => setVacinaTempo(e.target.value)}
             />
           </div>
-
+            */
+          }
           <div onChange={(e) => setDepressao(e.target.value)}>
             <p>15. Depressão?</p>
             <input type="radio" name="depressao" value="sim" />
@@ -704,32 +720,6 @@ const Anamnese = () => {
             <label htmlFor="epilepsia">Não</label>
           </div>
 
-          {
-            /*
-          <div onChange={(e) => setMedicacao(e.target.value)}>
-            <p>24. Toma medicação?</p>
-            <input type="radio" name="medicao" value="sim" />
-            <label htmlFor="medicao">Sim</label> <br />
-            <input type="radio" name="medicao" value="não" />
-            <label htmlFor="medicao">Não</label>
-          </div>
-          <div className="controle">
-            <label>Qual(is)?</label>
-            <input
-              type="text"
-              value={medicaoTipo}
-              onChange={(e) => setMedicacaoTipo(e.target.value)}
-            />
-          </div>
-          <div className="controle">
-            <label>Há quanto tempo?</label>
-            <input
-              type="text"
-              value={medicacaoTempo}
-              onChange={(e) => setMedicacaoTempo(e.target.value)}
-            />
-          </div> */
-          }
           <div onChange={(e) => setPerfume(e.target.value)}>
             <p>24. Tem sensibilidade a perfume, a fragrâncias?</p>
             <input type="radio" name="perfume" value="sim" />
@@ -824,8 +814,8 @@ const Anamnese = () => {
                 <p>Gripe ou resfriado: {dado.gripe}</p>
                 <p>COVID: {dado.covid}</p>
                 <p>COVID (tempo): {dado.covidTempo}</p>
-                <p>Vacina: {dado.vacina}</p>
-                <p>Vacina (tempo): {dado.vacinaTempo}</p>
+                <p>Medicação: {dado.medicacao}</p>
+                <p>Medicação (tipo): {dado.medicacaoTipo}</p>
                 <p>Depressão: {dado.depressao}</p>
                 <p>Ansiedade: {dado.ansiedade}</p>
                 <p>Dores: {dado.dores}</p>
@@ -860,14 +850,14 @@ const Anamnese = () => {
                         setCancerTempo(dado.cancerTempo),
                         setRecMedica(dado.recMedica),
                         setCovidTempo(dado.covidTempo),
-                        setVacinaTempo(dado.vacinaTempo),
                         setInflamacaoTipo(dado.inflamacaoTipo),
                         setCirurgiaTipo(dado.cirurgiaTipo),
                         setCirurgiaTempo(dado.cirurgiaTempo),
                         setCorpo(dado.corpo),
                         setQual(dado.qual),
                         setAnotacoes(dado.anotacoes),
-                        setRazao(dado.razao)
+                        setRazao(dado.razao),
+                        setMedicacaoTipo(dado.medicacaoTipo)
                     )}
                   >
                     <a href="#nome" style={{ textDecoration: "none" }}>

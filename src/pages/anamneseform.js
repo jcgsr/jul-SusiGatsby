@@ -47,8 +47,8 @@ const Anamnese = () => {
   const [gripe, setGripe] = useState("");
   const [covid, setCovid] = useState("");
   const [covidTempo, setCovidTempo] = useState("");
-  const [vacina, setVacina] = useState("");
-  const [vacinaTempo, setVacinaTempo] = useState("");
+  // const [vacina, setVacina] = useState("");
+  // const [vacinaTempo, setVacinaTempo] = useState("");
   const [depressao, setDepressao] = useState("");
   const [ansiedade, setAnsiedade] = useState("");
   const [dores, setDores] = useState("");
@@ -66,9 +66,9 @@ const Anamnese = () => {
   const [anotacoes, setAnotacoes] = useState("");
   const [razao, setRazao] = useState("");
   const [epilepsia, setEpilepsia] = useState("");
-  // const [medicao, setMedicacao] = useState("");
+  const [medicacao, setMedicacao] = useState("");
   // const [medicacaoTempo, setMedicacaoTempo] = useState("");
-  // const [medicaoTipo, setMedicacaoTipo] = useState("");
+  const [medicacaoTipo, setMedicacaoTipo] = useState("");
   const [perfume, setPerfume] = useState("");
   const [cosmetico, setCosmetico] = useState("");
 
@@ -129,8 +129,6 @@ const Anamnese = () => {
         gripe: gripe,
         covid: covid,
         covidTempo: covidTempo,
-        vacina: vacina,
-        vacinaTempo: vacinaTempo,
         depressao: depressao,
         ansiedade: ansiedade,
         dores: dores,
@@ -150,6 +148,8 @@ const Anamnese = () => {
         epilepsia: epilepsia,
         perfume: perfume,
         cosmetico: cosmetico,
+        medicacao: medicacao,
+        medicacaoTipo: medicacaoTipo,
       })
       .then(() => {
         handleReset();
@@ -177,6 +177,7 @@ const Anamnese = () => {
     setQual("");
     setAnotacoes("");
     setCirurgiaTempo("");
+    setMedicacao("");   
   };
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -500,7 +501,8 @@ const Anamnese = () => {
               onChange={(e) => setCovidTempo(e.target.value)}
             />
           </div>
-
+          {
+            /*
           <div onChange={(e) => setVacina(e.target.value)}>
             <p>14. Tomou vacina?</p>
             <input type="radio" name="vacina" value="sim" />
@@ -514,6 +516,24 @@ const Anamnese = () => {
               type="text"
               value={vacinaTempo}
               onChange={(e) => setVacinaTempo(e.target.value)}
+            />
+          </div>
+            */
+          }
+
+          <div onChange={(e) => setMedicacao(e.target.value)}>
+            <p>14. Toma medicação?</p>
+            <input type="radio" name="medicacao" value="sim" />
+            <label htmlFor="medicacao">Sim</label> <br />
+            <input type="radio" name="medicacao" value="não" />
+            <label htmlFor="medicacao">Não</label>
+          </div>
+          <div className="controle">
+            <label>Qual(is)?</label>
+            <input
+              type="text"
+              value={medicacaoTipo}
+              onChange={(e) => setMedicacaoTipo(e.target.value)}
             />
           </div>
 
