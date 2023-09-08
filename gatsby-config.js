@@ -33,35 +33,40 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/app/*`] },
     },
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-remark-images`,
     `gatsby-transformer-sharp`,
-    //`gatsby-plugin-sitemap`,
+    // `gatsby-plugin-sitemap`,
     // Needed for dynamic images
     {
       resolve: "gatsby-plugin-firebase",
       options: {
         credentials: {
           apiKey: process.env.GATSBY_PUBLIC_FIREBASE_API_KEY,
-          authDomain: `${process.env.GATSBY_PUBLIC_FIREBASE_PROJECT_ID}firebaseapp.com`,
-          databaseURL: `https://${process.env.GATSBY_PUBLIC_FIREBASE_PROJECT_ID}.firebaseio.com`,
+          authDomain:
+            `${process.env.GATSBY_PUBLIC_FIREBASE_PROJECT_ID}firebaseapp.com`,
+          databaseURL:
+            `https://${process.env.GATSBY_PUBLIC_FIREBASE_PROJECT_ID}.firebaseio.com`,
 
           projectId: process.env.GATSBY_PUBLIC_FIREBASE_PROJECT_ID,
 
-          storageBucket: `${process.env.GATSBY_PUBLIC_FIREBASE_PROJECT_ID}.appspot.com`,
+          storageBucket:
+            `${process.env.GATSBY_PUBLIC_FIREBASE_PROJECT_ID}.appspot.com`,
           messagingSenderId: "309172066111",
           appId: "1:309172066111:web:c31f3c2465c15c50a7a58a",
         },
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: `terapias`,
-        path: `${__dirname}/terapias-mdx`,
-      },
-    },
+    // `gatsby-plugin-mdx`,
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: `terapias`,
+    //     path: `${__dirname}/src/pages/terapias`,
+    //   },
+    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -69,7 +74,6 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-fonts`,
